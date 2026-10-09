@@ -19,7 +19,7 @@ def run_document_pipeline(upload_folder: str | Path, output_folder: str | Path):
     Run the complete document processing pipeline.
 
     Parameters
-    ----------
+    --
     upload_folder:
         Folder containing user-uploaded PDF files.
 
@@ -31,9 +31,9 @@ def run_document_pipeline(upload_folder: str | Path, output_folder: str | Path):
     upload_folder = Path(upload_folder)
     output_folder = Path(output_folder)
 
-    # --------------------------------------------------------
+    
     # Validate upload folder
-    # --------------------------------------------------------
+    
 
     if not upload_folder.exists():
         logger.error("Upload folder does not exist: %s", upload_folder)
@@ -45,9 +45,9 @@ def run_document_pipeline(upload_folder: str | Path, output_folder: str | Path):
 
         raise NotADirectoryError(f"Upload path is not a directory: {upload_folder}")
 
-    # --------------------------------------------------------
+    
     # Find PDFs
-    # --------------------------------------------------------
+    
 
     pdf_files = list(upload_folder.glob("*.pdf"))
 
@@ -58,9 +58,9 @@ def run_document_pipeline(upload_folder: str | Path, output_folder: str | Path):
 
     logger.info("Found %d PDF files in %s", len(pdf_files), upload_folder)
 
-    # --------------------------------------------------------
+    
     # Create output directories
-    # --------------------------------------------------------
+    
 
     raw_folder = output_folder / "raw_files"
     chunks_folder = output_folder / "chunks"
@@ -78,9 +78,9 @@ def run_document_pipeline(upload_folder: str | Path, output_folder: str | Path):
 
     final_chunks_json = chunks_folder / "final_chunks.json"
 
-    # ========================================================
+    
     # STEP 1 — EXTRACTION
-    # ========================================================
+    
 
     logger.info("[1/4] Starting document extraction")
 
@@ -88,9 +88,9 @@ def run_document_pipeline(upload_folder: str | Path, output_folder: str | Path):
 
     logger.info("[1/4] Document extraction completed")
 
-    # ========================================================
+    
     # STEP 2 — HEADER CHUNKING
-    # ========================================================
+    
 
     logger.info("[2/4] Starting document chunking")
 
@@ -98,9 +98,9 @@ def run_document_pipeline(upload_folder: str | Path, output_folder: str | Path):
 
     logger.info("[2/4] Document chunking completed")
 
-    # ========================================================
+    
     # STEP 3 — CHUNK REFINEMENT
-    # ========================================================
+    
 
     logger.info("[3/4] Starting chunk refinement")
 
@@ -108,9 +108,9 @@ def run_document_pipeline(upload_folder: str | Path, output_folder: str | Path):
 
     logger.info("[3/4] Chunk refinement completed")
 
-    # ========================================================
+    
     # STEP 4 — EMBEDDING + VECTOR STORE
-    # ========================================================
+    
 
     logger.info("[4/4] Starting embedding and vector indexing")
 
@@ -118,9 +118,9 @@ def run_document_pipeline(upload_folder: str | Path, output_folder: str | Path):
 
     logger.info("[4/4] Embedding and vector indexing completed")
 
-    # ========================================================
+    
     # RETURN PIPELINE RESULT
-    # ========================================================
+    
 
     result = {
         "uploaded_files": [file.name for file in pdf_files],
@@ -138,21 +138,21 @@ def run_document_pipeline(upload_folder: str | Path, output_folder: str | Path):
 
 if __name__ == "__main__":
     try:
-        # -----------------------------------------
+        
         # User-uploaded document folder
-        # -----------------------------------------
+        
 
         upload_folder = Path("./data/pdfs")
 
-        # -----------------------------------------
+        
         # Output folder
-        # -----------------------------------------
+        
 
         output_folder = Path("./data/processed/user_123")
 
-        # -----------------------------------------
+        
         # Check upload folder
-        # -----------------------------------------
+        
 
         if not upload_folder.exists():
             logger.error("Upload folder does not exist: %s", upload_folder.resolve())
@@ -162,9 +162,9 @@ if __name__ == "__main__":
             logger.error("Upload path is not a directory: %s", upload_folder.resolve())
             raise NotADirectoryError(f"Upload path is not a directory: {upload_folder}")
 
-        # -----------------------------------------
+        
         # Check PDF files
-        # -----------------------------------------
+        
 
         pdf_files = list(upload_folder.glob("*.pdf"))
 
@@ -177,17 +177,17 @@ if __name__ == "__main__":
         for pdf in pdf_files:
             logger.info("Input document: %s", pdf.name)
 
-        # -----------------------------------------
+        
         # Run pipeline
-        # -----------------------------------------
+        
 
         result = run_document_pipeline(
             upload_folder=upload_folder, output_folder=output_folder
         )
 
-        # -----------------------------------------
+        
         # Display result
-        # -----------------------------------------
+        
 
         print("\nPipeline completed successfully.")
 

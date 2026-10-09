@@ -15,9 +15,9 @@ from src.model.rag_response_model import RAGResponse
 from src.utils.logger import logger
 
 
-# ---------------------------------------------------------
+
 # Configuration
-# ---------------------------------------------------------
+
 
 DEFAULT_MODEL_ID = "qwen2.5:3b"
 DEFAULT_VECTOR_STORE_DIRECTORY = "./data/vector_store"
@@ -213,9 +213,9 @@ class RAGAgent:
 
         logger.info("Processing RAG query: %s", query)
 
-        # -----------------------------------------------------
+       
         # Step 1: Retrieve documents
-        # -----------------------------------------------------
+       
 
         try:
             retrieved_docs = retrieve_documents(
@@ -244,9 +244,9 @@ class RAGAgent:
             len(retrieved_docs),
         )
 
-        # -----------------------------------------------------
+       
         # Step 2: Prepare context and source references
-        # -----------------------------------------------------
+       
 
         context_parts: list[str] = []
         sources: list[str] = []
@@ -284,9 +284,9 @@ class RAGAgent:
 
         context = "\n\n---\n\n".join(context_parts)
 
-        # -----------------------------------------------------
+       
         # Step 3: Build the grounded prompt
-        # -----------------------------------------------------
+       
 
         prompt = f"""
 Answer the user's question using only the retrieved document context.
@@ -315,9 +315,9 @@ RETRIEVED DOCUMENT CONTEXT:
 </context>
 """
 
-        # -----------------------------------------------------
+       
         # Step 4: Generate the answer
-        # -----------------------------------------------------
+       
 
         try:
             response = await self.rag_agent.run(prompt)
@@ -332,9 +332,9 @@ RETRIEVED DOCUMENT CONTEXT:
                 "The Ollama agent failed to generate an answer."
             ) from exc
 
-        # -----------------------------------------------------
+       
         # Step 5: Parse and validate the JSON response
-        # -----------------------------------------------------
+       
 
         try:
             parsed_response = self._parse_json_response(raw_response)
@@ -357,9 +357,9 @@ RETRIEVED DOCUMENT CONTEXT:
                 sources=sources,
             )
 
-        # -----------------------------------------------------
+       
         # Step 6: Validate source references
-        # -----------------------------------------------------
+       
 
         allowed_sources = set(sources)
 

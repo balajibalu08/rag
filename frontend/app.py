@@ -7,9 +7,9 @@ from pathlib import Path
 import streamlit as st
 
 
-# ============================================================
+
 # CONFIGURATION
-# ============================================================
+
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
@@ -23,9 +23,9 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-# ============================================================
+
 # PAGE CONFIGURATION
-# ============================================================
+
 
 st.set_page_config(
     page_title="Northbridge AI",
@@ -35,13 +35,13 @@ st.set_page_config(
 )
 
 
-# ============================================================
-# CUSTOM UI
-# ============================================================
 
-# ============================================================
+# CUSTOM UI
+
+
+
 # CUSTOM DARK THEME
-# ============================================================
+
 
 st.markdown(
     """
@@ -388,9 +388,9 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
-# ============================================================
+
 # PERSISTENT ASYNCIO EVENT LOOP
-# ============================================================
+
 
 @st.cache_resource
 def get_event_loop():
@@ -430,9 +430,9 @@ def run_async(coroutine):
     return future.result()
 
 
-# ============================================================
+
 # RAG INITIALIZATION
-# ============================================================
+
 
 @st.cache_resource(show_spinner=False)
 def get_rag_agent():
@@ -478,9 +478,9 @@ def initialize_rag_agent():
         st.session_state.rag_initialization_error = str(exc)
 
 
-# ============================================================
+
 # SIDEBAR
-# ============================================================
+
 
 def render_sidebar():
 
@@ -654,9 +654,9 @@ def render_sidebar():
         )
 
 
-# ============================================================
+
 # WELCOME SCREEN
-# ============================================================
+
 
 SUGGESTIONS = [
     (
@@ -735,9 +735,9 @@ def render_welcome_screen():
     )
 
 
-# ============================================================
+
 # CHAT HISTORY
-# ============================================================
+
 
 def render_chat_history():
 
@@ -760,9 +760,9 @@ def render_chat_history():
                         st.markdown(f"- `{source}`")
 
 
-# ============================================================
+
 # CHAT PROCESSING
-# ============================================================
+
 
 def process_query(query: str):
 
@@ -879,9 +879,9 @@ def process_query(query: str):
                 )
 
 
-# ============================================================
+
 # MAIN APPLICATION
-# ============================================================
+
 
 def main():
 

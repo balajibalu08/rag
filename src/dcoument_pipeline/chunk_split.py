@@ -8,9 +8,9 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from src.utils.logger import logger
 
 
-# ============================================================
+
 # CONFIGURATION
-# ============================================================
+
 
 INPUT_JSON = "./data/chunks/chunks.json"
 OUTPUT_JSON = "./data/chunks/final_chunks.json"
@@ -19,9 +19,9 @@ MAX_CHUNK_SIZE = 4000
 CHUNK_OVERLAP = 200
 
 
-# ============================================================
+
 # TEXT SPLITTER
-# ============================================================
+
 
 splitter = RecursiveCharacterTextSplitter(
     chunk_size=MAX_CHUNK_SIZE,
@@ -30,9 +30,9 @@ splitter = RecursiveCharacterTextSplitter(
 )
 
 
-# ============================================================
+
 # LOAD CHUNKS
-# ============================================================
+
 
 
 def load_chunks(json_path: str) -> List[Dict[str, Any]]:
@@ -71,9 +71,9 @@ def load_chunks(json_path: str) -> List[Dict[str, Any]]:
     return data
 
 
-# ============================================================
+
 # VALIDATE CHUNK
-# ============================================================
+
 
 
 def validate_chunk(chunk: Dict[str, Any], index: int) -> bool:
@@ -110,9 +110,9 @@ def validate_chunk(chunk: Dict[str, Any], index: int) -> bool:
     return True
 
 
-# ============================================================
+
 # REFINE ONE CHUNK
-# ============================================================
+
 
 
 def refine_chunk(chunk: Dict[str, Any]) -> List[Dict[str, Any]]:
@@ -127,9 +127,9 @@ def refine_chunk(chunk: Dict[str, Any]) -> List[Dict[str, Any]]:
 
     content_length = len(content)
 
-    # --------------------------------------------------------
+    
     # Chunk is already within the limit
-    # --------------------------------------------------------
+    
 
     if content_length <= MAX_CHUNK_SIZE:
         logger.debug(
@@ -146,9 +146,9 @@ def refine_chunk(chunk: Dict[str, Any]) -> List[Dict[str, Any]]:
 
         return [refined_chunk]
 
-    # --------------------------------------------------------
+    
     # Chunk is oversized
-    # --------------------------------------------------------
+    
 
     logger.info(
         "Oversized chunk detected: %s (%d characters).", chunk_id, content_length
@@ -205,9 +205,9 @@ def refine_chunk(chunk: Dict[str, Any]) -> List[Dict[str, Any]]:
     return refined_chunks
 
 
-# ============================================================
+
 # REFINE ALL CHUNKS
-# ============================================================
+
 
 
 def refine_all_chunks(input_path: str, output_path: str) -> List[Dict[str, Any]]:
@@ -217,9 +217,9 @@ def refine_all_chunks(input_path: str, output_path: str) -> List[Dict[str, Any]]
 
     logger.info("========== CHUNK REFINEMENT STARTED ==========")
 
-    # --------------------------------------------------------
+    
     # Load
-    # --------------------------------------------------------
+    
 
     try:
         chunks = load_chunks(input_path)
@@ -236,9 +236,9 @@ def refine_all_chunks(input_path: str, output_path: str) -> List[Dict[str, Any]]
     failed_count = 0
     oversized_count = 0
 
-    # --------------------------------------------------------
+    
     # Process each chunk
-    # --------------------------------------------------------
+    
 
     for index, chunk in enumerate(chunks):
         chunk_id = (
@@ -248,9 +248,9 @@ def refine_all_chunks(input_path: str, output_path: str) -> List[Dict[str, Any]]
         )
 
         try:
-            # ----------------------------------------------
+            
             # Validate
-            # ----------------------------------------------
+            
 
             if not validate_chunk(chunk, index):
                 skipped_count += 1
@@ -258,16 +258,16 @@ def refine_all_chunks(input_path: str, output_path: str) -> List[Dict[str, Any]]
 
             processed_count += 1
 
-            # ----------------------------------------------
+            
             # Check size
-            # ----------------------------------------------
+            
 
             if len(chunk["content"]) > MAX_CHUNK_SIZE:
                 oversized_count += 1
 
-            # ----------------------------------------------
+            
             # Refine
-            # ----------------------------------------------
+            
 
             refined_chunks = refine_chunk(chunk)
 
@@ -278,9 +278,9 @@ def refine_all_chunks(input_path: str, output_path: str) -> List[Dict[str, Any]]
 
             logger.exception("Failed to process chunk: %s", chunk_id)
 
-    # --------------------------------------------------------
+    
     # Validate output directory
-    # --------------------------------------------------------
+    
 
     output_path = Path(output_path)
 
@@ -294,9 +294,9 @@ def refine_all_chunks(input_path: str, output_path: str) -> List[Dict[str, Any]]
 
         raise
 
-    # --------------------------------------------------------
+    
     # Save final chunks
-    # --------------------------------------------------------
+    
 
     try:
         with open(output_path, "w", encoding="utf-8") as file:
@@ -307,17 +307,17 @@ def refine_all_chunks(input_path: str, output_path: str) -> List[Dict[str, Any]]
 
         raise
 
-    # --------------------------------------------------------
+    
     # Final validation
-    # --------------------------------------------------------
+    
 
     remaining_oversized = sum(
         1 for chunk in final_chunks if len(chunk.get("content", "")) > MAX_CHUNK_SIZE
     )
 
-    # --------------------------------------------------------
+    
     # Statistics
-    # --------------------------------------------------------
+    
 
     logger.info("========== CHUNK REFINEMENT COMPLETED ==========")
 
@@ -340,9 +340,9 @@ def refine_all_chunks(input_path: str, output_path: str) -> List[Dict[str, Any]]
     return final_chunks
 
 
-# ============================================================
+
 # MAIN
-# ============================================================
+
 
 if __name__ == "__main__":
     try:
