@@ -1,11 +1,11 @@
 import json
-from dataclasses import dataclass, field, asdict
+from dataclasses import asdict, dataclass, field
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Any
 
 import pandas as pd
 from docling.document_converter import DocumentConverter
-from docling_core.types.doc import DocItemLabel, TextItem, TableItem, PictureItem
+from docling_core.types.doc import DocItemLabel, PictureItem, TableItem, TextItem
 
 
 @dataclass
@@ -14,8 +14,8 @@ class DocumentElement:
     type: str  # "title", "heading", "paragraph", "list_item", "table", "document_index", "picture", "code", "caption"
     content: str  # Direct text string or canonical Markdown string
     page_number: int
-    section_path: List[str]  # e.g., ["Academic Regulations", "Table of Contents"]
-    metadata: Dict[str, Any] = field(default_factory=dict)
+    section_path: list[str]  # e.g., ["Academic Regulations", "Table of Contents"]
+    metadata: dict[str, Any] = field(default_factory=dict)
 
 
 @dataclass
@@ -24,14 +24,14 @@ class DocumentData:
     file_path: str
     num_pages: int
     file_size_bytes: int
-    elements: List[DocumentElement] = field(default_factory=list)
+    elements: list[DocumentElement] = field(default_factory=list)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         """Convert object into a clean JSON-serializable dictionary."""
         return asdict(self)
 
 
-def extract_table_headers(table_md: str, df: pd.DataFrame) -> List[str]:
+def extract_table_headers(table_md: str, df: pd.DataFrame) -> list[str]:
     """
     Extracts canonical table headers.
     If DataFrame generated default numeric column names ([0, 1, 2]),
@@ -65,7 +65,7 @@ def extract_table_headers(table_md: str, df: pd.DataFrame) -> List[str]:
 
 def extract_folder_to_json(
     folder_path: str | Path, output_json_path: str | Path = "extracted_data.json"
-) -> List[DocumentData]:
+) -> list[DocumentData]:
     folder = Path(folder_path)
     converter = DocumentConverter()
 
@@ -80,7 +80,7 @@ def extract_folder_to_json(
         print(f"No valid PDF files found in {folder.resolve()}")
         return []
 
-    extracted_documents: List[DocumentData] = []
+    extracted_documents: list[DocumentData] = []
     conversion_results = converter.convert_all(pdf_files, raises_on_error=False)
 
     for result in conversion_results:
@@ -98,7 +98,7 @@ def extract_folder_to_json(
         )
 
         element_counter = 1
-        section_stack: List[str] = []
+        section_stack: list[str] = []
 
         # Iterate through elements in true linear reading order
         for item, level in doc.iterate_items():

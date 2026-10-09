@@ -6,8 +6,6 @@ from pathlib import Path
 
 import streamlit as st
 
-
-
 # CONFIGURATION
 
 
@@ -23,7 +21,6 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-
 # PAGE CONFIGURATION
 
 
@@ -35,9 +32,7 @@ st.set_page_config(
 )
 
 
-
 # CUSTOM UI
-
 
 
 # CUSTOM DARK THEME
@@ -418,9 +413,7 @@ def run_async(coroutine):
 
     if loop.is_closed():
         coroutine.close()
-        raise RuntimeError(
-            "The persistent asyncio event loop has been closed."
-        )
+        raise RuntimeError("The persistent asyncio event loop has been closed.")
 
     future = asyncio.run_coroutine_threadsafe(
         coroutine,
@@ -428,7 +421,6 @@ def run_async(coroutine):
     )
 
     return future.result()
-
 
 
 # RAG INITIALIZATION
@@ -453,7 +445,6 @@ def initialize_session_state():
     }
 
     for key, value in defaults.items():
-
         if key not in st.session_state:
             st.session_state[key] = value
 
@@ -464,19 +455,15 @@ def initialize_rag_agent():
         return
 
     try:
-
         with st.spinner("Starting document assistant..."):
-
             st.session_state.rag_agent = get_rag_agent()
 
         st.session_state.rag_initialization_error = None
 
     except Exception as exc:
-
         logger.exception("RAG initialization failed.")
 
         st.session_state.rag_initialization_error = str(exc)
-
 
 
 # SIDEBAR
@@ -485,7 +472,6 @@ def initialize_rag_agent():
 def render_sidebar():
 
     with st.sidebar:
-
         # Brand
 
         st.markdown(
@@ -509,7 +495,6 @@ def render_sidebar():
             "＋  New conversation",
             use_container_width=True,
         ):
-
             st.session_state.messages = []
             st.session_state.pending_query = None
 
@@ -523,7 +508,6 @@ def render_sidebar():
         )
 
         if st.session_state.rag_agent is not None:
-
             st.markdown(
                 """
                 <div class="status-indicator">
@@ -538,7 +522,6 @@ def render_sidebar():
             st.caption("Retrieval: FAISS")
 
         else:
-
             st.markdown(
                 """
                 <div class="status-indicator">
@@ -550,18 +533,13 @@ def render_sidebar():
             )
 
             if st.session_state.rag_initialization_error:
-
                 with st.expander("Initialization details"):
-
-                    st.code(
-                        st.session_state.rag_initialization_error
-                    )
+                    st.code(st.session_state.rag_initialization_error)
 
             if st.button(
                 "Retry connection",
                 use_container_width=True,
             ):
-
                 get_rag_agent.clear()
 
                 st.session_state.rag_agent = None
@@ -587,16 +565,10 @@ def render_sidebar():
         )
 
         if uploaded_files:
-
-            st.caption(
-                f"{len(uploaded_files)} PDF file(s) selected"
-            )
+            st.caption(f"{len(uploaded_files)} PDF file(s) selected")
 
             for uploaded_file in uploaded_files:
-
-                st.markdown(
-                    f"📄 {uploaded_file.name}"
-                )
+                st.markdown(f"📄 {uploaded_file.name}")
 
             st.info(
                 "PDF indexing is not connected yet. "
@@ -605,7 +577,6 @@ def render_sidebar():
             )
 
         else:
-
             st.markdown(
                 """
                 <div class="sidebar-note">
@@ -626,16 +597,12 @@ def render_sidebar():
             unsafe_allow_html=True,
         )
 
-        st.caption(
-            f"{len(st.session_state.messages)} messages "
-            "in this session"
-        )
+        st.caption(f"{len(st.session_state.messages)} messages in this session")
 
         if st.button(
             "Clear conversation",
             use_container_width=True,
         ):
-
             st.session_state.messages = []
             st.session_state.pending_query = None
 
@@ -652,7 +619,6 @@ def render_sidebar():
             """,
             unsafe_allow_html=True,
         )
-
 
 
 # WELCOME SCREEN
@@ -711,15 +677,12 @@ def render_welcome_screen():
     columns = first_row + second_row
 
     for index, (icon, title, question) in enumerate(SUGGESTIONS):
-
         with columns[index]:
-
             if st.button(
                 f"{icon}  {title}\n\n{question}",
                 key=f"suggestion_{index}",
                 use_container_width=True,
             ):
-
                 st.session_state.pending_query = question
 
                 st.rerun()
@@ -735,30 +698,21 @@ def render_welcome_screen():
     )
 
 
-
 # CHAT HISTORY
 
 
 def render_chat_history():
 
     for message in st.session_state.messages:
-
         with st.chat_message(message["role"]):
-
             st.markdown(message["content"])
 
             sources = message.get("sources", [])
 
             if message["role"] == "assistant" and sources:
-
-                with st.expander(
-                    f"📚 Sources ({len(sources)})"
-                ):
-
+                with st.expander(f"📚 Sources ({len(sources)})"):
                     for source in sources:
-
                         st.markdown(f"- `{source}`")
-
 
 
 # CHAT PROCESSING
@@ -784,7 +738,6 @@ def process_query(query: str):
     # Show the question.
 
     with st.chat_message("user"):
-
         st.markdown(query)
 
     # Check agent availability.
@@ -792,14 +745,12 @@ def process_query(query: str):
     rag_agent = st.session_state.rag_agent
 
     if rag_agent is None:
-
         answer = (
             "The assistant is currently unavailable. "
             "Please check the system status and try again."
         )
 
         with st.chat_message("assistant"):
-
             st.error(answer)
 
         st.session_state.messages.append(
@@ -814,70 +765,47 @@ def process_query(query: str):
 
     # Generate response.
 
-    with st.chat_message("assistant"):
+    with st.chat_message("assistant"), st.spinner("Searching your documents..."):
+        try:
+            response = run_async(rag_agent.route_request(query))
 
-        with st.spinner("Searching your documents..."):
+            answer = response.answer
+            sources = response.sources or []
 
-            try:
+            st.markdown(answer)
 
-                response = run_async(
-                    rag_agent.route_request(query)
-                )
+            if sources:
+                with st.expander(f"📚 Sources ({len(sources)})"):
+                    for source in sources:
+                        st.markdown(f"- `{source}`")
 
-                answer = response.answer
-                sources = response.sources or []
+            st.session_state.messages.append(
+                {
+                    "role": "assistant",
+                    "content": answer,
+                    "sources": sources,
+                }
+            )
 
-                st.markdown(answer)
+            logger.info("Response generated successfully.")
 
-                if sources:
+        except Exception as exc:
+            logger.exception("Failed to generate the RAG response.")
 
-                    with st.expander(
-                        f"📚 Sources ({len(sources)})"
-                    ):
+            answer = "I couldn't generate a response this time. Please try again."
 
-                        for source in sources:
+            st.error(answer)
 
-                            st.markdown(f"- `{source}`")
+            with st.expander("Technical details"):
+                st.code(f"{type(exc).__name__}: {exc}")
 
-                st.session_state.messages.append(
-                    {
-                        "role": "assistant",
-                        "content": answer,
-                        "sources": sources,
-                    }
-                )
-
-                logger.info(
-                    "Response generated successfully."
-                )
-
-            except Exception as exc:
-
-                logger.exception(
-                    "Failed to generate the RAG response."
-                )
-
-                answer = (
-                    "I couldn't generate a response this time. "
-                    "Please try again."
-                )
-
-                st.error(answer)
-
-                with st.expander("Technical details"):
-
-                    st.code(
-                        f"{type(exc).__name__}: {exc}"
-                    )
-
-                st.session_state.messages.append(
-                    {
-                        "role": "assistant",
-                        "content": answer,
-                        "sources": [],
-                    }
-                )
-
+            st.session_state.messages.append(
+                {
+                    "role": "assistant",
+                    "content": answer,
+                    "sources": [],
+                }
+            )
 
 
 # MAIN APPLICATION
@@ -894,11 +822,9 @@ def main():
     # Welcome screen or existing conversation.
 
     if not st.session_state.messages:
-
         render_welcome_screen()
 
     else:
-
         st.markdown(
             """
             <div style="
@@ -917,20 +843,16 @@ def main():
 
     # Chat input.
 
-    query = st.chat_input(
-        "Ask anything about your documents..."
-    )
+    query = st.chat_input("Ask anything about your documents...")
 
     # Handle a selected suggestion.
 
     if st.session_state.pending_query:
-
         query = st.session_state.pending_query
 
         st.session_state.pending_query = None
 
     if query:
-
         process_query(query)
 
         st.rerun()

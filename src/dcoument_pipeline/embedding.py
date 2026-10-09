@@ -1,15 +1,11 @@
 import json
-import logging
 from pathlib import Path
-from typing import Any, Dict, List
 
+from langchain_community.vectorstores import FAISS
 from langchain_core.documents import Document
 from langchain_ollama import OllamaEmbeddings
-from langchain_community.vectorstores import FAISS
 
 from src.utils.logger import logger
-
-
 
 # CONFIGURATION
 
@@ -23,12 +19,10 @@ EMBEDDING_MODEL = "qwen3-embedding:0.6b"
 TOP_K = 3
 
 
-
 # LOAD CHUNKS
 
 
-
-def load_documents(chunks_file: str) -> List[Document]:
+def load_documents(chunks_file: str) -> list[Document]:
     """
     Load final chunks and convert them into
     LangChain Document objects.
@@ -100,9 +94,7 @@ def load_documents(chunks_file: str) -> List[Document]:
     return documents
 
 
-
 # CREATE EMBEDDING MODEL
-
 
 
 def create_embeddings() -> OllamaEmbeddings:
@@ -123,13 +115,11 @@ def create_embeddings() -> OllamaEmbeddings:
         raise
 
 
-
 # CREATE VECTOR STORE
 
 
-
 def create_vector_store(
-    documents: List[Document], embeddings: OllamaEmbeddings
+    documents: list[Document], embeddings: OllamaEmbeddings
 ) -> FAISS:
     """
     Create FAISS vector store from documents.
@@ -150,9 +140,7 @@ def create_vector_store(
     return vector_store
 
 
-
 # SAVE VECTOR STORE
-
 
 
 def save_vector_store(vector_store: FAISS, directory: str) -> None:
@@ -175,9 +163,7 @@ def save_vector_store(vector_store: FAISS, directory: str) -> None:
     logger.info("Vector store saved successfully: %s", path.resolve())
 
 
-
 # LOAD VECTOR STORE
-
 
 
 def load_vector_store(directory: str, embeddings: OllamaEmbeddings) -> FAISS:
@@ -213,9 +199,7 @@ def load_vector_store(directory: str, embeddings: OllamaEmbeddings) -> FAISS:
     return vector_store
 
 
-
 # RETRIEVE DOCUMENTS
-
 
 
 def retrieve_documents(vector_store: FAISS, query: str, k: int = TOP_K):
@@ -256,9 +240,7 @@ def build_vector_store(chunks_file: str, vector_store_dir: str):
     logger.info("Starting vector store build: %s", chunks_file)
 
     try:
-        
         # Create embedding model
-        
 
         embeddings = create_embeddings()
 
@@ -267,9 +249,7 @@ def build_vector_store(chunks_file: str, vector_store_dir: str):
         index_file = vector_store_path / "index.faiss"
         metadata_file = vector_store_path / "index.pkl"
 
-        
         # Existing vector store
-        
 
         if index_file.exists() and metadata_file.exists():
             logger.info("Existing vector store found. Loading it.")
@@ -282,9 +262,7 @@ def build_vector_store(chunks_file: str, vector_store_dir: str):
 
             return vector_store
 
-        
         # Create new vector store
-        
 
         logger.info("No existing vector store found.")
 
@@ -294,9 +272,7 @@ def build_vector_store(chunks_file: str, vector_store_dir: str):
 
         vector_store = create_vector_store(documents=documents, embeddings=embeddings)
 
-        
         # Save locally
-        
 
         save_vector_store(vector_store=vector_store, directory=vector_store_dir)
 
@@ -310,12 +286,10 @@ def build_vector_store(chunks_file: str, vector_store_dir: str):
         raise
 
 
-
 # PRINT RESULTS
 
 
-
-def display_results(retrieved_docs: List[Document]) -> None:
+def display_results(retrieved_docs: list[Document]) -> None:
 
     print("\n" + "=" * 70)
 
@@ -337,9 +311,7 @@ def display_results(retrieved_docs: List[Document]) -> None:
         print("-" * 70)
 
 
-
 # MAIN
-
 
 
 def main():
@@ -347,17 +319,13 @@ def main():
     logger.info("========== EMBEDDING PIPELINE STARTED ==========")
 
     try:
-        
         # 1. Create embedding model
-        
 
         embeddings = create_embeddings()
 
         vector_store_path = Path(VECTOR_STORE_DIR)
 
-        
         # 2. Check whether vector store already exists
-        
 
         index_exists = (vector_store_path / "index.faiss").exists()
 
@@ -373,29 +341,21 @@ def main():
         else:
             logger.info("No existing vector store found.")
 
-            
             # 3. Load chunks
-            
 
             documents = load_documents(CHUNKS_FILE)
 
-            
             # 4. Create vectors
-            
 
             vector_store = create_vector_store(
                 documents=documents, embeddings=embeddings
             )
 
-            
             # 5. Save vectors locally
-            
 
             save_vector_store(vector_store=vector_store, directory=VECTOR_STORE_DIR)
 
-        
         # 6. Test retrieval
-        
 
         query = "students use which forms or services to request involving enrollment?"
 
@@ -403,9 +363,7 @@ def main():
             vector_store=vector_store, query=query, k=TOP_K
         )
 
-        
         # 7. Display results
-        
 
         display_results(retrieved_docs)
 
@@ -415,7 +373,6 @@ def main():
         logger.exception("Embedding pipeline failed.")
 
         raise
-
 
 
 # ENTRY POINT

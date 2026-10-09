@@ -4,7 +4,6 @@ from pathlib import Path
 
 from langchain_text_splitters import MarkdownHeaderTextSplitter
 
-
 # 1. CONFIGURATION
 
 
@@ -19,9 +18,7 @@ headers_to_split_on = [
 ]
 
 
-
 # 2. LOAD EXTRACTED JSON
-
 
 
 def load_extracted_data(json_path):
@@ -29,9 +26,7 @@ def load_extracted_data(json_path):
         return json.load(f)
 
 
-
 # 3. CONVERT HEADING TO MARKDOWN
-
 
 
 def heading_to_markdown(text):
@@ -67,9 +62,7 @@ def heading_to_markdown(text):
     return f"# {text}"
 
 
-
 # 4. CONVERT ONE DOCUMENT'S ELEMENTS TO MARKDOWN
-
 
 
 def elements_to_markdown(elements):
@@ -82,59 +75,43 @@ def elements_to_markdown(elements):
         if not content:
             continue
 
-        
         # TITLE / HEADING
-        
 
         if element_type in ["title", "heading"]:
             markdown_parts.append(heading_to_markdown(content))
 
-        
         # PARAGRAPH
-        
 
         elif element_type == "paragraph":
             markdown_parts.append(content)
 
-        
         # LIST ITEM
-        
 
         elif element_type == "list_item":
             markdown_parts.append(f"- {content}")
 
-        
         # TABLE
-        
 
         elif element_type == "table":
             # Docling already gave us Markdown table
             markdown_parts.append(content)
 
-        
         # CAPTION
-        
 
         elif element_type == "caption":
             markdown_parts.append(content)
 
-        
         # CODE
-        
 
         elif element_type == "code":
             markdown_parts.append(f"```\n{content}\n```")
 
-        
         # PICTURE
-        
 
         elif element_type == "picture":
             markdown_parts.append(content)
 
-        
         # DOCUMENT INDEX
-        
 
         elif element_type == "document_index":
             # Don't use table of contents as RAG knowledge
@@ -146,18 +123,14 @@ def elements_to_markdown(elements):
     return "\n".join(markdown_parts)
 
 
-
 # 5. CHUNK ONE DOCUMENT
-
 
 
 def chunk_document(document):
     markdown_parts = []
     element_map = []
 
-    
     # Convert JSON elements to Markdown
-    
 
     for element in document["elements"]:
         element_type = element["type"]
@@ -200,15 +173,11 @@ def chunk_document(document):
             }
         )
 
-    
     # Create Markdown
-    
 
     markdown_text = "\n".join(markdown_parts)
 
-    
     # Header-based splitting
-    
 
     splitter = MarkdownHeaderTextSplitter(
         headers_to_split_on=headers_to_split_on, strip_headers=False
@@ -218,9 +187,7 @@ def chunk_document(document):
 
     final_chunks = []
 
-    
     # Recover metadata for each chunk
-    
 
     for chunk_index, chunk in enumerate(chunks):
         chunk_content = chunk.page_content.strip()
@@ -238,9 +205,7 @@ def chunk_document(document):
             if element_content in chunk_content:
                 matched_elements.append(element)
 
-        
         # Collect metadata
-        
 
         element_ids = list(
             dict.fromkeys(element["element_id"] for element in matched_elements)
@@ -261,9 +226,7 @@ def chunk_document(document):
         if matched_elements:
             section_path = matched_elements[-1].get("section_path", [])
 
-        
         # Create final chunk
-        
 
         final_chunks.append(
             {
@@ -286,9 +249,7 @@ def chunk_document(document):
     return final_chunks
 
 
-
 # 6. CHUNK ALL DOCUMENTS
-
 
 
 def create_chunks(input_json, output_json):
@@ -320,7 +281,6 @@ def create_chunks(input_json, output_json):
     print(f"Saved to: {output_path.resolve()}")
 
     return all_chunks
-
 
 
 # 7. RUN

@@ -1,5 +1,6 @@
-from src.utils.config import config
 import logging
+
+from src.utils.config import config
 
 # Logging basic Configuration
 logging.basicConfig(

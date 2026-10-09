@@ -8,13 +8,11 @@ from agent_framework.ollama import OllamaChatClient
 
 from src.dcoument_pipeline.embedding import (
     create_embeddings,
-    retrieve_documents,
     load_vector_store,
+    retrieve_documents,
 )
 from src.model.rag_response_model import RAGResponse
 from src.utils.logger import logger
-
-
 
 # Configuration
 
@@ -23,9 +21,7 @@ DEFAULT_MODEL_ID = "qwen2.5:3b"
 DEFAULT_VECTOR_STORE_DIRECTORY = "./data/vector_store"
 TOP_K = 3
 
-INSUFFICIENT_INFORMATION = (
-    "I don't have enough information in the provided documents."
-)
+INSUFFICIENT_INFORMATION = "I don't have enough information in the provided documents."
 
 INSTRUCTIONS = """
 You are a document-based RAG assistant.
@@ -83,9 +79,7 @@ class RAGAgent:
             logger.info("Embedding model initialized successfully.")
         except Exception as exc:
             logger.exception("Failed to initialize embedding model.")
-            raise RuntimeError(
-                "Could not initialize the embedding model."
-            ) from exc
+            raise RuntimeError("Could not initialize the embedding model.") from exc
 
         # Load the persisted FAISS vector store once.
         try:
@@ -106,9 +100,7 @@ class RAGAgent:
             ) from exc
         except Exception as exc:
             logger.exception("Failed to load FAISS vector store.")
-            raise RuntimeError(
-                "Could not load the FAISS vector store."
-            ) from exc
+            raise RuntimeError("Could not load the FAISS vector store.") from exc
 
         # Create the chat agent.
         try:
@@ -118,9 +110,7 @@ class RAGAgent:
             logger.info("RAGAgent initialized successfully.")
         except Exception as exc:
             logger.exception("Failed to create the chat agent.")
-            raise RuntimeError(
-                "Could not create the Ollama agent."
-            ) from exc
+            raise RuntimeError("Could not create the Ollama agent.") from exc
 
     @staticmethod
     def _get_source_reference(document: Any) -> str:
@@ -213,9 +203,7 @@ class RAGAgent:
 
         logger.info("Processing RAG query: %s", query)
 
-       
         # Step 1: Retrieve documents
-       
 
         try:
             retrieved_docs = retrieve_documents(
@@ -244,9 +232,7 @@ class RAGAgent:
             len(retrieved_docs),
         )
 
-       
         # Step 2: Prepare context and source references
-       
 
         context_parts: list[str] = []
         sources: list[str] = []
@@ -273,9 +259,7 @@ class RAGAgent:
             )
 
         if not context_parts:
-            logger.warning(
-                "Retrieved documents did not contain usable text."
-            )
+            logger.warning("Retrieved documents did not contain usable text.")
 
             return RAGResponse(
                 answer=INSUFFICIENT_INFORMATION,
@@ -284,9 +268,7 @@ class RAGAgent:
 
         context = "\n\n---\n\n".join(context_parts)
 
-       
         # Step 3: Build the grounded prompt
-       
 
         prompt = f"""
 Answer the user's question using only the retrieved document context.
@@ -315,9 +297,7 @@ RETRIEVED DOCUMENT CONTEXT:
 </context>
 """
 
-       
         # Step 4: Generate the answer
-       
 
         try:
             response = await self.rag_agent.run(prompt)
@@ -332,9 +312,7 @@ RETRIEVED DOCUMENT CONTEXT:
                 "The Ollama agent failed to generate an answer."
             ) from exc
 
-       
         # Step 5: Parse and validate the JSON response
-       
 
         try:
             parsed_response = self._parse_json_response(raw_response)
@@ -357,9 +335,7 @@ RETRIEVED DOCUMENT CONTEXT:
                 sources=sources,
             )
 
-       
         # Step 6: Validate source references
-       
 
         allowed_sources = set(sources)
 
@@ -398,10 +374,7 @@ async def main() -> None:
     try:
         rag = RAGAgent()
 
-        query = (
-            "Students use which forms or services to request "
-            "involving enrollment?"
-        )
+        query = "Students use which forms or services to request involving enrollment?"
 
         response = await rag.route_request(query)
 
