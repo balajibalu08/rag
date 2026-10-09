@@ -1,0 +1,8 @@
+Application:
+  max_chunk : 4000
+  chunk_overlap : 200
+  logging:
+    level: DEBUG
+    file: logs/app.log
+    format: "%(asctime)s | %(levelname)-8s | %(name)s | %(message)s"
+    datefmt: "%Y-%m-%d %H:%M:%S"

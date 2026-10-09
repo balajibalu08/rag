@@ -1,0 +1,1358 @@
+[
+  {
+    "chunk_id": "01_student_handbook_chunk_1",
+    "document_name": "01_student_handbook.pdf",
+    "content": "# NORTHBRIDGE INSTITUTE OF TECHNOLOGY",
+    "metadata": {
+      "source": "01_student_handbook.pdf",
+      "headers": {
+        "Header 1": "NORTHBRIDGE INSTITUTE OF TECHNOLOGY"
+      },
+      "chunk_size": 37,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "01_student_handbook_chunk_2",
+    "document_name": "01_student_handbook.pdf",
+    "content": "# Student Handbook  \nGeneral Student Responsibilities, Services, and Campus Standards  \nDocument Code: NIT-SH-001  \nClassification: Synthetic / Educational Use  \nThis fictional document is created solely for testing document intelligence, semantic chunking, embeddings, vector indexing, and retrieval-augmented generation. It does not represent a real institution or policy.",
+    "metadata": {
+      "source": "01_student_handbook.pdf",
+      "headers": {
+        "Header 1": "Student Handbook"
+      },
+      "chunk_size": 374,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "01_student_handbook_chunk_3",
+    "document_name": "01_student_handbook.pdf",
+    "content": "# Table of Contents  \n- Purpose and Scope  \n- Student Responsibilities  \n- Academic Conduct  \n- Attendance and Participation  \n- Campus Facilities  \n- Student Services  \n- Library and Digital Resources  \n- Health, Safety, and Emergency Practices  \n- Conduct and Community Standards  \n- Administrative Requests  \n- Related Documents",
+    "metadata": {
+      "source": "01_student_handbook.pdf",
+      "headers": {
+        "Header 1": "Table of Contents"
+      },
+      "chunk_size": 331,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "01_student_handbook_chunk_4",
+    "document_name": "01_student_handbook.pdf",
+    "content": "# 1. Purpose and Scope  \nThe Student Handbook provides a common reference for students enrolled at Northbridge Institute of Technology (NIT). It explains general expectations, academic behavior, campus services, safety practices, and routine administrative processes. The handbook should be read together with the Academic Regulations and Examination Guidelines.  \nThe handbook applies to undergraduate and postgraduate students unless a program-specific rule states otherwise. Where a specialized program rule conflicts with a general handbook statement, the program regulation takes precedence for that program.  \nStudents are expected to use official institutional channels for deadlines, notices, and requests. Verbal statements from individuals do not automatically amend a published policy.",
+    "metadata": {
+      "source": "01_student_handbook.pdf",
+      "headers": {
+        "Header 1": "1. Purpose and Scope"
+      },
+      "chunk_size": 796,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "01_student_handbook_chunk_5",
+    "document_name": "01_student_handbook.pdf",
+    "content": "# 2. Student Responsibilities  \nStudents are responsible for maintaining accurate enrollment information, meeting academic deadlines, attending required learning activities, and complying with published examination procedures.  \n- Maintain an active student account and keep contact details current.  \n- Read official notices and course communications within a reasonable period.  \n- Submit work through the designated academic system before stated deadlines.  \n- Respect the learning environment, staff, visitors, and other students.  \n- Protect passwords, access cards, and other credentials assigned to the student.  \n- Report suspected safety incidents or serious policy violations through the appropriate channel.  \nStudents should seek clarification early when a rule or deadline is unclear. Requests for exceptions should be supported by relevant evidence and submitted through the prescribed process.",
+    "metadata": {
+      "source": "01_student_handbook.pdf",
+      "headers": {
+        "Header 1": "2. Student Responsibilities"
+      },
+      "chunk_size": 908,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "01_student_handbook_chunk_6",
+    "document_name": "01_student_handbook.pdf",
+    "content": "# 3. Academic Conduct  \nAcademic work must represent the student's own contribution except where collaboration is explicitly permitted. Plagiarism, unauthorized assistance, fabrication of results, and deliberate misrepresentation of academic work are prohibited.  \nExamples of unacceptable conduct include submitting another person's work as one's own, inventing experimental observations, using prohibited material during an assessment, and altering an official academic record.  \nThe Examination Guidelines provide additional rules for examinations, including permitted materials, identification requirements, and procedures for suspected misconduct.",
+    "metadata": {
+      "source": "01_student_handbook.pdf",
+      "headers": {
+        "Header 1": "3. Academic Conduct"
+      },
+      "chunk_size": 652,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "01_student_handbook_chunk_7",
+    "document_name": "01_student_handbook.pdf",
+    "content": "# 4. Attendance and Participation  \nRegular attendance supports academic progression. Unless a program or course specifies a higher requirement, students should maintain at least 75% attendance in scheduled instructional activities. The Academic Regulations define how attendance is calculated and how approved absences may be treated.  \n| Activity     | General Expectation                 | Record Owner          |\n|--------------|-------------------------------------|-----------------------|\n| Lectures     | Attendance recorded where scheduled | Course instructor     |\n| Laboratories | Attendance normally required        | Laboratory instructor |\n| Tutorials    | Participation expected              | Course instructor     |  \n| Activity          | General Expectation           | Record Owner     |\n|-------------------|-------------------------------|------------------|\n| Academic advising | Attend scheduled appointments | Academic advisor |  \nAttendance is not the only measure of academic participation. Students should complete assigned work and comply with course-specific participation requirements.",
+    "metadata": {
+      "source": "01_student_handbook.pdf",
+      "headers": {
+        "Header 1": "4. Attendance and Participation"
+      },
+      "chunk_size": 1116,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "01_student_handbook_chunk_8",
+    "document_name": "01_student_handbook.pdf",
+    "content": "# 5. Campus Facilities  \nNIT provides learning spaces, laboratories, a library, student service areas, and shared technology facilities. Facilities may have additional operating rules.  \nLibrary users should return borrowed material by the stated due date, maintain reasonable noise levels, and avoid damaging books, equipment, or furniture.  \nLaboratory users must follow posted safety instructions and may be required to complete an orientation before using specialized equipment.  \n- Do not remove equipment or institutional property without authorization.  \n- Keep walkways and emergency exits clear.  \n- Report damaged equipment promptly rather than attempting an unauthorized repair.  \n- Use institutional computing resources primarily for legitimate educational or administrative purposes.",
+    "metadata": {
+      "source": "01_student_handbook.pdf",
+      "headers": {
+        "Header 1": "5. Campus Facilities"
+      },
+      "chunk_size": 796,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "01_student_handbook_chunk_9",
+    "document_name": "01_student_handbook.pdf",
+    "content": "# 6. Student Services  \nStudent services include academic advising, enrollment support, library services, career guidance, accessibility support, and general administrative assistance.  \n| Service               | Typical Purpose                   | Student Action                                 |\n|-----------------------|-----------------------------------|------------------------------------------------|\n| Academic Advising     | Course planning and progression   | Book an advising appointment                   |\n| Enrollment Support    | Registration and records          | Submit a service request                       |\n| Library Services      | Research and learning resources   | Use library portal or service desk             |\n| Career Guidance       | Career planning and employability | Register for an appointment                    |\n| Accessibility Support | Reasonable academic support       | Submit supporting documentation where required |",
+    "metadata": {
+      "source": "01_student_handbook.pdf",
+      "headers": {
+        "Header 1": "6. Student Services"
+      },
+      "chunk_size": 963,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "01_student_handbook_chunk_10",
+    "document_name": "01_student_handbook.pdf",
+    "content": "# 7. Library and Digital Resources  \nInstitutional digital resources may include learning platforms, electronic books, databases, email, and course repositories. Students should use these resources responsibly.  \nCredentials must not be shared. A student who suspects unauthorized access should change the password and contact the relevant support service.  \nCopyright and licensing restrictions apply to digital resources. Downloading or distributing material beyond permitted use may violate institutional or external requirements.",
+    "metadata": {
+      "source": "01_student_handbook.pdf",
+      "headers": {
+        "Header 1": "7. Library and Digital Resources"
+      },
+      "chunk_size": 533,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "01_student_handbook_chunk_11",
+    "document_name": "01_student_handbook.pdf",
+    "content": "# 8. Health, Safety, and Emergency Practices  \nStudents should follow posted safety instructions, participate in evacuation procedures, and immediately report hazards. In an emergency, students should follow instructions from authorized personnel and move to the designated assembly location.  \n- Do not obstruct emergency exits or safety equipment.  \n- Do not operate unfamiliar laboratory equipment without authorization.  \n- Report spills, electrical hazards, damaged equipment, or other hazards promptly.  \n- Follow building-specific evacuation instructions.",
+    "metadata": {
+      "source": "01_student_handbook.pdf",
+      "headers": {
+        "Header 1": "8. Health, Safety, and Emergency Practices"
+      },
+      "chunk_size": 562,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "01_student_handbook_chunk_12",
+    "document_name": "01_student_handbook.pdf",
+    "content": "# 9. Conduct and Community Standards  \nNIT expects students to communicate respectfully and to contribute to an environment suitable for learning. Harassment, threats, deliberate property damage, and disruptive behavior are inconsistent with community standards.  \nDisciplinary processes should provide the student an opportunity to understand the allegation and respond through the applicable institutional process. Specific procedures may depend on the nature of the matter.",
+    "metadata": {
+      "source": "01_student_handbook.pdf",
+      "headers": {
+        "Header 1": "9. Conduct and Community Standards"
+      },
+      "chunk_size": 476,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "01_student_handbook_chunk_13",
+    "document_name": "01_student_handbook.pdf",
+    "content": "# 10. Administrative Requests  \nStudents should use official forms or service channels for requests involving enrollment, records, fees, examinations, or scholarships. Each request should contain enough information for staff to identify the student and the requested service.  \n- 1 Identify the service or issue clearly.  \n- 2 Attach required supporting documents.  \n- 3 Submit the request through the designated channel.  \n- 4 Retain the submission confirmation.  \n- 5 Respond promptly if additional information is requested.",
+    "metadata": {
+      "source": "01_student_handbook.pdf",
+      "headers": {
+        "Header 1": "10. Administrative Requests"
+      },
+      "chunk_size": 526,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "01_student_handbook_chunk_14",
+    "document_name": "01_student_handbook.pdf",
+    "content": "# 11. Related Documents  \nFor detailed academic progression rules, refer to the Academic Regulations. For examination eligibility, assessment procedures, and revaluation, refer to the Examination Guidelines. For charges and payment categories, refer to the Fee Structure. For financial aid eligibility and renewal, refer to the Scholarship Guidelines.",
+    "metadata": {
+      "source": "01_student_handbook.pdf",
+      "headers": {
+        "Header 1": "11. Related Documents"
+      },
+      "chunk_size": 351,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_1",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "# Northbridge Institute of Technology",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Northbridge Institute of Technology"
+      },
+      "chunk_size": 37,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_2",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "# Academic Regulations  \nCredit system, grading, registration, progression and graduation  \n| Document code       | NIT-AR-2026                                                               |\n|---------------------|---------------------------------------------------------------------------|\n| Version             | 3.0                                                                       |\n| Academic year       | 2026-27                                                                   |\n| Effective date      | 1 August 2026                                                             |\n| Applies to          | All enrolled undergraduate (UG) and postgraduate (PG) coursework students |\n| Document owner      | Office of Academic Affairs                                                |\n| Approving authority | Academic Council                                                          |  \nNOTICE This document is part of a fictional, synthetic knowledge base created solely for testing document-processing and retrieval software. Northbridge Institute of Technology, its offices, figures and rules are invented and do not describe any real institution.",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Academic Regulations"
+      },
+      "chunk_size": 1157,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_3",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "# Document Control  \n| Title               | Academic Regulations                                                                                                                                                                                 |\n|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| Document code       | NIT-AR-2026                                                                                                                                                                                          |\n| Current version     | 3.0                                                                                                                                                                                                  |\n| Effective date      | 1 August 2026                                                                                                                                                                                        |\n| Document owner      | Office of Academic Affairs                                                                                                                                                                           |\n| Approving authority | Academic Council                                                                                                                                                                                     |\n| Review cycle        | Annual; interim amendments are issued through the Office of Academic Affairs                                                                                                                         |\n| Scope               | Credit system, grading, attendance, registration, progression and graduation for coursework programmes. Doctoral programmes are governed by separate regulations that are not part of this document. |",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Document Control"
+      },
+      "chunk_size": 2027,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_4",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "# Revision History  \n|   Version | Date        | Summary of change                                                                                      | Approved by      |\n|-----------|-------------|--------------------------------------------------------------------------------------------------------|------------------|\n|       1.0 | August 2023 | Initial consolidated regulations adopted by the Academic Council.                                      | Academic Council |\n|       2.0 | August 2025 | Introduced the two-tier attendance standard (theory and laboratory) and the condonation limits.        | Academic Council |\n|       3.0 | August 2026 | Added B.Tech Data Science, revised progression thresholds, restated grading and classification tables. | Academic Council |",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Revision History"
+      },
+      "chunk_size": 780,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_5",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "# Related Documents in the NIT Policy Library  \n| Code        | Document                             | Owner                                    |\n|-------------|--------------------------------------|------------------------------------------|\n| NIT-SH-2026 | Student Handbook                     | Office of Student Affairs                |\n| NIT-AR-2026 | Academic Regulations (this document) | Office of Academic Affairs               |\n| NIT-EX-2026 | Examination Guidelines               | Office of the Controller of Examinations |\n| NIT-FS-2026 | Fee Structure                        | Accounts Office                          |\n| NIT-SG-2026 | Scholarship Guidelines               | Scholarship and Financial Aid Cell       |",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Related Documents in the NIT Policy Library"
+      },
+      "chunk_size": 733,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_6",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "# Table of Contents",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Table of Contents"
+      },
+      "chunk_size": 19,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_7",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "# CHAPTER 1",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "CHAPTER 1"
+      },
+      "chunk_size": 11,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_8",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "# General Provisions  \n## 1.1 Purpose and Applicability  \nThese Academic Regulations set out the academic rules of the Northbridge Institute of Technology (NIT) for the Academic Year 2026-27. They apply to every student admitted to a coursework programme listed in Table 2.1, from the date of first registration until the award of the degree or the end of enrolment, whichever is earlier.  \nThe regulations should be read together with the Student Handbook (NIT-SH-2026) for conduct and campus rules, the Examination Guidelines (NIT-EX-2026) for examination procedures, the Fee Structure (NIT-FS-2026) for charges, and the Scholarship Guidelines (NIT-SG-2026) for financial awards. Where this document defines a numerical threshold, the other documents refer to that threshold rather than restating a different value.  \nPOLICY AR-P01 In any matter on which a programme-specific rule conflicts with these Regulations, these Regulations prevail unless the Academic Council has approved the exception in writing.",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "General Provisions",
+        "Header 2": "1.1 Purpose and Applicability"
+      },
+      "chunk_size": 1009,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_9",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "## 1.2 Definitions  \nDEFINITION Academic Year - the period from the first Monday of August to the last day of the Spring Semester examinations, comprising an Autumn Semester and a Spring Semester.  \nDEFINITION Semester - a teaching term of 15 teaching weeks followed by the end-semester examination period.  \nDEFINITION Credit - the unit of academic workload assigned to a course, defined in Table 2.3.  \nDEFINITION Credits Earned - the sum of credits of courses in which a student has obtained a passing grade (D or better for theory courses; B or better for laboratory courses).  \nDEFINITION Working Day - any Monday to Friday that is not an Institute holiday.  \nDEFINITION Student Portal - the official online system through which registration, attendance, results and fee invoices are published; notices posted on the Student Portal are deemed delivered.",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "General Provisions",
+        "Header 2": "1.2 Definitions"
+      },
+      "chunk_size": 858,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_10",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "## 1.3 Academic Calendar Framework  \nThe indicative weekly structure of each semester is shown in Table 1.1. Exact dates for each Academic Year are published by the Office of Academic Affairs (OAA) at least eight weeks before the Autumn Semester begins.  \nTable 1.1: Semester structure and key academic milestones  \n| Milestone                                 | Autumn Semester                        | Spring Semester                        |\n|-------------------------------------------|----------------------------------------|----------------------------------------|\n| Semester commencement                     | First Monday of August                 | First Monday of January                |\n| Teaching weeks                            | Weeks 1 - 15                           | Weeks 1 - 15                           |\n| Add/drop period                           | First 5 working days of Week 1         | First 5 working days of Week 1         |\n| Internal Test 1                           | Week 6                                 | Week 6                                 |\n| Internal Test 2                           | Week 11                                | Week 11                                |\n| Last date for course withdrawal (grade W) | End of Week 8                          | End of Week 8                          |\n| Attendance shortage list published        | End of Week 14                         | End of Week 14                         |\n| End-semester practical examinations       | Week 15                                | Week 15                                |\n| Final theory examinations                 | Weeks 16 - 17                          | Weeks 16 - 17                          |\n| Declaration of results                    | Within 21 days of the last examination | Within 21 days of the last examination |\n| Supplementary examination window          | Last two weeks of January              | First two weeks of July                |  \nTable 1.1: Semester structure and key academic milestones",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "General Provisions",
+        "Header 2": "1.3 Academic Calendar Framework"
+      },
+      "chunk_size": 2039,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_11",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "## 1.4 Governance and Amendments  \nThe Academic Council is the final authority for interpreting these Regulations. Amendments take effect only when approved by the Academic Council and published on the Student Portal. An amendment does not alter a grade or result that was declared before the amendment took effect.",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "General Provisions",
+        "Header 2": "1.4 Governance and Amendments"
+      },
+      "chunk_size": 315,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_12",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "# CHAPTER 2",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "CHAPTER 2"
+      },
+      "chunk_size": 11,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_13",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "# Programmes and the Credit System  \n## 2.1 Programmes Offered  \nNIT offers eleven coursework programmes through three schools. Each programme has a nominal duration, a minimum number of credits for graduation, and attendance and CGPA requirements that apply uniformly as shown in Table 2.1.  \nTable 2.1: Programmes, duration, minimum credits and attendance requirements  \n| Code   | Programme                                        | Duration   |   Semeste rs |   Minimum credits | Attendance (theory / lab)   |   Minimum CGPA to graduate |\n|--------|--------------------------------------------------|------------|--------------|-------------------|-----------------------------|----------------------------|\n| BT-CS  | B.Tech Computer Science                          | 4 years    |            8 |               160 | 75% / 80%                   |                       5.00 |\n| BT-IS  | B.Tech Information Systems                       | 4 years    |            8 |               156 | 75% / 80%                   |                       5.00 |\n| BT-DS  | B.Tech Data Science                              | 4 years    |            8 |               158 | 75% / 80%                   |                       5.00 |\n| BT-EE  | B.Tech Electrical Engineering                    | 4 years    |            8 |               164 | 75% / 80%                   |                       5.00 |\n| BT-EC  | B.Tech Electronics and Communication Engineering | 4 years    |            8 |               162 | 75% / 80%                   |                       5.00 |\n| BT-ME  | B.Tech Mechanical Engineering                    | 4 years    |            8 |               164 | 75% / 80%                   |                       5.00 |\n| BT-CE  | B.Tech Civil Engineering                         | 4 years    |            8 |               162 | 75% / 80%                   |                       5.00 |\n| BS-AM  | B.Sc Applied Mathematics                         | 3 years    |            6 |               120 | 75% / 80%                   |                       5.00 |\n| MT-CS  | M.Tech Computer Science                          | 2 years    |            4 |                72 | 75% / 80%                   |                       6.00 |\n| MT-SE  | M.Tech Structural Engineering                    | 2 years    |            4 |                72 | 75% / 80%                   |                       6.00 |\n| MB-TM  | MBA Technology Management                        | 2 years    |            4 |                80 | 75% / 80%                   |                       6.00 |  \nTable 2.1: Programmes, duration, minimum credits and attendance requirements  \nAttendance percentages are the minimum required per course; see Section 4.2. The School of Computing, School of Engineering and School of Sciences and Management administer the programmes as listed in Table 2.2.  \nTable 2.2: Programme codes grouped by school  \n| School                            | Programmes administered           | Level     |\n|-----------------------------------|-----------------------------------|-----------|\n| School of Computing               | BT-CS, BT-IS, BT-DS, MT-CS        | UG and PG |\n| School of Engineering             | BT-EE, BT-EC, BT-ME, BT-CE, MT-SE | UG and PG |\n| School of Sciences and Management | BS-AM, MB-TM                      | UG and PG |  \nTable 2.2: Programme codes grouped by school",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Programmes and the Credit System",
+        "Header 2": "2.1 Programmes Offered"
+      },
+      "chunk_size": 3388,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_14",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "## 2.2 Definition of a Credit  \nEvery course carries a whole number of credits derived from its weekly contact hours. A course is described by the notation L-T-P-C (lecture hours, tutorial hours, practical hours, credits) and its credit value is calculated as C = L + T/2 + P/2.  \nTable 2.3: Credit conversion by type of contact hour  \n| Component              | Weekly contact hours   | Credits Illustration (L-T-P-C)                                                 |\n|------------------------|------------------------|--------------------------------------------------------------------------------|\n| Lecture                | 1 hour                 | 1 MA201 Probability and Statistics: 3-0-0-3                                    |\n| Tutorial               | 2 hours                | 1 CS201 Data Structures: 3-2-0-4                                               |\n| Laboratory / practical | 2 hours                | 1 CS207L Data Structures Laboratory: 0-0-4-2                                   |\n| Seminar                | 2 hours                | 1 CS390 Technical Seminar: 0-0-2-1 (seminar hours recorded as practical hours) |\n| Project work           | 3 hours                | 1 Final-year project phases (see Table 2.5)                                    |  \nTable 2.3: Credit conversion by type of contact hour",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Programmes and the Credit System",
+        "Header 2": "2.2 Definition of a Credit"
+      },
+      "chunk_size": 1321,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_15",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "## 2.3 Credit Distribution of B.Tech Programmes  \nThe credit requirement of each four-year B.Tech programme is distributed across six course categories. Mandatory non-credit courses (Environmental Studies and Professional Ethics) are additional and do not count towards the minimum credits.  \nTable 2.4: Credit distribution by course category (B.Tech programmes)  \n| Programme   |   Basic sciences and mathematics |   Engineering foundation |   Programme core |   Programme electives |   Humanities and management |   Project and internship |   Total credits |\n|-------------|----------------------------------|--------------------------|------------------|-----------------------|-----------------------------|--------------------------|-----------------|\n| BT-CS       |                               24 |                       20 |               72 |                    24 |                          12 |                        8 |             160 |\n| BT-IS       |                               24 |                       20 |               68 |                    24 |                          12 |                        8 |             156 |\n| BT-DS       |                               26 |                       18 |               70 |                    24 |                          12 |                        8 |             158 |\n| BT-EE       |                               26 |                       22 |               72 |                    24 |                          12 |                        8 |             164 |\n| BT-EC       |                               26 |                       22 |               70 |                    24 |                          12 |                        8 |             162 |\n| BT-ME       |                               26 |                       24 |               70 |                    24 |                          12 |                        8 |             164 |\n| BT-CE       |                               26 |                       24 |               68 |                    24 |                          12 |                        8 |             162 |  \nTable 2.4: Credit distribution by course category (B.Tech programmes)",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Programmes and the Credit System",
+        "Header 2": "2.3 Credit Distribution of B.Tech Programmes"
+      },
+      "chunk_size": 2200,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_16",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "## 2.4 Illustrative Semester Plan  \nTable 2.5 shows the standard semester-wise credit plan for BT-CS. Other B.Tech programmes follow the same pattern with credits adjusted to the totals in Table 2.4.  \nTable 2.5: Semester-wise credit plan for BT-CS (160 credits)  \n| Semester   |   Theory credits |   Laboratory credits |   Project / internship credits |   Total credits |   Cumulative credits |\n|------------|------------------|----------------------|--------------------------------|-----------------|----------------------|\n| Semester 1 |               16 |                    4 |                              0 |              20 |                   20 |\n| Semester 2 |               16 |                    4 |                              0 |              20 |                   40 |\n| Semester 3 |               17 |                    5 |                              0 |              22 |                   62 |\n| Semester 4 |               17 |                    5 |                              0 |              22 |                   84 |\n| Semester 5 |               17 |                    5 |                              0 |              22 |                  106 |\n| Semester 6 |               17 |                    5 |                              0 |              22 |                  128 |\n| Semester 7 |               12 |                    2 |                              4 |              18 |                  146 |\n| Semester 8 |               10 |                    0 |                              4 |              14 |                  160 |\n| Total      |              122 |                   30 |                              8 |             160 |                  160 |  \nTable 2.5: Semester-wise credit plan for BT-CS (160 credits)",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Programmes and the Credit System",
+        "Header 2": "2.4 Illustrative Semester Plan"
+      },
+      "chunk_size": 1768,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_17",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "## 2.5 Course Code Structure  \nCourse codes consist of a two-letter subject prefix, a three-digit number whose first digit indicates the year of study, and an optional suffix L for laboratory courses. For example, CS201 is a second-year Computer Science theory course and CS207L is a second-year Computer Science laboratory course.  \nTable 2.6: Course code prefixes  \n| Prefix   | Subject area                  | Prefix   | Subject area              |\n|----------|-------------------------------|----------|---------------------------|\n| CS       | Computer Science              | ME       | Mechanical Engineering    |\n| DS       | Data Science                  | CE       | Civil Engineering         |\n| IS       | Information Systems           | MA       | Mathematics               |\n| EE       | Electrical Engineering        | HM       | Humanities and Management |\n| EC       | Electronics and Communication | BA       | Business Administration   |  \nTable 2.6: Course code prefixes",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Programmes and the Credit System",
+        "Header 2": "2.5 Course Code Structure"
+      },
+      "chunk_size": 989,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_18",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "# CHAPTER 3",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "CHAPTER 3"
+      },
+      "chunk_size": 11,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_19",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "# Grading System  \n## 3.1 Assessment and Grading Principles  \nEvery credit course is assessed on a scale of 100 marks made up of an internal component and an end-semester component. The component weights and minimum marks for each type of course are fixed by ?? of the Examination Guidelines. Total marks are converted into letter grades and grade points using Table 3.1.",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Grading System",
+        "Header 2": "3.1 Assessment and Grading Principles"
+      },
+      "chunk_size": 371,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_20",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "## 3.2 Letter Grades and Grade Points  \nTable 3.1: Conversion of total marks to letter grades and grade points  \n| Grade   | Description   | Total marks (out of 100)   |   Grade points | Result                                          |\n|---------|---------------|----------------------------|----------------|-------------------------------------------------|\n| O       | Outstanding   | 90 - 100                   |             10 | Pass                                            |\n| A+      | Excellent     | 80 - 89                    |              9 | Pass                                            |\n| A       | Very Good     | 70 - 79                    |              8 | Pass                                            |\n| B+      | Good          | 60 - 69                    |              7 | Pass                                            |\n| B       | Above Average | 50 - 59                    |              6 | Pass                                            |\n| C       | Average       | 45 - 49                    |              5 | Pass (theory); not a pass in laboratory courses |\n| D       | Marginal Pass | 40 - 44                    |              4 | Pass (theory); not a pass in laboratory courses |\n| F       | Fail          | 0 - 39                     |              0 | Fail                                            |  \nTable 3.1: Conversion of total marks to letter grades and grade points  \nNOTE A laboratory course requires at least 50 total marks to pass (see ??). A laboratory total of 40 - 49 marks therefore results in grade F even though the same marks would earn grade D or C in a theory course.",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Grading System",
+        "Header 2": "3.2 Letter Grades and Grade Points"
+      },
+      "chunk_size": 1639,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_21",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "## 3.3 Special Grade Codes  \nTable 3.2: Special grade codes and their treatment in GPA calculation  \n| Code   | Meaning                       | When awarded                                                                    | Grade points   | Counted in SGPA/CGPA?   |\n|--------|-------------------------------|---------------------------------------------------------------------------------|----------------|-------------------------|\n| DT     | Detained                      | Attendance below the eligibility floor or condonation refused (see Section 4.4) | 0              | Yes, as 0 points        |\n| AB     | Absent                        | Absent from the final examination without an approved special examination       | 0              | Yes, as 0 points        |\n| I      | Incomplete                    | Result withheld pending completion of an evaluation or a disciplinary inquiry   | -              | No, until resolved      |\n| W      | Withdrawn                     | Course dropped after the add/drop period and before the end of Week 8           | -              | No                      |\n| MP     | Malpractice                   | Examination misconduct finding of Level 2 or higher (see ??)                    | 0              | Yes, as 0 points        |\n| S / U  | Satisfactory / Unsatisfactory | Mandatory non-credit courses                                                    | -              | No                      |  \nTable 3.2: Special grade codes and their treatment in GPA calculation",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Grading System",
+        "Header 2": "3.3 Special Grade Codes"
+      },
+      "chunk_size": 1516,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_22",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "## 3.4 SGPA and CGPA  \nThe Semester Grade Point Average (SGPA) is the credit-weighted mean of grade points in one semester; the Cumulative Grade Point Average (CGPA) is the same calculation over all semesters. Both are reported to two decimal places.  \nFORMULA SGPA = Σ (course credits × grade points) ÷ Σ course credits attempted in the semester. CGPA = Σ (course credits × grade points) over all semesters ÷ Σ credits attempted over all semesters.  \nTable 3.3: Worked SGPA example for a second-year BT-CS student  \n| Course   | Title                      |   Credits | Grade   |   Grade points |   Credits × grade points |\n|----------|----------------------------|-----------|---------|----------------|--------------------------|\n| CS201    | Data Structures            |         4 | A+      |              9 |                       36 |\n| CS203    | Discrete Mathematics       |         3 | A       |              8 |                       24 |\n| CS205    | Computer Organization      |         3 | B+      |              7 |                       21 |\n| MA201    | Probability and Statistics |         3 | O       |             10 |                       30 |\n| HM201    | Technical Communication    |         2 | A       |              8 |                       16 |\n| CS207L   | Data Structures Laboratory |         2 | A+      |              9 |                       18 |\n| Total    |                            |        17 |         |                |                      145 |  \nTable 3.3: Worked SGPA example for a second-year BT-CS student  \nSGPA = 145 ÷ 17 = 8.5294, reported as 8.53.",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Grading System",
+        "Header 2": "3.4 SGPA and CGPA"
+      },
+      "chunk_size": 1599,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_23",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "## 3.5 Academic Standing  \nTable 3.4: Academic standing categories and consequences  \n| Standing           | Condition (UG)                                                 | Condition (PG)                                                 | Consequence                                                                                                      |\n|--------------------|----------------------------------------------------------------|----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|\n| Good Standing      | CGPA 5.00 or above                                             | CGPA 6.00 or above                                             | No restriction                                                                                                   |\n| Academic Warning   | SGPA below 5.00 in a semester while CGPA remains 5.00 or above | SGPA below 6.00 in a semester while CGPA remains 6.00 or above | Written warning and mandatory advising meeting                                                                   |\n| Academic Probation | CGPA below 5.00 at the end of a semester                       | CGPA below 6.00 at the end of a semester                       | Credit load capped at 16 (UG) or 12 (PG); ineligible for scholarships (see Scholarship Guidelines (NIT-SG-2026)) |\n| Academic Dismissal | On probation for 3 consecutive semesters                       | On probation for 3 consecutive semesters                       | Required to leave NIT; appeal within 10 working days to the Academic Council                                     |",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Grading System",
+        "Header 2": "3.5 Academic Standing"
+      },
+      "chunk_size": 1693,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_24",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "# CHAPTER 4",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "CHAPTER 4"
+      },
+      "chunk_size": 11,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_25",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "# Attendance Requirements  \n## 4.1 Computation of Attendance  \nAttendance is recorded for every scheduled class session by the instructor of record and published weekly on the Student Portal. Attendance in each course is computed separately:  \nFORMULA Attendance % = (sessions attended + creditable institute-duty sessions) ÷ sessions conducted × 100, truncated to two decimal places (74.99% is not rounded up to 75%).  \nInstitute-duty sessions (approved representation of NIT in academic, sports or cultural events) are counted as attended up to a maximum of 10% of the sessions conducted in the course. Other kinds of leave described in ?? of the Student Handbook do not count as attendance.",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Attendance Requirements",
+        "Header 2": "4.1 Computation of Attendance"
+      },
+      "chunk_size": 693,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_26",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "## 4.2 Minimum Attendance Requirement  \nPOLICY AR-P02 A student must attend at least 75% of the sessions conducted in each theory course and at least 80% of the sessions conducted in each laboratory course to be eligible for the final examination of that course.  \nAttendance is assessed course by course; high attendance in one course cannot offset a shortage in another. The requirement applies equally to all programmes in Table 2.1.  \nTable 4.1: Attendance requirements, condonation ranges and consequences  \n| Course type                      | Minimum attendance   | Condonation range   | Below the condonation floor                       |\n|----------------------------------|----------------------|---------------------|---------------------------------------------------|\n| Theory courses                   | 75%                  | 65.00% - 74.99%     | Grade DT; not eligible for final examination      |\n| Laboratory and practical courses | 80%                  | 70.00% - 79.99%     | Grade DT; not eligible for end-semester practical |\n| Mandatory non-credit courses     | 75%                  | 65.00% - 74.99%     | Grade U; course must be repeated                  |  \nTable 4.1: Attendance requirements, condonation ranges and consequences",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Attendance Requirements",
+        "Header 2": "4.2 Minimum Attendance Requirement"
+      },
+      "chunk_size": 1256,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_27",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "## 4.3 Condonation of Attendance Shortage  \nA student whose attendance falls within the condonation range in Table 4.1 may apply for condonation. Condonation is an exception, not an entitlement, and is decided by the Attendance Review Committee (ARC) constituted by the Dean of Academic Affairs.  \n- The OAA publishes the attendance shortage list on the Student Portal at the end of Week 14.  \n- The student submits an online condonation application with supporting documents within 3 working days of publication.  \n- The student pays the condonation fee of CU 500 per course (see ??).  \n- The ARC decides each application by the end of Week 15 and records the decision on the Student Portal.  \n- If condonation is granted, the course is marked Condoned and the student receives a hall ticket for that course.  \nTable 4.2: Acceptable grounds for condonation and required evidence  \n| Ground                                 | Evidence required                                                        | Remarks                                                     |\n|----------------------------------------|--------------------------------------------------------------------------|-------------------------------------------------------------|\n| Illness                                | Certificate from a registered medical practitioner with dates of illness | Certificate must cover the absence period                   |\n| Hospitalisation                        | Admission and discharge summary                                          | Considered together with any related recovery period        |\n| Family emergency                       | Written statement and supporting evidence                                | Reviewed by the Dean of Student Affairs                     |\n| Institute activity beyond the duty cap | Letter from the Dean or faculty coordinator                              | Applies only to sessions above the 10% cap                  |\n| Documented technical or system error   | Instructor confirmation and portal log                                   | Corrected attendance may be recorded instead of condonation |  \nTable 4.2: Acceptable grounds for condonation and required evidence  \nIMPORTANT Condonation is limited to 2 courses per semester and 6 courses over the whole programme. Attendance below the condonation floor cannot be condoned under any ground.",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Attendance Requirements",
+        "Header 2": "4.3 Condonation of Attendance Shortage"
+      },
+      "chunk_size": 2388,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_28",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "## 4.4 Consequences of Attendance Shortage  \nA student whose attendance is below the minimum and who has not been granted condonation receives grade DT in that course. A DT student:  \n- may not sit the final examination (or practical examination) of that course;  \n- is not eligible for a supplementary examination in that course, because supplementary examinations are available only to students who were eligible for the final examination (?? of the Examination Guidelines);  \n- must re-register for the course when it is next offered and pay the re-registration charge (see Section 5.5);  \n- is treated as having failed the course for the purpose of scholarship eligibility (see Scholarship Guidelines (NIT-SG-2026)).  \nNOTE Detention does not count as an examination attempt. Examination attendance eligibility is also described in ?? of the Examination Guidelines, which applies the thresholds defined here.",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Attendance Requirements",
+        "Header 2": "4.4 Consequences of Attendance Shortage"
+      },
+      "chunk_size": 912,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_29",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "# CHAPTER 5",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "CHAPTER 5"
+      },
+      "chunk_size": 11,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_30",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "# Course Registration  \n## 5.1 Registration Process and Timeline  \nRegistration for each semester is complete only when course selection has been confirmed by the OAA and the semester fee invoice has been paid. Table 5.1 lists the steps. Fee amounts and late payment rules are in the Fee Structure (NIT-FS-2026).  \nTable 5.1: Registration timeline for each semester  \n|   Step | Activity                                      | Timing                                             | Responsible                    |\n|--------|-----------------------------------------------|----------------------------------------------------|--------------------------------|\n|      1 | Course offering list published                | 4 weeks before semester commencement               | Office of Academic Affairs     |\n|      2 | Academic advising meeting                     | Within the 3 weeks before commencement             | Faculty advisor                |\n|      3 | Pre-registration window (course selection)    | Opens 3 weeks before commencement; open for 7 days | Student                        |\n|      4 | Fee invoice generated                         | 2 weeks before commencement                        | Accounts Office                |\n|      5 | Fee payment due date                          | Friday before the first teaching week              | Student                        |\n|      6 | Registration confirmed                        | On receipt of payment                              | Office of Academic Affairs     |\n|      7 | Add/drop of courses                           | First 5 working days of Week 1                     | Student, with advisor approval |\n|      8 | Late payment period (late fee applies)        | Up to 15 calendar days after the due date          | Student                        |\n|      9 | Registration cancelled if unpaid              | On day 16 after the due date                       | Office of Academic Affairs     |\n|     10 | Last date to withdraw from a course (grade W) | End of Week 8                                      | Student, with advisor approval |  \nTable 5.1: Registration timeline for each semester",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Course Registration",
+        "Header 2": "5.1 Registration Process and Timeline"
+      },
+      "chunk_size": 2160,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_31",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "## 5.2 Credit Load  \nTable 5.2: Minimum and maximum credit load per semester  \n| Student category                                    | Minimum credits   | Normal maximum    | Maximum with approval                  |\n|-----------------------------------------------------|-------------------|-------------------|----------------------------------------|\n| UG, good standing                                   | 16                | 24                | 27 (CGPA 8.00 or above; Dean approval) |\n| PG, good standing                                   | 12                | 20                | 22 (CGPA 8.00 or above; Dean approval) |\n| UG, academic probation                              | -                 | 16                | Not permitted                          |\n| PG, academic probation                              | -                 | 12                | Not permitted                          |\n| Final-semester student with fewer credits remaining | None              | Credits remaining | Not applicable                         |  \nTable 5.2: Minimum and maximum credit load per semester",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Course Registration",
+        "Header 2": "5.2 Credit Load"
+      },
+      "chunk_size": 1095,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_32",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "## 5.3 Add, Drop and Withdrawal  \nDuring the first five working days of the semester a student may add or drop courses without academic record, subject to the load limits in Table 5.2 and advisor approval. After this period a student may withdraw from a course until the end of Week 8; the course then appears on the transcript with grade W. Withdrawal after Week 8 is not permitted. Withdrawal from a course does not reduce the attendance record of other courses.",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Course Registration",
+        "Header 2": "5.3 Add, Drop and Withdrawal"
+      },
+      "chunk_size": 464,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_33",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "## 5.4 Prerequisites  \nA course with a stated prerequisite may be registered only if the prerequisite has been passed. The Dean may waive a prerequisite in writing for a student whose CGPA is 7.00 or above.",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Course Registration",
+        "Header 2": "5.4 Prerequisites"
+      },
+      "chunk_size": 206,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_34",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "## 5.5 Re-registration of Failed and Detained Courses  \nA student who has received grade F (and has exhausted or chooses not to use the supplementary option, see ?? of the Examination Guidelines) or grade DT must re-register for the course when next offered. The student attends classes afresh, pays a re-registration charge of CU 1,000 per credit, and is assessed with all internal and final components. Internal marks from the earlier registration are discarded.  \nA student may attempt a course at most three times in total: one regular attempt and up to two supplementary attempts. Re-registration starts a fresh cycle of attempts.",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Course Registration",
+        "Header 2": "5.5 Re-registration of Failed and Detained Courses"
+      },
+      "chunk_size": 635,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_35",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "# CHAPTER 6",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "CHAPTER 6"
+      },
+      "chunk_size": 11,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_36",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "# Academic Progression  \n## 6.1 Progression Thresholds  \nTo register for certain semesters a student must have earned a minimum number of credits, which ensures that the student is keeping pace with the programme. The thresholds in Table 6.1 equal 75% of the nominal credits of the preceding semesters.  \nTable 6.1: Minimum credits earned to register for a semester  \n| Programme group                              |   To register for Semester 3 | To register for Semester 5   | To register for Semester 7   |\n|----------------------------------------------|------------------------------|------------------------------|------------------------------|\n| Four-year B.Tech programmes                  |                           30 | 60                           | 90                           |\n| Three-year B.Sc programme (BS-AM)            |                           30 | 60                           | Not applicable               |\n| Two-year PG programmes (MT-CS, MT-SE, MB-TM) |                           27 | Not applicable               | Not applicable               |  \nTable 6.1: Minimum credits earned to register for a semester  \nA student below the applicable threshold may register only for failed or detained courses and for up to 10 credits of new courses, subject to the load limits in Table 5.2.",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Academic Progression",
+        "Header 2": "6.1 Progression Thresholds"
+      },
+      "chunk_size": 1314,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_37",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "## 6.2 Probation and Dismissal  \nThe conditions of Good Standing, Warning, Probation and Dismissal are set out in Table 3.4. A student on probation must meet the faculty advisor every two weeks and may not hold any office in a student body.",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Academic Progression",
+        "Header 2": "6.2 Probation and Dismissal"
+      },
+      "chunk_size": 240,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_38",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "## 6.3 Maximum Duration of Study  \nA student must complete all requirements within the maximum duration of the programme, counted from the first semester of registration. The maximum duration is the nominal duration plus two years for UG programmes and plus one year for PG programmes.  \nTable 6.2: Nominal and maximum duration by programme  \n| Programme code   | Level   |   Nominal duration (years) |   Maximum duration (years) |   Latest semester count |\n|------------------|---------|----------------------------|----------------------------|-------------------------|\n| BT-CS            | UG      |                          4 |                          6 |                      12 |\n| BT-IS            | UG      |                          4 |                          6 |                      12 |\n| BT-DS            | UG      |                          4 |                          6 |                      12 |\n| BT-EE            | UG      |                          4 |                          6 |                      12 |\n| BT-EC            | UG      |                          4 |                          6 |                      12 |\n| BT-ME            | UG      |                          4 |                          6 |                      12 |\n| BT-CE            | UG      |                          4 |                          6 |                      12 |\n| BS-AM            | UG      |                          3 |                          5 |                      10 |\n| MT-CS            | PG      |                          2 |                          3 |                       6 |\n| MT-SE            | PG      |                          2 |                          3 |                       6 |\n| MB-TM            | PG      |                          2 |                          3 |                       6 |  \nTable 6.2: Nominal and maximum duration by programme",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Academic Progression",
+        "Header 2": "6.3 Maximum Duration of Study"
+      },
+      "chunk_size": 1892,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_39",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "## 6.4 Break of Study  \nA student may apply to the Dean of Academic Affairs for a break of study of up to two consecutive semesters, for medical or other documented reasons. Break periods are excluded when the maximum duration is calculated. A student on break pays no tuition for the break period, but must pay a re-admission processing charge on return.",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Academic Progression",
+        "Header 2": "6.4 Break of Study"
+      },
+      "chunk_size": 355,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_40",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "# CHAPTER 7",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "CHAPTER 7"
+      },
+      "chunk_size": 11,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_41",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "# Graduation Requirements  \n## 7.1 Requirements for the Award of a Degree  \nA degree is awarded when all conditions in Table 7.1 are satisfied.  \nTable 7.1: Conditions for graduation  \n| Requirement                            | UG programmes                                         | PG programmes                                         |\n|----------------------------------------|-------------------------------------------------------|-------------------------------------------------------|\n| Minimum credits earned                 | As in Table 2.1 (120 - 164)                           | As in Table 2.1 (72 - 80)                             |\n| Minimum CGPA                           | 5.00                                                  | 6.00                                                  |\n| Outstanding F, DT, AB, MP or I grades  | None                                                  | None                                                  |\n| Mandatory non-credit courses           | All marked S                                          | All marked S                                          |\n| Final-year project                     | Passed with at least 50 total marks                   | Dissertation passed with at least 50 total marks      |\n| Industrial internship (B.Tech)         | At least 6 weeks, marked Satisfactory                 | Not applicable                                        |\n| Completion within the maximum duration | See Table 6.2                                         | See Table 6.2                                         |\n| Clearance of dues                      | No dues at Accounts, Library, Hostel and Laboratories | No dues at Accounts, Library, Hostel and Laboratories |\n| Pending disciplinary action            | No unresolved Class II or Class III case              | No unresolved Class II or Class III case              |  \nTable 7.1: Conditions for graduation",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Graduation Requirements",
+        "Header 2": "7.1 Requirements for the Award of a Degree"
+      },
+      "chunk_size": 1928,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_42",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "## 7.2 Classification of Degrees  \nTable 7.2: Degree classification by CGPA  \n| Class                        | CGPA (UG)      | CGPA (PG)      | Additional condition                                                            |\n|------------------------------|----------------|----------------|---------------------------------------------------------------------------------|\n| First Class with Distinction | 8.00 and above | 8.00 and above | Completed within the nominal duration with no F, DT or AB grade in any semester |\n| First Class                  | 6.50 - 7.99    | 7.00 - 7.99    | None                                                                            |\n| Second Class                 | 5.00 - 6.49    | 6.00 - 6.99    | None                                                                            |  \nTable 7.2: Degree classification by CGPA",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Graduation Requirements",
+        "Header 2": "7.2 Classification of Degrees"
+      },
+      "chunk_size": 865,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_43",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "## 7.3 Degree Award, Transcripts and Certificates  \nDegrees are conferred at the annual convocation. A provisional certificate is issued after the final result is declared and the clearance of dues is complete. Official transcripts and duplicate grade cards are issued on request and subject to the charges in ?? of the Fee Structure.",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Graduation Requirements",
+        "Header 2": "7.3 Degree Award, Transcripts and Certificates"
+      },
+      "chunk_size": 334,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_44",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "# APPENDIX A",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "APPENDIX A"
+      },
+      "chunk_size": 12,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "02_academic_regulations_chunk_45",
+    "document_name": "02_academic_regulations.pdf",
+    "content": "# Summary of Key Numerical Thresholds  \nThe table below consolidates the thresholds defined in these Regulations and shows where each is defined or applied.  \nTable A.1: Quick reference of academic thresholds  \n| Parameter                              | Value                                                   | Defined in   |\n|----------------------------------------|---------------------------------------------------------|--------------|\n| Minimum attendance, theory course      | 75%                                                     | Section 4.2  |\n| Minimum attendance, laboratory course  | 80%                                                     | Section 4.2  |\n| Condonation floor, theory / laboratory | 65% / 70%                                               | Table 4.1    |\n| Condonation limit                      | 2 courses per semester; 6 per programme                 | Section 4.3  |\n| Condonation application deadline       | 3 working days after the shortage list (end of Week 14) | Section 4.3  |\n| Institute-duty attendance cap          | 10% of sessions conducted                               | Section 4.1  |\n| Course withdrawal deadline             | End of Week 8                                           | Table 1.1    |\n| Pass mark, theory (total)              | 40 out of 100                                           | ??           |\n| Pass mark, laboratory (total)          | 50 out of 100                                           | ??           |\n| Maximum attempts per course            | 3 (1 regular + 2 supplementary)                         | Section 5.5  |\n| Minimum CGPA to graduate (UG / PG)     | 5.00 / 6.00                                             | Table 7.1    |\n| Credit load, UG (min / normal max)     | 16 / 24                                                 | Table 5.2    |\n| Maximum duration (UG / PG)             | Nominal + 2 years / nominal + 1 year                    | Section 6.3  |  \nTable A.1: Quick reference of academic thresholds",
+    "metadata": {
+      "source": "02_academic_regulations.pdf",
+      "headers": {
+        "Header 1": "Summary of Key Numerical Thresholds"
+      },
+      "chunk_size": 2002,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "03_examination_guidelines_chunk_1",
+    "document_name": "03_examination_guidelines.pdf",
+    "content": "# NORTHBRIDGE INSTITUTE OF TECHNOLOGY",
+    "metadata": {
+      "source": "03_examination_guidelines.pdf",
+      "headers": {
+        "Header 1": "NORTHBRIDGE INSTITUTE OF TECHNOLOGY"
+      },
+      "chunk_size": 37,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "03_examination_guidelines_chunk_2",
+    "document_name": "03_examination_guidelines.pdf",
+    "content": "# Examination Guidelines  \nEligibility, Assessment Procedures, Conduct, and Result Review  \nDocument Code: NIT-EG-003  \nClassification: Synthetic / Educational Use  \nThis fictional document is created solely for testing document intelligence, semantic chunking, embeddings, vector indexing, and retrieval-augmented generation. It does not represent a real institution or policy.",
+    "metadata": {
+      "source": "03_examination_guidelines.pdf",
+      "headers": {
+        "Header 1": "Examination Guidelines"
+      },
+      "chunk_size": 378,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "03_examination_guidelines_chunk_3",
+    "document_name": "03_examination_guidelines.pdf",
+    "content": "# Table of Contents  \n- Examination Framework  \n- Examination Eligibility  \n- Examination Pattern  \n- Before the Examination  \n- Permitted and Prohibited Items  \n- Examination Conduct  \n- Misconduct Process  \n- Passing Requirements  \n- Revaluation and Result Review  \n- Supplementary Examination  \n- Special Circumstances  \n- Related Documents",
+    "metadata": {
+      "source": "03_examination_guidelines.pdf",
+      "headers": {
+        "Header 1": "Table of Contents"
+      },
+      "chunk_size": 343,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "03_examination_guidelines_chunk_4",
+    "document_name": "03_examination_guidelines.pdf",
+    "content": "# 1. Examination Framework  \nThe Examination Guidelines describe the procedures used for scheduled examinations at Northbridge Institute of Technology. They should be read with the Academic Regulations, particularly the attendance and assessment provisions.  \nAn examination may be conducted in a classroom, laboratory, computer environment, or another approved location. The examination notice specifies the format and reporting time.",
+    "metadata": {
+      "source": "03_examination_guidelines.pdf",
+      "headers": {
+        "Header 1": "1. Examination Framework"
+      },
+      "chunk_size": 435,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "03_examination_guidelines_chunk_5",
+    "document_name": "03_examination_guidelines.pdf",
+    "content": "# 2. Examination Eligibility  \nOrdinary eligibility requires the student to be properly registered for the course and to satisfy the applicable attendance and academic conditions.  \n| Condition           | Standard Requirement              | Evidence / Record       |\n|---------------------|-----------------------------------|-------------------------|\n| Course Registration | Student registered for the course | Registration record     |\n| Attendance          | Normally at least 75%             | Attendance record       |\n| Academic Status     | No applicable restriction         | Academic record         |\n| Examination Form    | Submitted where required          | Submission confirmation |  \nA student below the standard attendance threshold may be required to undergo an eligibility review. Approval of an absence does not by itself remove every examination requirement.",
+    "metadata": {
+      "source": "03_examination_guidelines.pdf",
+      "headers": {
+        "Header 1": "2. Examination Eligibility"
+      },
+      "chunk_size": 879,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "03_examination_guidelines_chunk_6",
+    "document_name": "03_examination_guidelines.pdf",
+    "content": "# 3. Examination Pattern  \nA standard course may use a combination of internal assessment and a final examination. The actual pattern is specified in the course outline.  \n| Component              | Typical Weight   |   Maximum Marks |\n|------------------------|------------------|-----------------|\n| Internal Assessment    | 20%              |              20 |\n| Laboratory / Practical | 20%              |              20 |\n| Final Examination      | 60%              |              60 |\n| Total                  | 100%             |             100 |  \nSome courses may use a different structure, particularly practical or project-oriented courses.",
+    "metadata": {
+      "source": "03_examination_guidelines.pdf",
+      "headers": {
+        "Header 1": "3. Examination Pattern"
+      },
+      "chunk_size": 653,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "03_examination_guidelines_chunk_7",
+    "document_name": "03_examination_guidelines.pdf",
+    "content": "# 4. Before the Examination  \n- 1 Check the examination timetable and venue.  \n- 2 Carry the required student identification.  \n- 3 Arrive at the venue before the reporting time.  \n- 4 Bring only permitted materials.  \n- 5 Follow seating and invigilation instructions.  \nStudents should not rely on informal timetable changes. Only an officially published update should be treated as an examination schedule change.",
+    "metadata": {
+      "source": "03_examination_guidelines.pdf",
+      "headers": {
+        "Header 1": "4. Before the Examination"
+      },
+      "chunk_size": 415,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "03_examination_guidelines_chunk_8",
+    "document_name": "03_examination_guidelines.pdf",
+    "content": "# 5. Permitted and Prohibited Items  \n| Item                        | Status                       | Notes                          |\n|-----------------------------|------------------------------|--------------------------------|\n| Student ID                  | Permitted / Required         | Present when requested         |\n| Approved stationery         | Permitted                    | Subject to course instructions |\n| Non-programmable calculator | Conditional                  | Only where explicitly allowed  |\n| Mobile phone                | Prohibited during assessment | Must be stored as instructed   |\n| Unapproved notes            | Prohibited                   | Unless explicitly authorized   |\n| Smart wearable device       | Prohibited                   | Must be stored as instructed   |  \nSpecific assessments may impose additional restrictions. Students should check the instructions supplied for the examination.",
+    "metadata": {
+      "source": "03_examination_guidelines.pdf",
+      "headers": {
+        "Header 1": "5. Permitted and Prohibited Items"
+      },
+      "chunk_size": 933,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "03_examination_guidelines_chunk_9",
+    "document_name": "03_examination_guidelines.pdf",
+    "content": "# 6. Examination Conduct  \nStudents must follow instructions from authorized invigilators. Communication with another candidate is not permitted unless the examination instructions explicitly allow collaboration.  \n- Do not access unauthorized materials.  \n- Do not copy another candidate's work.  \n- Do not attempt to obtain advance access to examination content.  \n- Do not impersonate another student.  \n- Do not remove examination materials unless instructed.",
+    "metadata": {
+      "source": "03_examination_guidelines.pdf",
+      "headers": {
+        "Header 1": "6. Examination Conduct"
+      },
+      "chunk_size": 463,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "03_examination_guidelines_chunk_10",
+    "document_name": "03_examination_guidelines.pdf",
+    "content": "# 7. Misconduct Process  \nWhen suspected misconduct is identified, the examination may continue or be concluded according to the circumstances. The incident should be documented and referred through the applicable review process.  \nA finding of misconduct should be based on the applicable institutional procedure. Students should have an opportunity to respond to allegations through that process.",
+    "metadata": {
+      "source": "03_examination_guidelines.pdf",
+      "headers": {
+        "Header 1": "7. Misconduct Process"
+      },
+      "chunk_size": 398,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "03_examination_guidelines_chunk_11",
+    "document_name": "03_examination_guidelines.pdf",
+    "content": "# 8. Passing Requirements  \nThe standard synthetic grading scale in the Academic Regulations defines a passing grade as E or above, subject to any course-specific minimum component requirements.  \n| Result   | Overall Mark   | General Outcome   |\n|----------|----------------|-------------------|\n| A+       | 90-100         | Pass              |\n| A        | 80-89          | Pass              |\n| B        | 70-79          | Pass              |\n| C        | 60-69          | Pass              |\n| D        | 50-59          | Pass              |\n| E        | 40-49          | Pass              |\n| F        | Below 40       | Fail              |  \nA course may require a student to meet a separate minimum in the final examination or practical component. The course outline should be consulted.",
+    "metadata": {
+      "source": "03_examination_guidelines.pdf",
+      "headers": {
+        "Header 1": "8. Passing Requirements"
+      },
+      "chunk_size": 795,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "03_examination_guidelines_chunk_12",
+    "document_name": "03_examination_guidelines.pdf",
+    "content": "# 9. Revaluation and Result Review  \nA student who believes a result contains an evaluation issue may submit a review or revaluation request within the published period. The request should identify the course, assessment, and reason for the request.  \n- 1 Obtain the published review window.  \n- 2 Submit the request using the approved form.  \n- 3 Pay any applicable review fee listed in the Fee Structure.  \n- 4 Retain the submission confirmation.  \n- 5 Review the updated result when issued.",
+    "metadata": {
+      "source": "03_examination_guidelines.pdf",
+      "headers": {
+        "Header 1": "9. Revaluation and Result Review"
+      },
+      "chunk_size": 493,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "03_examination_guidelines_chunk_13",
+    "document_name": "03_examination_guidelines.pdf",
+    "content": "# 10. Supplementary Examination  \nA supplementary examination may be offered for eligible students who have not achieved a passing result. Eligibility, scheduling, and maximum attempts are determined by the applicable academic rules.  \nA supplementary examination does not automatically waive attendance, registration, or other eligibility requirements.",
+    "metadata": {
+      "source": "03_examination_guidelines.pdf",
+      "headers": {
+        "Header 1": "10. Supplementary Examination"
+      },
+      "chunk_size": 353,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "03_examination_guidelines_chunk_14",
+    "document_name": "03_examination_guidelines.pdf",
+    "content": "# 11. Special Circumstances  \nStudents who experience a serious and documented circumstance affecting an examination should contact the designated academic or examination service as soon as reasonably possible. Late requests may be subject to additional requirements.",
+    "metadata": {
+      "source": "03_examination_guidelines.pdf",
+      "headers": {
+        "Header 1": "11. Special Circumstances"
+      },
+      "chunk_size": 267,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "03_examination_guidelines_chunk_15",
+    "document_name": "03_examination_guidelines.pdf",
+    "content": "# 12. Related Documents  \nAttendance and academic progression rules are defined in the Academic Regulations. Examination-related charges are listed in the Fee Structure. General student conduct expectations are described in the Student Handbook.",
+    "metadata": {
+      "source": "03_examination_guidelines.pdf",
+      "headers": {
+        "Header 1": "12. Related Documents"
+      },
+      "chunk_size": 245,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "04_fee_structure_chunk_1",
+    "document_name": "04_fee_structure.pdf",
+    "content": "# NORTHBRIDGE INSTITUTE OF TECHNOLOGY",
+    "metadata": {
+      "source": "04_fee_structure.pdf",
+      "headers": {
+        "Header 1": "NORTHBRIDGE INSTITUTE OF TECHNOLOGY"
+      },
+      "chunk_size": 37,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "04_fee_structure_chunk_2",
+    "document_name": "04_fee_structure.pdf",
+    "content": "# Fee Structure  \nTuition, Services, Examination, Housing, and Payment Information  \nDocument Code: NIT-FS-004  \nClassification: Synthetic / Educational Use  \nThis fictional document is created solely for testing document intelligence, semantic chunking, embeddings, vector indexing, and retrieval-augmented generation. It does not represent a real institution or policy.",
+    "metadata": {
+      "source": "04_fee_structure.pdf",
+      "headers": {
+        "Header 1": "Fee Structure"
+      },
+      "chunk_size": 371,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "04_fee_structure_chunk_3",
+    "document_name": "04_fee_structure.pdf",
+    "content": "# Table of Contents  \n- Fee Structure Overview  \n- Tuition Fees  \n- Student Service Charges  \n- Examination Charges  \n- Hostel Charges  \n- Transportation Charges  \n- Payment Schedule  \n- Refund and Adjustment Principles  \n- Late Payment  \n- Financial Clearance  \n- Relationship to Other Documents",
+    "metadata": {
+      "source": "04_fee_structure.pdf",
+      "headers": {
+        "Header 1": "Table of Contents"
+      },
+      "chunk_size": 296,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "04_fee_structure_chunk_4",
+    "document_name": "04_fee_structure.pdf",
+    "content": "# 1. Fee Structure Overview  \nThis synthetic Fee Structure describes illustrative charges for students at Northbridge Institute of Technology. Amounts are stated in fictional currency units (NCU) and are provided for RAG testing only.  \nProgram-specific offers, waivers, and approved exceptions may alter the amount payable for an individual student. The fee schedule should be read with the student's enrollment information.",
+    "metadata": {
+      "source": "04_fee_structure.pdf",
+      "headers": {
+        "Header 1": "1. Fee Structure Overview"
+      },
+      "chunk_size": 425,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "04_fee_structure_chunk_5",
+    "document_name": "04_fee_structure.pdf",
+    "content": "# 2. Tuition Fees  \n| Program Category       |   Annual Tuition (NCU) | Payment Frequency              | Notes                      |\n|------------------------|------------------------|--------------------------------|----------------------------|\n| Computer Science       |                120,000 | Annual / approved installments | Illustrative standard rate |\n| Information Systems    |                112,000 | Annual / approved installments | Illustrative standard rate |\n| Data Analytics         |                116,000 | Annual / approved installments | Illustrative standard rate |\n| Engineering Technology |                124,000 | Annual / approved installments | Illustrative standard rate |\n| Business Technology    |                108,000 | Annual / approved installments | Illustrative standard rate |  \nTuition is distinct from service charges, examination fees, accommodation, and optional activities.",
+    "metadata": {
+      "source": "04_fee_structure.pdf",
+      "headers": {
+        "Header 1": "2. Tuition Fees"
+      },
+      "chunk_size": 919,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "04_fee_structure_chunk_6",
+    "document_name": "04_fee_structure.pdf",
+    "content": "# 3. Student Service Charges  \n| Charge                    |   Amount (NCU) | Frequency               |\n|---------------------------|----------------|-------------------------|\n| Library Services          |          2,000 | Annual                  |\n| Technology Services       |          3,500 | Annual                  |\n| Student Activities        |          1,500 | Annual                  |\n| Laboratory Services       |          6,000 | Annual where applicable |\n| Identity Card Replacement |            300 | Per replacement         |\n| Transcript Request        |            250 | Per request             |",
+    "metadata": {
+      "source": "04_fee_structure.pdf",
+      "headers": {
+        "Header 1": "3. Student Service Charges"
+      },
+      "chunk_size": 614,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "04_fee_structure_chunk_7",
+    "document_name": "04_fee_structure.pdf",
+    "content": "# 4. Examination Charges  \nExamination charges may apply to scheduled assessments and certain review services.  \n| Service                      | Amount (NCU)                          | When Applied                      |\n|------------------------------|---------------------------------------|-----------------------------------|\n| Regular Examination          | Included in standard academic charges | Normal scheduled examination      |\n| Supplementary Examination    | 800                                   | Eligible supplementary attempt    |\n| Revaluation Request          | 500                                   | Per course request                |\n| Result Transcript - Standard | 250                                   | Per request                       |\n| Late Examination Form        | 300                                   | Where late submission is approved |  \nStudents should confirm the current published schedule before making payment.",
+    "metadata": {
+      "source": "04_fee_structure.pdf",
+      "headers": {
+        "Header 1": "4. Examination Charges"
+      },
+      "chunk_size": 955,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "04_fee_structure_chunk_8",
+    "document_name": "04_fee_structure.pdf",
+    "content": "# 5. Hostel Charges  \n| Room Type            |   Annual Accommodation (NCU) |   Utilities Deposit (NCU) | Notes                                 |\n|----------------------|------------------------------|---------------------------|---------------------------------------|\n| Shared - Four Person |                       48,000 |                     3,000 | Standard shared room                  |\n| Shared - Two Person  |                       66,000 |                     3,000 | Two residents                         |\n| Single Room          |                       90,000 |                     3,000 | Subject to availability               |\n| Accessible Room      |                       66,000 |                     3,000 | Allocation subject to support process |  \nThe accommodation amount does not include optional services unless specifically stated in the housing agreement.",
+    "metadata": {
+      "source": "04_fee_structure.pdf",
+      "headers": {
+        "Header 1": "5. Hostel Charges"
+      },
+      "chunk_size": 880,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "04_fee_structure_chunk_9",
+    "document_name": "04_fee_structure.pdf",
+    "content": "# 6. Transportation Charges  \n| Route Category   |   Annual Pass (NCU) |   Semester Pass (NCU) |\n|------------------|---------------------|-----------------------|\n| Route A          |              18,000 |                10,000 |\n| Route B          |              22,000 |                12,000 |\n| Route C          |              26,000 |                14,000 |\n| Route D          |              30,000 |                16,000 |  \nTransportation routes are fictional. Availability depends on capacity and published route schedules.",
+    "metadata": {
+      "source": "04_fee_structure.pdf",
+      "headers": {
+        "Header 1": "6. Transportation Charges"
+      },
+      "chunk_size": 534,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "04_fee_structure_chunk_10",
+    "document_name": "04_fee_structure.pdf",
+    "content": "# 7. Payment Schedule  \nStudents using approved installment plans should follow the published payment dates.  \n| Installment   | Indicative Due Point           | Share of Annual Tuition   |\n|---------------|--------------------------------|---------------------------|\n| Installment 1 | Before semester 1 registration | 50%                       |\n| Installment 2 | Before semester 2 registration | 50%                       |  \nA student's actual invoice may include other approved charges. Payment plans do not necessarily apply to deposits or one-time administrative fees.",
+    "metadata": {
+      "source": "04_fee_structure.pdf",
+      "headers": {
+        "Header 1": "7. Payment Schedule"
+      },
+      "chunk_size": 575,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "04_fee_structure_chunk_11",
+    "document_name": "04_fee_structure.pdf",
+    "content": "# 8. Refund and Adjustment Principles  \nRefund eligibility depends on the nature and timing of the request. Some administrative charges may be non-refundable after a service has been processed.  \n| Situation                                 | Illustrative Treatment                                         |\n|-------------------------------------------|----------------------------------------------------------------|\n| Program withdrawal before registration    | May be eligible for adjustment subject to published conditions |\n| Withdrawal after academic activity begins | Adjustment depends on applicable schedule                      |\n| Duplicate payment                         | May be reviewed for correction                                 |\n| Processed service fee                     | May be non-refundable                                          |\n| Security / utility deposit                | Returned subject to applicable clearance and deductions        |",
+    "metadata": {
+      "source": "04_fee_structure.pdf",
+      "headers": {
+        "Header 1": "8. Refund and Adjustment Principles"
+      },
+      "chunk_size": 972,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "04_fee_structure_chunk_12",
+    "document_name": "04_fee_structure.pdf",
+    "content": "# 9. Late Payment  \nLate payment may result in administrative restrictions where permitted by the applicable enrollment agreement. Students should contact the finance service before a deadline if they anticipate difficulty meeting a payment date.",
+    "metadata": {
+      "source": "04_fee_structure.pdf",
+      "headers": {
+        "Header 1": "9. Late Payment"
+      },
+      "chunk_size": 246,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "04_fee_structure_chunk_13",
+    "document_name": "04_fee_structure.pdf",
+    "content": "# 10. Financial Clearance  \nStudents completing a program may need to resolve outstanding fees, return institutional property, and complete relevant clearances before final records are released.  \n- 1 Review the account statement.  \n- 2 Resolve outstanding balances or approved payment arrangements.  \n- 3 Return required institutional property.  \n- 4 Complete applicable library and accommodation clearances.  \n- 5 Confirm the final clearance status.",
+    "metadata": {
+      "source": "04_fee_structure.pdf",
+      "headers": {
+        "Header 1": "10. Financial Clearance"
+      },
+      "chunk_size": 451,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "04_fee_structure_chunk_14",
+    "document_name": "04_fee_structure.pdf",
+    "content": "# 11. Relationship to Other Documents  \nThe Examination Guidelines reference the Fee Structure for revaluation and supplementary examination charges. The Scholarship Guidelines describe financial assistance that may reduce certain eligible charges but does not automatically waive every fee. The Student Handbook describes general student service processes.",
+    "metadata": {
+      "source": "04_fee_structure.pdf",
+      "headers": {
+        "Header 1": "11. Relationship to Other Documents"
+      },
+      "chunk_size": 357,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "05_scholarship_guidelines_chunk_1",
+    "document_name": "05_scholarship_guidelines.pdf",
+    "content": "# NORTHBRIDGE INSTITUTE OF TECHNOLOGY",
+    "metadata": {
+      "source": "05_scholarship_guidelines.pdf",
+      "headers": {
+        "Header 1": "NORTHBRIDGE INSTITUTE OF TECHNOLOGY"
+      },
+      "chunk_size": 37,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "05_scholarship_guidelines_chunk_2",
+    "document_name": "05_scholarship_guidelines.pdf",
+    "content": "# Scholarship Guidelines  \nEligibility, Awards, Application, Renewal, and Review  \nDocument Code: NIT-SG-005  \nClassification: Synthetic / Educational Use  \nThis fictional document is created solely for testing document intelligence, semantic chunking, embeddings, vector indexing, and retrieval-augmented generation. It does not represent a real institution or policy.",
+    "metadata": {
+      "source": "05_scholarship_guidelines.pdf",
+      "headers": {
+        "Header 1": "Scholarship Guidelines"
+      },
+      "chunk_size": 369,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "05_scholarship_guidelines_chunk_3",
+    "document_name": "05_scholarship_guidelines.pdf",
+    "content": "# Table of Contents  \n- Scholarship Framework  \n- Scholarship Categories  \n- Academic Excellence Scholarship  \n- Progress Award  \n- Need Support Award  \n- Application Process  \n- Renewal Requirements  \n- Scholarship Amount and Fee Interaction  \n- Disqualification and Suspension  \n- Appeal and Review  \n- Related Documents",
+    "metadata": {
+      "source": "05_scholarship_guidelines.pdf",
+      "headers": {
+        "Header 1": "Table of Contents"
+      },
+      "chunk_size": 322,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "05_scholarship_guidelines_chunk_4",
+    "document_name": "05_scholarship_guidelines.pdf",
+    "content": "# 1. Scholarship Framework  \nThe Scholarship Guidelines describe fictional financial assistance programs available to eligible students at Northbridge Institute of Technology. Scholarships are intended to support academic participation and may be awarded according to academic, financial, or participation criteria.  \nScholarship awards are subject to available funding, eligibility rules, application deadlines, and renewal conditions. Receiving a scholarship does not automatically remove every university fee.",
+    "metadata": {
+      "source": "05_scholarship_guidelines.pdf",
+      "headers": {
+        "Header 1": "1. Scholarship Framework"
+      },
+      "chunk_size": 512,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "05_scholarship_guidelines_chunk_5",
+    "document_name": "05_scholarship_guidelines.pdf",
+    "content": "# 2. Scholarship Categories  \n| Scholarship          | Primary Basis                        |   Annual Award (NCU) | Typical Availability   |\n|----------------------|--------------------------------------|----------------------|------------------------|\n| Academic Excellence  | Academic performance                 |               30,000 | Limited                |\n| Progress Award       | Improved academic performance        |               18,000 | Limited                |\n| Participation Award  | Approved institutional participation |               12,000 | Limited                |\n| Need Support Award   | Documented financial need            |               24,000 | Limited                |\n| Access Support Award | Approved access-related criteria     |               20,000 | Limited                |  \nA student may be considered for more than one category, but award combination rules may limit the total assistance.",
+    "metadata": {
+      "source": "05_scholarship_guidelines.pdf",
+      "headers": {
+        "Header 1": "2. Scholarship Categories"
+      },
+      "chunk_size": 931,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "05_scholarship_guidelines_chunk_6",
+    "document_name": "05_scholarship_guidelines.pdf",
+    "content": "# 3. Academic Excellence Scholarship  \nThe Academic Excellence Scholarship recognizes strong academic achievement. For the synthetic standard, applicants should have completed the required academic load and achieved a minimum grade point average.  \n| Criterion                                    | Minimum Requirement                               |\n|----------------------------------------------|---------------------------------------------------|\n| Completed credits in prior assessment period | At least 20 credits                               |\n| Grade point average                          | At least 8.5 / 10                                 |\n| Attendance                                   | At least 80% unless an approved exception applies |\n| Academic misconduct finding                  | No unresolved finding                             |\n| Application                                  | Submitted within published period                 |  \nThe award is reviewed annually and does not guarantee renewal. The student's academic record is checked against the renewal criteria.",
+    "metadata": {
+      "source": "05_scholarship_guidelines.pdf",
+      "headers": {
+        "Header 1": "3. Academic Excellence Scholarship"
+      },
+      "chunk_size": 1091,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "05_scholarship_guidelines_chunk_7",
+    "document_name": "05_scholarship_guidelines.pdf",
+    "content": "# 4. Progress Award  \nThe Progress Award is intended for students who demonstrate meaningful academic improvement.  \n| Measure            | Illustrative Requirement                  |\n|--------------------|-------------------------------------------|\n| Previous GPA       | Below 7.0                                 |\n| Current GPA        | At least 7.5                              |\n| Improvement        | At least 0.8 GPA points                   |\n| Attendance         | At least 75%                              |\n| Required documents | Academic record and application statement |  \nThe Progress Award is not intended to replace the Academic Excellence Scholarship when a student independently satisfies the higher academic criteria.",
+    "metadata": {
+      "source": "05_scholarship_guidelines.pdf",
+      "headers": {
+        "Header 1": "4. Progress Award"
+      },
+      "chunk_size": 738,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "05_scholarship_guidelines_chunk_8",
+    "document_name": "05_scholarship_guidelines.pdf",
+    "content": "# 5. Need Support Award  \nThe Need Support Award considers documented financial circumstances together with academic participation. Applicants may be asked to provide financial documents through the designated confidential process.  \n- Submit the application within the published period.  \n- Provide the requested supporting documentation.  \n- Maintain the academic and attendance conditions stated in the award notice.  \n- Notify the scholarship service if a material circumstance changes.  \nFinancial documents should contain only information required for assessment and should be submitted through the approved secure channel.",
+    "metadata": {
+      "source": "05_scholarship_guidelines.pdf",
+      "headers": {
+        "Header 1": "5. Need Support Award"
+      },
+      "chunk_size": 629,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "05_scholarship_guidelines_chunk_9",
+    "document_name": "05_scholarship_guidelines.pdf",
+    "content": "# 6. Application Process  \n- 1 Review the scholarship categories and eligibility criteria.  \n- 2 Select the appropriate application category.  \n- 3 Complete the application form.  \n- 4 Attach required supporting documents.  \n- 5 Submit before the published deadline.  \n- 6 Respond to clarification requests if required.  \n- 7 Review the award decision and any conditions.  \n| Scholarship Category   | Core Documents                                                 |\n|------------------------|----------------------------------------------------------------|\n| Academic Excellence    | Academic record; application form                              |\n| Progress Award         | Academic records for relevant periods; application statement   |\n| Need Support           | Academic record; financial-support documents; application form |\n| Participation Award    | Participation evidence; application form                       |\n| Access Support         | Eligibility/support documentation; application form            |",
+    "metadata": {
+      "source": "05_scholarship_guidelines.pdf",
+      "headers": {
+        "Header 1": "6. Application Process"
+      },
+      "chunk_size": 1017,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "05_scholarship_guidelines_chunk_10",
+    "document_name": "05_scholarship_guidelines.pdf",
+    "content": "# 7. Renewal Requirements  \nScholarship renewal requires the student to continue meeting the applicable conditions. Renewal is assessed at the designated review point.  \n| Condition                      | Academic Excellence   | Need Support   |\n|--------------------------------|-----------------------|----------------|\n| Minimum GPA                    | 8.5                   | 7.0            |\n| Minimum Attendance             | 80%                   | 75%            |\n| Required credit completion     | 20 credits            | 18 credits     |\n| Unresolved academic misconduct | Not permitted         | Not permitted  |\n| Application / confirmation     | Required              | Required       |  \nDifferent scholarship categories may have additional renewal conditions.",
+    "metadata": {
+      "source": "05_scholarship_guidelines.pdf",
+      "headers": {
+        "Header 1": "7. Renewal Requirements"
+      },
+      "chunk_size": 776,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "05_scholarship_guidelines_chunk_11",
+    "document_name": "05_scholarship_guidelines.pdf",
+    "content": "# 8. Scholarship Amount and Fee Interaction  \nScholarship amounts are expressed in NCU. Unless an award notice states otherwise, the award is applied according to the approved financial process rather than treated as unrestricted cash.  \n| Award                |   Annual Amount (NCU) | Illustrative Application                     |\n|----------------------|-----------------------|----------------------------------------------|\n| Academic Excellence  |                30,000 | Eligible tuition-related charges             |\n| Progress Award       |                18,000 | Eligible tuition-related charges             |\n| Participation Award  |                12,000 | Eligible academic charges                    |\n| Need Support Award   |                24,000 | Eligible tuition or approved support charges |\n| Access Support Award |                20,000 | Eligible approved charges                    |  \nFor example, a scholarship may reduce an eligible tuition balance but does not automatically eliminate separately listed examination, housing, or administrative charges in the Fee Structure.",
+    "metadata": {
+      "source": "05_scholarship_guidelines.pdf",
+      "headers": {
+        "Header 1": "8. Scholarship Amount and Fee Interaction"
+      },
+      "chunk_size": 1102,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "05_scholarship_guidelines_chunk_12",
+    "document_name": "05_scholarship_guidelines.pdf",
+    "content": "# 9. Disqualification and Suspension  \nAn award may be suspended or withdrawn when a student no longer meets required conditions or when material information supplied during application is found to be inaccurate.  \n- Failure to meet renewal criteria.  \n- Withdrawal from the program.  \n- Unresolved academic misconduct finding.  \n- Material misrepresentation in an application.  \n- Failure to provide required renewal documentation.",
+    "metadata": {
+      "source": "05_scholarship_guidelines.pdf",
+      "headers": {
+        "Header 1": "9. Disqualification and Suspension"
+      },
+      "chunk_size": 432,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "05_scholarship_guidelines_chunk_13",
+    "document_name": "05_scholarship_guidelines.pdf",
+    "content": "# 10. Appeal and Review  \nA student who believes a scholarship decision was made using incorrect information may request a review within the stated review period. The request should identify the decision, explain the issue, and provide relevant supporting evidence.",
+    "metadata": {
+      "source": "05_scholarship_guidelines.pdf",
+      "headers": {
+        "Header 1": "10. Appeal and Review"
+      },
+      "chunk_size": 265,
+      "refined": false
+    }
+  },
+  {
+    "chunk_id": "05_scholarship_guidelines_chunk_14",
+    "document_name": "05_scholarship_guidelines.pdf",
+    "content": "# 11. Related Documents  \nAcademic performance and attendance information referenced by scholarships is governed by the Academic Regulations. General conduct expectations are described in the Student Handbook. The Fee Structure explains tuition, examination, accommodation, and other charges that may remain payable even when scholarship assistance is awarded.",
+    "metadata": {
+      "source": "05_scholarship_guidelines.pdf",
+      "headers": {
+        "Header 1": "11. Related Documents"
+      },
+      "chunk_size": 360,
+      "refined": false
+    }
+  }
+]

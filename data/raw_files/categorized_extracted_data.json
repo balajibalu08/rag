@@ -1,0 +1,2654 @@
+[
+    {
+        "file_name": "01_student_handbook.pdf",
+        "file_path": "D:\\RAG\\data\\pdfs\\01_student_handbook.pdf",
+        "num_pages": 5,
+        "file_size_bytes": 35768,
+        "paragraphs": [],
+        "headings": [
+            {
+                "label": "SECTION_HEADER",
+                "text": "NORTHBRIDGE INSTITUTE OF TECHNOLOGY"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "Student Handbook"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "Table of Contents"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "1. Purpose and Scope"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "2. Student Responsibilities"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "3. Academic Conduct"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "4. Attendance and Participation"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "5. Campus Facilities"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "6. Student Services"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "7. Library and Digital Resources"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "8. Health, Safety, and Emergency Practices"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "9. Conduct and Community Standards"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "10. Administrative Requests"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "11. Related Documents"
+            }
+        ],
+        "list_items": [
+            "Purpose and Scope",
+            "Student Responsibilities",
+            "Academic Conduct",
+            "Attendance and Participation",
+            "Campus Facilities",
+            "Student Services",
+            "Library and Digital Resources",
+            "Health, Safety, and Emergency Practices",
+            "Conduct and Community Standards",
+            "Administrative Requests",
+            "Related Documents",
+            "Maintain an active student account and keep contact details current.",
+            "Read official notices and course communications within a reasonable period.",
+            "Submit work through the designated academic system before stated deadlines.",
+            "Respect the learning environment, staff, visitors, and other students.",
+            "Protect passwords, access cards, and other credentials assigned to the student.",
+            "Report suspected safety incidents or serious policy violations through the appropriate channel.",
+            "Do not remove equipment or institutional property without authorization.",
+            "Keep walkways and emergency exits clear.",
+            "Report damaged equipment promptly rather than attempting an unauthorized repair.",
+            "Use institutional computing resources primarily for legitimate educational or administrative purposes.",
+            "Do not obstruct emergency exits or safety equipment.",
+            "Do not operate unfamiliar laboratory equipment without authorization.",
+            "Report spills, electrical hazards, damaged equipment, or other hazards promptly.",
+            "Follow building-specific evacuation instructions.",
+            "1 Identify the service or issue clearly.",
+            "2 Attach required supporting documents.",
+            "3 Submit the request through the designated channel.",
+            "4 Retain the submission confirmation.",
+            "5 Respond promptly if additional information is requested."
+        ],
+        "tables": [
+            {
+                "table_id": 1,
+                "markdown": "| Activity     | General Expectation                 | Record Owner          |\n|--------------|-------------------------------------|-----------------------|\n| Lectures     | Attendance recorded where scheduled | Course instructor     |\n| Laboratories | Attendance normally required        | Laboratory instructor |\n| Tutorials    | Participation expected              | Course instructor     |",
+                "dataframe": [
+                    {
+                        "Activity": "Lectures",
+                        "General Expectation": "Attendance recorded where scheduled",
+                        "Record Owner": "Course instructor"
+                    },
+                    {
+                        "Activity": "Laboratories",
+                        "General Expectation": "Attendance normally required",
+                        "Record Owner": "Laboratory instructor"
+                    },
+                    {
+                        "Activity": "Tutorials",
+                        "General Expectation": "Participation expected",
+                        "Record Owner": "Course instructor"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 2,
+                "markdown": "| Activity          | General Expectation           | Record Owner     |\n|-------------------|-------------------------------|------------------|\n| Academic advising | Attend scheduled appointments | Academic advisor |",
+                "dataframe": [
+                    {
+                        "0": "Activity",
+                        "1": "General Expectation",
+                        "2": "Record Owner"
+                    },
+                    {
+                        "0": "Academic advising",
+                        "1": "Attend scheduled appointments",
+                        "2": "Academic advisor"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 3,
+                "markdown": "| Service               | Typical Purpose                   | Student Action                                 |\n|-----------------------|-----------------------------------|------------------------------------------------|\n| Academic Advising     | Course planning and progression   | Book an advising appointment                   |\n| Enrollment Support    | Registration and records          | Submit a service request                       |\n| Library Services      | Research and learning resources   | Use library portal or service desk             |\n| Career Guidance       | Career planning and employability | Register for an appointment                    |\n| Accessibility Support | Reasonable academic support       | Submit supporting documentation where required |",
+                "dataframe": [
+                    {
+                        "Service": "Academic Advising",
+                        "Typical Purpose": "Course planning and progression",
+                        "Student Action": "Book an advising appointment"
+                    },
+                    {
+                        "Service": "Enrollment Support",
+                        "Typical Purpose": "Registration and records",
+                        "Student Action": "Submit a service request"
+                    },
+                    {
+                        "Service": "Library Services",
+                        "Typical Purpose": "Research and learning resources",
+                        "Student Action": "Use library portal or service desk"
+                    },
+                    {
+                        "Service": "Career Guidance",
+                        "Typical Purpose": "Career planning and employability",
+                        "Student Action": "Register for an appointment"
+                    },
+                    {
+                        "Service": "Accessibility Support",
+                        "Typical Purpose": "Reasonable academic support",
+                        "Student Action": "Submit supporting documentation where required"
+                    }
+                ],
+                "caption": null
+            }
+        ],
+        "pictures": []
+    },
+    {
+        "file_name": "02_academic_regulations.pdf",
+        "file_path": "D:\\RAG\\data\\pdfs\\02_academic_regulations.pdf",
+        "num_pages": 15,
+        "file_size_bytes": 123298,
+        "paragraphs": [],
+        "headings": [
+            {
+                "label": "PAGE_HEADER",
+                "text": "OFFICIAL POLICY DOCUMENT"
+            },
+            {
+                "label": "PAGE_HEADER",
+                "text": "NIT"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "Northbridge Institute of Technology"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "Academic Regulations"
+            },
+            {
+                "label": "PAGE_HEADER",
+                "text": "Northbridge Institute of Technology"
+            },
+            {
+                "label": "PAGE_HEADER",
+                "text": "Academic Regulations | Academic Year 2026-27"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "Document Control"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "Revision History"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "Related Documents in the NIT Policy Library"
+            },
+            {
+                "label": "PAGE_HEADER",
+                "text": "Northbridge Institute of Technology"
+            },
+            {
+                "label": "PAGE_HEADER",
+                "text": "Academic Regulations | Academic Year 2026-27"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "Table of Contents"
+            },
+            {
+                "label": "PAGE_HEADER",
+                "text": "Northbridge Institute of Technology"
+            },
+            {
+                "label": "PAGE_HEADER",
+                "text": "Academic Regulations | Academic Year 2026-27"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "CHAPTER 1"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "General Provisions"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "1.1 Purpose and Applicability"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "1.2 Definitions"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "1.3 Academic Calendar Framework"
+            },
+            {
+                "label": "PAGE_HEADER",
+                "text": "Northbridge Institute of Technology"
+            },
+            {
+                "label": "PAGE_HEADER",
+                "text": "Academic Regulations | Academic Year 2026-27"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "1.4 Governance and Amendments"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "CHAPTER 2"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "Programmes and the Credit System"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "2.1 Programmes Offered"
+            },
+            {
+                "label": "PAGE_HEADER",
+                "text": "Northbridge Institute of Technology"
+            },
+            {
+                "label": "PAGE_HEADER",
+                "text": "Academic Regulations | Academic Year 2026-27"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "2.2 Definition of a Credit"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "2.3 Credit Distribution of B.Tech Programmes"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "2.4 Illustrative Semester Plan"
+            },
+            {
+                "label": "PAGE_HEADER",
+                "text": "Northbridge Institute of Technology"
+            },
+            {
+                "label": "PAGE_HEADER",
+                "text": "Academic Regulations | Academic Year 2026-27"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "2.5 Course Code Structure"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "CHAPTER 3"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "Grading System"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "3.1 Assessment and Grading Principles"
+            },
+            {
+                "label": "PAGE_HEADER",
+                "text": "Northbridge Institute of Technology"
+            },
+            {
+                "label": "PAGE_HEADER",
+                "text": "Academic Regulations | Academic Year 2026-27"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "3.2 Letter Grades and Grade Points"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "3.3 Special Grade Codes"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "3.4 SGPA and CGPA"
+            },
+            {
+                "label": "PAGE_HEADER",
+                "text": "Northbridge Institute of Technology"
+            },
+            {
+                "label": "PAGE_HEADER",
+                "text": "Academic Regulations | Academic Year 2026-27"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "3.5 Academic Standing"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "CHAPTER 4"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "Attendance Requirements"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "4.1 Computation of Attendance"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "4.2 Minimum Attendance Requirement"
+            },
+            {
+                "label": "PAGE_HEADER",
+                "text": "Northbridge Institute of Technology"
+            },
+            {
+                "label": "PAGE_HEADER",
+                "text": "Academic Regulations | Academic Year 2026-27"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "4.3 Condonation of Attendance Shortage"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "4.4 Consequences of Attendance Shortage"
+            },
+            {
+                "label": "PAGE_HEADER",
+                "text": "Northbridge Institute of Technology"
+            },
+            {
+                "label": "PAGE_HEADER",
+                "text": "Academic Regulations | Academic Year 2026-27"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "CHAPTER 5"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "Course Registration"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "5.1 Registration Process and Timeline"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "5.2 Credit Load"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "5.3 Add, Drop and Withdrawal"
+            },
+            {
+                "label": "PAGE_HEADER",
+                "text": "Northbridge Institute of Technology"
+            },
+            {
+                "label": "PAGE_HEADER",
+                "text": "Academic Regulations | Academic Year 2026-27"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "5.4 Prerequisites"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "5.5 Re-registration of Failed and Detained Courses"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "CHAPTER 6"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "Academic Progression"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "6.1 Progression Thresholds"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "6.2 Probation and Dismissal"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "6.3 Maximum Duration of Study"
+            },
+            {
+                "label": "PAGE_HEADER",
+                "text": "Northbridge Institute of Technology"
+            },
+            {
+                "label": "PAGE_HEADER",
+                "text": "Academic Regulations | Academic Year 2026-27"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "6.4 Break of Study"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "CHAPTER 7"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "Graduation Requirements"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "7.1 Requirements for the Award of a Degree"
+            },
+            {
+                "label": "PAGE_HEADER",
+                "text": "Northbridge Institute of Technology"
+            },
+            {
+                "label": "PAGE_HEADER",
+                "text": "Academic Regulations | Academic Year 2026-27"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "7.2 Classification of Degrees"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "7.3 Degree Award, Transcripts and Certificates"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "APPENDIX A"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "Summary of Key Numerical Thresholds"
+            }
+        ],
+        "list_items": [
+            "The OAA publishes the attendance shortage list on the Student Portal at the end of Week 14.",
+            "The student submits an online condonation application with supporting documents within 3 working days of publication.",
+            "The student pays the condonation fee of CU 500 per course (see ??).",
+            "The ARC decides each application by the end of Week 15 and records the decision on the Student Portal.",
+            "If condonation is granted, the course is marked Condoned and the student receives a hall ticket for that course.",
+            "may not sit the final examination (or practical examination) of that course;",
+            "is not eligible for a supplementary examination in that course, because supplementary examinations are available only to students who were eligible for the final examination (?? of the Examination Guidelines);",
+            "must re-register for the course when it is next offered and pay the re-registration charge (see Section 5.5);",
+            "is treated as having failed the course for the purpose of scholarship eligibility (see Scholarship Guidelines (NIT-SG-2026))."
+        ],
+        "tables": [
+            {
+                "table_id": 1,
+                "markdown": "| Document code       | NIT-AR-2026                                                               |\n|---------------------|---------------------------------------------------------------------------|\n| Version             | 3.0                                                                       |\n| Academic year       | 2026-27                                                                   |\n| Effective date      | 1 August 2026                                                             |\n| Applies to          | All enrolled undergraduate (UG) and postgraduate (PG) coursework students |\n| Document owner      | Office of Academic Affairs                                                |\n| Approving authority | Academic Council                                                          |",
+                "dataframe": [
+                    {
+                        "Document code": "Version",
+                        "NIT-AR-2026": "3.0"
+                    },
+                    {
+                        "Document code": "Academic year",
+                        "NIT-AR-2026": "2026-27"
+                    },
+                    {
+                        "Document code": "Effective date",
+                        "NIT-AR-2026": "1 August 2026"
+                    },
+                    {
+                        "Document code": "Applies to",
+                        "NIT-AR-2026": "All enrolled undergraduate (UG) and postgraduate (PG) coursework students"
+                    },
+                    {
+                        "Document code": "Document owner",
+                        "NIT-AR-2026": "Office of Academic Affairs"
+                    },
+                    {
+                        "Document code": "Approving authority",
+                        "NIT-AR-2026": "Academic Council"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 2,
+                "markdown": "| Title               | Academic Regulations                                                                                                                                                                                 |\n|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| Document code       | NIT-AR-2026                                                                                                                                                                                          |\n| Current version     | 3.0                                                                                                                                                                                                  |\n| Effective date      | 1 August 2026                                                                                                                                                                                        |\n| Document owner      | Office of Academic Affairs                                                                                                                                                                           |\n| Approving authority | Academic Council                                                                                                                                                                                     |\n| Review cycle        | Annual; interim amendments are issued through the Office of Academic Affairs                                                                                                                         |\n| Scope               | Credit system, grading, attendance, registration, progression and graduation for coursework programmes. Doctoral programmes are governed by separate regulations that are not part of this document. |",
+                "dataframe": [
+                    {
+                        "Title": "Document code",
+                        "Academic Regulations": "NIT-AR-2026"
+                    },
+                    {
+                        "Title": "Current version",
+                        "Academic Regulations": "3.0"
+                    },
+                    {
+                        "Title": "Effective date",
+                        "Academic Regulations": "1 August 2026"
+                    },
+                    {
+                        "Title": "Document owner",
+                        "Academic Regulations": "Office of Academic Affairs"
+                    },
+                    {
+                        "Title": "Approving authority",
+                        "Academic Regulations": "Academic Council"
+                    },
+                    {
+                        "Title": "Review cycle",
+                        "Academic Regulations": "Annual; interim amendments are issued through the Office of Academic Affairs"
+                    },
+                    {
+                        "Title": "Scope",
+                        "Academic Regulations": "Credit system, grading, attendance, registration, progression and graduation for coursework programmes. Doctoral programmes are governed by separate regulations that are not part of this document."
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 3,
+                "markdown": "|   Version | Date        | Summary of change                                                                                      | Approved by      |\n|-----------|-------------|--------------------------------------------------------------------------------------------------------|------------------|\n|       1.0 | August 2023 | Initial consolidated regulations adopted by the Academic Council.                                      | Academic Council |\n|       2.0 | August 2025 | Introduced the two-tier attendance standard (theory and laboratory) and the condonation limits.        | Academic Council |\n|       3.0 | August 2026 | Added B.Tech Data Science, revised progression thresholds, restated grading and classification tables. | Academic Council |",
+                "dataframe": [
+                    {
+                        "Version": "1.0",
+                        "Date": "August 2023",
+                        "Summary of change": "Initial consolidated regulations adopted by the Academic Council.",
+                        "Approved by": "Academic Council"
+                    },
+                    {
+                        "Version": "2.0",
+                        "Date": "August 2025",
+                        "Summary of change": "Introduced the two-tier attendance standard (theory and laboratory) and the condonation limits.",
+                        "Approved by": "Academic Council"
+                    },
+                    {
+                        "Version": "3.0",
+                        "Date": "August 2026",
+                        "Summary of change": "Added B.Tech Data Science, revised progression thresholds, restated grading and classification tables.",
+                        "Approved by": "Academic Council"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 4,
+                "markdown": "| Code        | Document                             | Owner                                    |\n|-------------|--------------------------------------|------------------------------------------|\n| NIT-SH-2026 | Student Handbook                     | Office of Student Affairs                |\n| NIT-AR-2026 | Academic Regulations (this document) | Office of Academic Affairs               |\n| NIT-EX-2026 | Examination Guidelines               | Office of the Controller of Examinations |\n| NIT-FS-2026 | Fee Structure                        | Accounts Office                          |\n| NIT-SG-2026 | Scholarship Guidelines               | Scholarship and Financial Aid Cell       |",
+                "dataframe": [
+                    {
+                        "Code": "NIT-SH-2026",
+                        "Document": "Student Handbook",
+                        "Owner": "Office of Student Affairs"
+                    },
+                    {
+                        "Code": "NIT-AR-2026",
+                        "Document": "Academic Regulations (this document)",
+                        "Owner": "Office of Academic Affairs"
+                    },
+                    {
+                        "Code": "NIT-EX-2026",
+                        "Document": "Examination Guidelines",
+                        "Owner": "Office of the Controller of Examinations"
+                    },
+                    {
+                        "Code": "NIT-FS-2026",
+                        "Document": "Fee Structure",
+                        "Owner": "Accounts Office"
+                    },
+                    {
+                        "Code": "NIT-SG-2026",
+                        "Document": "Scholarship Guidelines",
+                        "Owner": "Scholarship and Financial Aid Cell"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 5,
+                "markdown": "| . . . . . . . . . . . . . . . . . . . . . . . . 1 General Provisions         | . . . . . . . . . . . . . . . . . . . . . . . . 5       |\n|------------------------------------------------------------------------------|---------------------------------------------------------|\n| . . . . . . . . . . . . . . . . . . . . . . 1.1 Purpose and Applicability    | . . . . . . . . . . . . . . . . . . . . . . . . . . . 5 |\n| . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1.2 Definitions  | . . . . . . . . . . . . . . . . . . . . . . . . . . . 5 |\n| . . . . . . . . . . . . . . . . . . . 1.3 Academic Calendar Framework        | . . . . . . . . . . . . . . . . . . . . . . . . . . . 5 |\n| . . . . . . . . . . . . . . . . . . . 1.4 Governance and Amendments          | . . . . . . . . . . . . . . . . . . . . . . . . . . . 6 |\n| . . . . . . . . . . . . . . 2 Programmes and the Credit System               | . . . . . . . . . . . . . . . . . . . . . . . . 6       |\n| . . . . . . . . . . . . . . . . . . . . . . . . 2.1 Programmes Offered       | . . . . . . . . . . . . . . . . . . . . . . . . . . . 6 |\n| . . . . . . . . . . . . . . . . . . . . . . . . . 2.2 Definition of a Credit | . . . . . . . . . . . . . . . . . . . . . . . . . . . 7 |\n| . . . . . . . . . . . . . 2.3 Credit Distribution of B.Tech Programmes       | . . . . . . . . . . . . . . . . . . . . . . . . . . . 7 |\n| . . . . . . . . . . . . . . . . . . . . . . 2.4 Illustrative Semester Plan   | . . . . . . . . . . . . . . . . . . . . . . . . . . . 7 |\n| . . . . . . . . . . . . . . . . . . . . . . . 2.5 Course Code Structure      | . . . . . . . . . . . . . . . . . . . . . . . . . . . 8 |\n| . . . . . . . . . . . . . . . . . . . . . . . . . 3 Grading System           | . . . . . . . . . . . . . . . . . . . . . . . . 8       |\n| . . . . . . . . . . . . . . . . . 3.1 Assessment and Grading Principles      | . . . . . . . . . . . . . . . . . . . . . . . . . . . 8 |\n| . . . . . . . . . . . . . . . . . . . 3.2 Letter Grades and Grade Points     | . . . . . . . . . . . . . . . . . . . . . . . . . . . 9 |\n| . . . . . . . . . . . . . . . . . . . . . . . . 3.3 Special Grade Codes      | . . . . . . . . . . . . . . . . . . . . . . . . . . . 9 |\n| . . . . . . . . . . . . . . . . . . . . . . . . . . 3.4 SGPA and CGPA        | . . . . . . . . . . . . . . . . . . . . . . . . . . . 9 |\n| . . . . . . . . . . . . . . . . . . . . . . . . . . 3.5 Academic Standing    | . . . . . . . . . . . . . . . . . . . . . . . . . . 10  |\n| . . . . . . . . . . . . . . . . . . . . 4 Attendance Requirements            | . . . . . . . . . . . . . . . . . . . . . . . 10        |\n| . . . . . . . . . . . . . . . . . . . . . 4.1 Computation of Attendance      | . . . . . . . . . . . . . . . . . . . . . . . . . . 10  |\n| . . . . . . . . . . . . . . . . . 4.2 Minimum Attendance Requirement         | . . . . . . . . . . . . . . . . . . . . . . . . . . 10  |\n| . . . . . . . . . . . . . . . . 4.3 Condonation of Attendance Shortage       | . . . . . . . . . . . . . . . . . . . . . . . . . . 11  |\n| . . . . . . . . . . . . . . . 4.4 Consequences of Attendance Shortage        | . . . . . . . . . . . . . . . . . . . . . . . . . . 11  |\n| . . . . . . . . . . . . . . . . . . . . . . . . 5 Course Registration        | . . . . . . . . . . . . . . . . . . . . . . . 12        |\n| . . . . . . . . . . . . . . . . . . 5.1 Registration Process and Timeline    | . . . . . . . . . . . . . . . . . . . . . . . . . . 12  |\n| . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5.2 Credit Load  | . . . . . . . . . . . . . . . . . . . . . . . . . . 12  |\n| . . . . . . . . . . . . . . . . . . . . . . 5.3 Add, Drop and Withdrawal     | . . . . . . . . . . . . . . . . . . . . . . . . . . 12  |\n| . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5.4 Prerequisites  | . . . . . . . . . . . . . . . . . . . . . . . . . . 13  |\n| . . . . . . . . . . . 5.5 Re-registration of Failed and Detained Courses     | . . . . . . . . . . . . . . . . . . . . . . . . . . 13  |\n| . . . . . . . . . . . . . . . . . . . . . . 6 Academic Progression           | . . . . . . . . . . . . . . . . . . . . . . . 13        |\n| . . . . . . . . . . . . . . . . . . . . . . . 6.1 Progression Thresholds     | . . . . . . . . . . . . . . . . . . . . . . . . . . 13  |\n| . . . . . . . . . . . . . . . . . . . . . . . 6.2 Probation and Dismissal    | . . . . . . . . . . . . . . . . . . . . . . . . . . 13  |\n| . . . . . . . . . . . . . . . . . . . . . 6.3 Maximum Duration of Study      | . . . . . . . . . . . . . . . . . . . . . . . . . . 13  |\n| . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6.4 Break of Study   | . . . . . . . . . . . . . . . . . . . . . . . . . . 14  |\n| . . . . . . . . . . . . . . . . . . . . 7 Graduation Requirements            | . . . . . . . . . . . . . . . . . . . . . . . 14        |\n| . . . . . . . . . . . . . . 7.1 Requirements for the Award of a Degree       | . . . . . . . . . . . . . . . . . . . . . . . . . . 14  |\n| . . . . . . . . . . . . . . . . . . . . . . . 7.2 Classification of Degrees  | . . . . . . . . . . . . . . . . . . . . . . . . . . 15  |",
+                "dataframe": [
+                    {
+                        "0": ". . . . . . . . . . . . . . . . . . . . . . . . 1 General Provisions",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . 5"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . . . . . . . . . 1.1 Purpose and Applicability",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . . . . 5"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1.2 Definitions",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . . . . 5"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . . . . . . 1.3 Academic Calendar Framework",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . . . . 5"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . . . . . . 1.4 Governance and Amendments",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . . . . 6"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . 2 Programmes and the Credit System",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . 6"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . . . . . . . . . . . 2.1 Programmes Offered",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . . . . 6"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . . . . . . . . . . . . 2.2 Definition of a Credit",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . . . . 7"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . 2.3 Credit Distribution of B.Tech Programmes",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . . . . 7"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . . . . . . . . . 2.4 Illustrative Semester Plan",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . . . . 7"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . . . . . . . . . . 2.5 Course Code Structure",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . . . . 8"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . . . . . . . . . . . . 3 Grading System",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . 8"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . . . . 3.1 Assessment and Grading Principles",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . . . . 8"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . . . . . . 3.2 Letter Grades and Grade Points",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . . . . 9"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . . . . . . . . . . . 3.3 Special Grade Codes",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . . . . 9"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . . . . . . . . . . . . . 3.4 SGPA and CGPA",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . . . . 9"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . . . . . . . . . . . . . 3.5 Academic Standing",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . . . 10"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . . . . . . . 4 Attendance Requirements",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . 10"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . . . . . . . . 4.1 Computation of Attendance",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . . . 10"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . . . . 4.2 Minimum Attendance Requirement",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . . . 10"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . . . 4.3 Condonation of Attendance Shortage",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . . . 11"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . . 4.4 Consequences of Attendance Shortage",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . . . 11"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . . . . . . . . . . . 5 Course Registration",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . 12"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . . . . . 5.1 Registration Process and Timeline",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . . . 12"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5.2 Credit Load",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . . . 12"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . . . . . . . . . 5.3 Add, Drop and Withdrawal",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . . . 12"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5.4 Prerequisites",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . . . 13"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . 5.5 Re-registration of Failed and Detained Courses",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . . . 13"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . . . . . . . . . 6 Academic Progression",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . 13"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . . . . . . . . . . 6.1 Progression Thresholds",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . . . 13"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . . . . . . . . . . 6.2 Probation and Dismissal",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . . . 13"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . . . . . . . . 6.3 Maximum Duration of Study",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . . . 13"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . . . . . . . . . . . . . . . 6.4 Break of Study",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . . . 14"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . . . . . . . 7 Graduation Requirements",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . 14"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . 7.1 Requirements for the Award of a Degree",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . . . 14"
+                    },
+                    {
+                        "0": ". . . . . . . . . . . . . . . . . . . . . . . 7.2 Classification of Degrees",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . . . 15"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 6,
+                "markdown": "| Northbridge Institute of Technology                            | Academic Regulations &#124; Academic Year 2026-27                |\n|----------------------------------------------------------------|------------------------------------------------------------------|\n| . . . . . . . . 7.3 Degree Award, Transcripts and Certificates | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15 |\n| . . Appendix A Summary of Key Numerical Thresholds             | . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15       |",
+                "dataframe": [
+                    {
+                        "0": "Northbridge Institute of Technology",
+                        "1": "Academic Regulations | Academic Year 2026-27"
+                    },
+                    {
+                        "0": ". . . . . . . . 7.3 Degree Award, Transcripts and Certificates",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15"
+                    },
+                    {
+                        "0": ". . Appendix A Summary of Key Numerical Thresholds",
+                        "1": ". . . . . . . . . . . . . . . . . . . . . . . . . . . . 15"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 7,
+                "markdown": "Table 1.1: Semester structure and key academic milestones\n\n| Milestone                                 | Autumn Semester                        | Spring Semester                        |\n|-------------------------------------------|----------------------------------------|----------------------------------------|\n| Semester commencement                     | First Monday of August                 | First Monday of January                |\n| Teaching weeks                            | Weeks 1 - 15                           | Weeks 1 - 15                           |\n| Add/drop period                           | First 5 working days of Week 1         | First 5 working days of Week 1         |\n| Internal Test 1                           | Week 6                                 | Week 6                                 |\n| Internal Test 2                           | Week 11                                | Week 11                                |\n| Last date for course withdrawal (grade W) | End of Week 8                          | End of Week 8                          |\n| Attendance shortage list published        | End of Week 14                         | End of Week 14                         |\n| End-semester practical examinations       | Week 15                                | Week 15                                |\n| Final theory examinations                 | Weeks 16 - 17                          | Weeks 16 - 17                          |\n| Declaration of results                    | Within 21 days of the last examination | Within 21 days of the last examination |\n| Supplementary examination window          | Last two weeks of January              | First two weeks of July                |",
+                "dataframe": [
+                    {
+                        "Milestone": "Semester commencement",
+                        "Autumn Semester": "First Monday of August",
+                        "Spring Semester": "First Monday of January"
+                    },
+                    {
+                        "Milestone": "Teaching weeks",
+                        "Autumn Semester": "Weeks 1 - 15",
+                        "Spring Semester": "Weeks 1 - 15"
+                    },
+                    {
+                        "Milestone": "Add/drop period",
+                        "Autumn Semester": "First 5 working days of Week 1",
+                        "Spring Semester": "First 5 working days of Week 1"
+                    },
+                    {
+                        "Milestone": "Internal Test 1",
+                        "Autumn Semester": "Week 6",
+                        "Spring Semester": "Week 6"
+                    },
+                    {
+                        "Milestone": "Internal Test 2",
+                        "Autumn Semester": "Week 11",
+                        "Spring Semester": "Week 11"
+                    },
+                    {
+                        "Milestone": "Last date for course withdrawal (grade W)",
+                        "Autumn Semester": "End of Week 8",
+                        "Spring Semester": "End of Week 8"
+                    },
+                    {
+                        "Milestone": "Attendance shortage list published",
+                        "Autumn Semester": "End of Week 14",
+                        "Spring Semester": "End of Week 14"
+                    },
+                    {
+                        "Milestone": "End-semester practical examinations",
+                        "Autumn Semester": "Week 15",
+                        "Spring Semester": "Week 15"
+                    },
+                    {
+                        "Milestone": "Final theory examinations",
+                        "Autumn Semester": "Weeks 16 - 17",
+                        "Spring Semester": "Weeks 16 - 17"
+                    },
+                    {
+                        "Milestone": "Declaration of results",
+                        "Autumn Semester": "Within 21 days of the last examination",
+                        "Spring Semester": "Within 21 days of the last examination"
+                    },
+                    {
+                        "Milestone": "Supplementary examination window",
+                        "Autumn Semester": "Last two weeks of January",
+                        "Spring Semester": "First two weeks of July"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 8,
+                "markdown": "Table 2.1: Programmes, duration, minimum credits and attendance requirements\n\n| Code   | Programme                                        | Duration   |   Semeste rs |   Minimum credits | Attendance (theory / lab)   |   Minimum CGPA to graduate |\n|--------|--------------------------------------------------|------------|--------------|-------------------|-----------------------------|----------------------------|\n| BT-CS  | B.Tech Computer Science                          | 4 years    |            8 |               160 | 75% / 80%                   |                       5.00 |\n| BT-IS  | B.Tech Information Systems                       | 4 years    |            8 |               156 | 75% / 80%                   |                       5.00 |\n| BT-DS  | B.Tech Data Science                              | 4 years    |            8 |               158 | 75% / 80%                   |                       5.00 |\n| BT-EE  | B.Tech Electrical Engineering                    | 4 years    |            8 |               164 | 75% / 80%                   |                       5.00 |\n| BT-EC  | B.Tech Electronics and Communication Engineering | 4 years    |            8 |               162 | 75% / 80%                   |                       5.00 |\n| BT-ME  | B.Tech Mechanical Engineering                    | 4 years    |            8 |               164 | 75% / 80%                   |                       5.00 |\n| BT-CE  | B.Tech Civil Engineering                         | 4 years    |            8 |               162 | 75% / 80%                   |                       5.00 |\n| BS-AM  | B.Sc Applied Mathematics                         | 3 years    |            6 |               120 | 75% / 80%                   |                       5.00 |\n| MT-CS  | M.Tech Computer Science                          | 2 years    |            4 |                72 | 75% / 80%                   |                       6.00 |\n| MT-SE  | M.Tech Structural Engineering                    | 2 years    |            4 |                72 | 75% / 80%                   |                       6.00 |\n| MB-TM  | MBA Technology Management                        | 2 years    |            4 |                80 | 75% / 80%                   |                       6.00 |",
+                "dataframe": [
+                    {
+                        "Code": "BT-CS",
+                        "Programme": "B.Tech Computer Science",
+                        "Duration": "4 years",
+                        "Semeste rs": "8",
+                        "Minimum credits": "160",
+                        "Attendance (theory / lab)": "75% / 80%",
+                        "Minimum CGPA to graduate": "5.00"
+                    },
+                    {
+                        "Code": "BT-IS",
+                        "Programme": "B.Tech Information Systems",
+                        "Duration": "4 years",
+                        "Semeste rs": "8",
+                        "Minimum credits": "156",
+                        "Attendance (theory / lab)": "75% / 80%",
+                        "Minimum CGPA to graduate": "5.00"
+                    },
+                    {
+                        "Code": "BT-DS",
+                        "Programme": "B.Tech Data Science",
+                        "Duration": "4 years",
+                        "Semeste rs": "8",
+                        "Minimum credits": "158",
+                        "Attendance (theory / lab)": "75% / 80%",
+                        "Minimum CGPA to graduate": "5.00"
+                    },
+                    {
+                        "Code": "BT-EE",
+                        "Programme": "B.Tech Electrical Engineering",
+                        "Duration": "4 years",
+                        "Semeste rs": "8",
+                        "Minimum credits": "164",
+                        "Attendance (theory / lab)": "75% / 80%",
+                        "Minimum CGPA to graduate": "5.00"
+                    },
+                    {
+                        "Code": "BT-EC",
+                        "Programme": "B.Tech Electronics and Communication Engineering",
+                        "Duration": "4 years",
+                        "Semeste rs": "8",
+                        "Minimum credits": "162",
+                        "Attendance (theory / lab)": "75% / 80%",
+                        "Minimum CGPA to graduate": "5.00"
+                    },
+                    {
+                        "Code": "BT-ME",
+                        "Programme": "B.Tech Mechanical Engineering",
+                        "Duration": "4 years",
+                        "Semeste rs": "8",
+                        "Minimum credits": "164",
+                        "Attendance (theory / lab)": "75% / 80%",
+                        "Minimum CGPA to graduate": "5.00"
+                    },
+                    {
+                        "Code": "BT-CE",
+                        "Programme": "B.Tech Civil Engineering",
+                        "Duration": "4 years",
+                        "Semeste rs": "8",
+                        "Minimum credits": "162",
+                        "Attendance (theory / lab)": "75% / 80%",
+                        "Minimum CGPA to graduate": "5.00"
+                    },
+                    {
+                        "Code": "BS-AM",
+                        "Programme": "B.Sc Applied Mathematics",
+                        "Duration": "3 years",
+                        "Semeste rs": "6",
+                        "Minimum credits": "120",
+                        "Attendance (theory / lab)": "75% / 80%",
+                        "Minimum CGPA to graduate": "5.00"
+                    },
+                    {
+                        "Code": "MT-CS",
+                        "Programme": "M.Tech Computer Science",
+                        "Duration": "2 years",
+                        "Semeste rs": "4",
+                        "Minimum credits": "72",
+                        "Attendance (theory / lab)": "75% / 80%",
+                        "Minimum CGPA to graduate": "6.00"
+                    },
+                    {
+                        "Code": "MT-SE",
+                        "Programme": "M.Tech Structural Engineering",
+                        "Duration": "2 years",
+                        "Semeste rs": "4",
+                        "Minimum credits": "72",
+                        "Attendance (theory / lab)": "75% / 80%",
+                        "Minimum CGPA to graduate": "6.00"
+                    },
+                    {
+                        "Code": "MB-TM",
+                        "Programme": "MBA Technology Management",
+                        "Duration": "2 years",
+                        "Semeste rs": "4",
+                        "Minimum credits": "80",
+                        "Attendance (theory / lab)": "75% / 80%",
+                        "Minimum CGPA to graduate": "6.00"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 9,
+                "markdown": "Table 2.2: Programme codes grouped by school\n\n| School                            | Programmes administered           | Level     |\n|-----------------------------------|-----------------------------------|-----------|\n| School of Computing               | BT-CS, BT-IS, BT-DS, MT-CS        | UG and PG |\n| School of Engineering             | BT-EE, BT-EC, BT-ME, BT-CE, MT-SE | UG and PG |\n| School of Sciences and Management | BS-AM, MB-TM                      | UG and PG |",
+                "dataframe": [
+                    {
+                        "School": "School of Computing",
+                        "Programmes administered": "BT-CS, BT-IS, BT-DS, MT-CS",
+                        "Level": "UG and PG"
+                    },
+                    {
+                        "School": "School of Engineering",
+                        "Programmes administered": "BT-EE, BT-EC, BT-ME, BT-CE, MT-SE",
+                        "Level": "UG and PG"
+                    },
+                    {
+                        "School": "School of Sciences and Management",
+                        "Programmes administered": "BS-AM, MB-TM",
+                        "Level": "UG and PG"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 10,
+                "markdown": "Table 2.3: Credit conversion by type of contact hour\n\n| Component              | Weekly contact hours   | Credits Illustration (L-T-P-C)                                                 |\n|------------------------|------------------------|--------------------------------------------------------------------------------|\n| Lecture                | 1 hour                 | 1 MA201 Probability and Statistics: 3-0-0-3                                    |\n| Tutorial               | 2 hours                | 1 CS201 Data Structures: 3-2-0-4                                               |\n| Laboratory / practical | 2 hours                | 1 CS207L Data Structures Laboratory: 0-0-4-2                                   |\n| Seminar                | 2 hours                | 1 CS390 Technical Seminar: 0-0-2-1 (seminar hours recorded as practical hours) |\n| Project work           | 3 hours                | 1 Final-year project phases (see Table 2.5)                                    |",
+                "dataframe": [
+                    {
+                        "Component": "Lecture",
+                        "Weekly contact hours": "1 hour",
+                        "Credits Illustration (L-T-P-C)": "1 MA201 Probability and Statistics: 3-0-0-3"
+                    },
+                    {
+                        "Component": "Tutorial",
+                        "Weekly contact hours": "2 hours",
+                        "Credits Illustration (L-T-P-C)": "1 CS201 Data Structures: 3-2-0-4"
+                    },
+                    {
+                        "Component": "Laboratory / practical",
+                        "Weekly contact hours": "2 hours",
+                        "Credits Illustration (L-T-P-C)": "1 CS207L Data Structures Laboratory: 0-0-4-2"
+                    },
+                    {
+                        "Component": "Seminar",
+                        "Weekly contact hours": "2 hours",
+                        "Credits Illustration (L-T-P-C)": "1 CS390 Technical Seminar: 0-0-2-1 (seminar hours recorded as practical hours)"
+                    },
+                    {
+                        "Component": "Project work",
+                        "Weekly contact hours": "3 hours",
+                        "Credits Illustration (L-T-P-C)": "1 Final-year project phases (see Table 2.5)"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 11,
+                "markdown": "Table 2.4: Credit distribution by course category (B.Tech programmes)\n\n| Programme   |   Basic sciences and mathematics |   Engineering foundation |   Programme core |   Programme electives |   Humanities and management |   Project and internship |   Total credits |\n|-------------|----------------------------------|--------------------------|------------------|-----------------------|-----------------------------|--------------------------|-----------------|\n| BT-CS       |                               24 |                       20 |               72 |                    24 |                          12 |                        8 |             160 |\n| BT-IS       |                               24 |                       20 |               68 |                    24 |                          12 |                        8 |             156 |\n| BT-DS       |                               26 |                       18 |               70 |                    24 |                          12 |                        8 |             158 |\n| BT-EE       |                               26 |                       22 |               72 |                    24 |                          12 |                        8 |             164 |\n| BT-EC       |                               26 |                       22 |               70 |                    24 |                          12 |                        8 |             162 |\n| BT-ME       |                               26 |                       24 |               70 |                    24 |                          12 |                        8 |             164 |\n| BT-CE       |                               26 |                       24 |               68 |                    24 |                          12 |                        8 |             162 |",
+                "dataframe": [
+                    {
+                        "Programme": "BT-CS",
+                        "Basic sciences and mathematics": "24",
+                        "Engineering foundation": "20",
+                        "Programme core": "72",
+                        "Programme electives": "24",
+                        "Humanities and management": "12",
+                        "Project and internship": "8",
+                        "Total credits": "160"
+                    },
+                    {
+                        "Programme": "BT-IS",
+                        "Basic sciences and mathematics": "24",
+                        "Engineering foundation": "20",
+                        "Programme core": "68",
+                        "Programme electives": "24",
+                        "Humanities and management": "12",
+                        "Project and internship": "8",
+                        "Total credits": "156"
+                    },
+                    {
+                        "Programme": "BT-DS",
+                        "Basic sciences and mathematics": "26",
+                        "Engineering foundation": "18",
+                        "Programme core": "70",
+                        "Programme electives": "24",
+                        "Humanities and management": "12",
+                        "Project and internship": "8",
+                        "Total credits": "158"
+                    },
+                    {
+                        "Programme": "BT-EE",
+                        "Basic sciences and mathematics": "26",
+                        "Engineering foundation": "22",
+                        "Programme core": "72",
+                        "Programme electives": "24",
+                        "Humanities and management": "12",
+                        "Project and internship": "8",
+                        "Total credits": "164"
+                    },
+                    {
+                        "Programme": "BT-EC",
+                        "Basic sciences and mathematics": "26",
+                        "Engineering foundation": "22",
+                        "Programme core": "70",
+                        "Programme electives": "24",
+                        "Humanities and management": "12",
+                        "Project and internship": "8",
+                        "Total credits": "162"
+                    },
+                    {
+                        "Programme": "BT-ME",
+                        "Basic sciences and mathematics": "26",
+                        "Engineering foundation": "24",
+                        "Programme core": "70",
+                        "Programme electives": "24",
+                        "Humanities and management": "12",
+                        "Project and internship": "8",
+                        "Total credits": "164"
+                    },
+                    {
+                        "Programme": "BT-CE",
+                        "Basic sciences and mathematics": "26",
+                        "Engineering foundation": "24",
+                        "Programme core": "68",
+                        "Programme electives": "24",
+                        "Humanities and management": "12",
+                        "Project and internship": "8",
+                        "Total credits": "162"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 12,
+                "markdown": "Table 2.5: Semester-wise credit plan for BT-CS (160 credits)\n\n| Semester   |   Theory credits |   Laboratory credits |   Project / internship credits |   Total credits |   Cumulative credits |\n|------------|------------------|----------------------|--------------------------------|-----------------|----------------------|\n| Semester 1 |               16 |                    4 |                              0 |              20 |                   20 |\n| Semester 2 |               16 |                    4 |                              0 |              20 |                   40 |\n| Semester 3 |               17 |                    5 |                              0 |              22 |                   62 |\n| Semester 4 |               17 |                    5 |                              0 |              22 |                   84 |\n| Semester 5 |               17 |                    5 |                              0 |              22 |                  106 |\n| Semester 6 |               17 |                    5 |                              0 |              22 |                  128 |\n| Semester 7 |               12 |                    2 |                              4 |              18 |                  146 |\n| Semester 8 |               10 |                    0 |                              4 |              14 |                  160 |\n| Total      |              122 |                   30 |                              8 |             160 |                  160 |",
+                "dataframe": [
+                    {
+                        "Semester": "Semester 1",
+                        "Theory credits": "16",
+                        "Laboratory credits": "4",
+                        "Project / internship credits": "0",
+                        "Total credits": "20",
+                        "Cumulative credits": "20"
+                    },
+                    {
+                        "Semester": "Semester 2",
+                        "Theory credits": "16",
+                        "Laboratory credits": "4",
+                        "Project / internship credits": "0",
+                        "Total credits": "20",
+                        "Cumulative credits": "40"
+                    },
+                    {
+                        "Semester": "Semester 3",
+                        "Theory credits": "17",
+                        "Laboratory credits": "5",
+                        "Project / internship credits": "0",
+                        "Total credits": "22",
+                        "Cumulative credits": "62"
+                    },
+                    {
+                        "Semester": "Semester 4",
+                        "Theory credits": "17",
+                        "Laboratory credits": "5",
+                        "Project / internship credits": "0",
+                        "Total credits": "22",
+                        "Cumulative credits": "84"
+                    },
+                    {
+                        "Semester": "Semester 5",
+                        "Theory credits": "17",
+                        "Laboratory credits": "5",
+                        "Project / internship credits": "0",
+                        "Total credits": "22",
+                        "Cumulative credits": "106"
+                    },
+                    {
+                        "Semester": "Semester 6",
+                        "Theory credits": "17",
+                        "Laboratory credits": "5",
+                        "Project / internship credits": "0",
+                        "Total credits": "22",
+                        "Cumulative credits": "128"
+                    },
+                    {
+                        "Semester": "Semester 7",
+                        "Theory credits": "12",
+                        "Laboratory credits": "2",
+                        "Project / internship credits": "4",
+                        "Total credits": "18",
+                        "Cumulative credits": "146"
+                    },
+                    {
+                        "Semester": "Semester 8",
+                        "Theory credits": "10",
+                        "Laboratory credits": "0",
+                        "Project / internship credits": "4",
+                        "Total credits": "14",
+                        "Cumulative credits": "160"
+                    },
+                    {
+                        "Semester": "Total",
+                        "Theory credits": "122",
+                        "Laboratory credits": "30",
+                        "Project / internship credits": "8",
+                        "Total credits": "160",
+                        "Cumulative credits": "160"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 13,
+                "markdown": "Table 2.6: Course code prefixes\n\n| Prefix   | Subject area                  | Prefix   | Subject area              |\n|----------|-------------------------------|----------|---------------------------|\n| CS       | Computer Science              | ME       | Mechanical Engineering    |\n| DS       | Data Science                  | CE       | Civil Engineering         |\n| IS       | Information Systems           | MA       | Mathematics               |\n| EE       | Electrical Engineering        | HM       | Humanities and Management |\n| EC       | Electronics and Communication | BA       | Business Administration   |",
+                "dataframe": [
+                    {
+                        "Prefix": "ME",
+                        "Subject area": "Mechanical Engineering"
+                    },
+                    {
+                        "Prefix": "CE",
+                        "Subject area": "Civil Engineering"
+                    },
+                    {
+                        "Prefix": "MA",
+                        "Subject area": "Mathematics"
+                    },
+                    {
+                        "Prefix": "HM",
+                        "Subject area": "Humanities and Management"
+                    },
+                    {
+                        "Prefix": "BA",
+                        "Subject area": "Business Administration"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 14,
+                "markdown": "Table 3.1: Conversion of total marks to letter grades and grade points\n\n| Grade   | Description   | Total marks (out of 100)   |   Grade points | Result                                          |\n|---------|---------------|----------------------------|----------------|-------------------------------------------------|\n| O       | Outstanding   | 90 - 100                   |             10 | Pass                                            |\n| A+      | Excellent     | 80 - 89                    |              9 | Pass                                            |\n| A       | Very Good     | 70 - 79                    |              8 | Pass                                            |\n| B+      | Good          | 60 - 69                    |              7 | Pass                                            |\n| B       | Above Average | 50 - 59                    |              6 | Pass                                            |\n| C       | Average       | 45 - 49                    |              5 | Pass (theory); not a pass in laboratory courses |\n| D       | Marginal Pass | 40 - 44                    |              4 | Pass (theory); not a pass in laboratory courses |\n| F       | Fail          | 0 - 39                     |              0 | Fail                                            |",
+                "dataframe": [
+                    {
+                        "Grade": "O",
+                        "Description": "Outstanding",
+                        "Total marks (out of 100)": "90 - 100",
+                        "Grade points": "10",
+                        "Result": "Pass"
+                    },
+                    {
+                        "Grade": "A+",
+                        "Description": "Excellent",
+                        "Total marks (out of 100)": "80 - 89",
+                        "Grade points": "9",
+                        "Result": "Pass"
+                    },
+                    {
+                        "Grade": "A",
+                        "Description": "Very Good",
+                        "Total marks (out of 100)": "70 - 79",
+                        "Grade points": "8",
+                        "Result": "Pass"
+                    },
+                    {
+                        "Grade": "B+",
+                        "Description": "Good",
+                        "Total marks (out of 100)": "60 - 69",
+                        "Grade points": "7",
+                        "Result": "Pass"
+                    },
+                    {
+                        "Grade": "B",
+                        "Description": "Above Average",
+                        "Total marks (out of 100)": "50 - 59",
+                        "Grade points": "6",
+                        "Result": "Pass"
+                    },
+                    {
+                        "Grade": "C",
+                        "Description": "Average",
+                        "Total marks (out of 100)": "45 - 49",
+                        "Grade points": "5",
+                        "Result": "Pass (theory); not a pass in laboratory courses"
+                    },
+                    {
+                        "Grade": "D",
+                        "Description": "Marginal Pass",
+                        "Total marks (out of 100)": "40 - 44",
+                        "Grade points": "4",
+                        "Result": "Pass (theory); not a pass in laboratory courses"
+                    },
+                    {
+                        "Grade": "F",
+                        "Description": "Fail",
+                        "Total marks (out of 100)": "0 - 39",
+                        "Grade points": "0",
+                        "Result": "Fail"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 15,
+                "markdown": "Table 3.2: Special grade codes and their treatment in GPA calculation\n\n| Code   | Meaning                       | When awarded                                                                    | Grade points   | Counted in SGPA/CGPA?   |\n|--------|-------------------------------|---------------------------------------------------------------------------------|----------------|-------------------------|\n| DT     | Detained                      | Attendance below the eligibility floor or condonation refused (see Section 4.4) | 0              | Yes, as 0 points        |\n| AB     | Absent                        | Absent from the final examination without an approved special examination       | 0              | Yes, as 0 points        |\n| I      | Incomplete                    | Result withheld pending completion of an evaluation or a disciplinary inquiry   | -              | No, until resolved      |\n| W      | Withdrawn                     | Course dropped after the add/drop period and before the end of Week 8           | -              | No                      |\n| MP     | Malpractice                   | Examination misconduct finding of Level 2 or higher (see ??)                    | 0              | Yes, as 0 points        |\n| S / U  | Satisfactory / Unsatisfactory | Mandatory non-credit courses                                                    | -              | No                      |",
+                "dataframe": [
+                    {
+                        "Code": "DT",
+                        "Meaning": "Detained",
+                        "When awarded": "Attendance below the eligibility floor or condonation refused (see Section 4.4)",
+                        "Grade points": "0",
+                        "Counted in SGPA/CGPA?": "Yes, as 0 points"
+                    },
+                    {
+                        "Code": "AB",
+                        "Meaning": "Absent",
+                        "When awarded": "Absent from the final examination without an approved special examination",
+                        "Grade points": "0",
+                        "Counted in SGPA/CGPA?": "Yes, as 0 points"
+                    },
+                    {
+                        "Code": "I",
+                        "Meaning": "Incomplete",
+                        "When awarded": "Result withheld pending completion of an evaluation or a disciplinary inquiry",
+                        "Grade points": "-",
+                        "Counted in SGPA/CGPA?": "No, until resolved"
+                    },
+                    {
+                        "Code": "W",
+                        "Meaning": "Withdrawn",
+                        "When awarded": "Course dropped after the add/drop period and before the end of Week 8",
+                        "Grade points": "-",
+                        "Counted in SGPA/CGPA?": "No"
+                    },
+                    {
+                        "Code": "MP",
+                        "Meaning": "Malpractice",
+                        "When awarded": "Examination misconduct finding of Level 2 or higher (see ??)",
+                        "Grade points": "0",
+                        "Counted in SGPA/CGPA?": "Yes, as 0 points"
+                    },
+                    {
+                        "Code": "S / U",
+                        "Meaning": "Satisfactory / Unsatisfactory",
+                        "When awarded": "Mandatory non-credit courses",
+                        "Grade points": "-",
+                        "Counted in SGPA/CGPA?": "No"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 16,
+                "markdown": "Table 3.3: Worked SGPA example for a second-year BT-CS student\n\n| Course   | Title                      |   Credits | Grade   |   Grade points |   Credits × grade points |\n|----------|----------------------------|-----------|---------|----------------|--------------------------|\n| CS201    | Data Structures            |         4 | A+      |              9 |                       36 |\n| CS203    | Discrete Mathematics       |         3 | A       |              8 |                       24 |\n| CS205    | Computer Organization      |         3 | B+      |              7 |                       21 |\n| MA201    | Probability and Statistics |         3 | O       |             10 |                       30 |\n| HM201    | Technical Communication    |         2 | A       |              8 |                       16 |\n| CS207L   | Data Structures Laboratory |         2 | A+      |              9 |                       18 |\n| Total    |                            |        17 |         |                |                      145 |",
+                "dataframe": [
+                    {
+                        "Course": "CS201",
+                        "Title": "Data Structures",
+                        "Credits": "4",
+                        "Grade": "A+",
+                        "Grade points": "9",
+                        "Credits × grade points": "36"
+                    },
+                    {
+                        "Course": "CS203",
+                        "Title": "Discrete Mathematics",
+                        "Credits": "3",
+                        "Grade": "A",
+                        "Grade points": "8",
+                        "Credits × grade points": "24"
+                    },
+                    {
+                        "Course": "CS205",
+                        "Title": "Computer Organization",
+                        "Credits": "3",
+                        "Grade": "B+",
+                        "Grade points": "7",
+                        "Credits × grade points": "21"
+                    },
+                    {
+                        "Course": "MA201",
+                        "Title": "Probability and Statistics",
+                        "Credits": "3",
+                        "Grade": "O",
+                        "Grade points": "10",
+                        "Credits × grade points": "30"
+                    },
+                    {
+                        "Course": "HM201",
+                        "Title": "Technical Communication",
+                        "Credits": "2",
+                        "Grade": "A",
+                        "Grade points": "8",
+                        "Credits × grade points": "16"
+                    },
+                    {
+                        "Course": "CS207L",
+                        "Title": "Data Structures Laboratory",
+                        "Credits": "2",
+                        "Grade": "A+",
+                        "Grade points": "9",
+                        "Credits × grade points": "18"
+                    },
+                    {
+                        "Course": "Total",
+                        "Title": "",
+                        "Credits": "17",
+                        "Grade": "",
+                        "Grade points": "",
+                        "Credits × grade points": "145"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 17,
+                "markdown": "| Standing           | Condition (UG)                                                 | Condition (PG)                                                 | Consequence                                                                                                      |\n|--------------------|----------------------------------------------------------------|----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|\n| Good Standing      | CGPA 5.00 or above                                             | CGPA 6.00 or above                                             | No restriction                                                                                                   |\n| Academic Warning   | SGPA below 5.00 in a semester while CGPA remains 5.00 or above | SGPA below 6.00 in a semester while CGPA remains 6.00 or above | Written warning and mandatory advising meeting                                                                   |\n| Academic Probation | CGPA below 5.00 at the end of a semester                       | CGPA below 6.00 at the end of a semester                       | Credit load capped at 16 (UG) or 12 (PG); ineligible for scholarships (see Scholarship Guidelines (NIT-SG-2026)) |\n| Academic Dismissal | On probation for 3 consecutive semesters                       | On probation for 3 consecutive semesters                       | Required to leave NIT; appeal within 10 working days to the Academic Council                                     |",
+                "dataframe": [
+                    {
+                        "Standing": "Good Standing",
+                        "Condition (UG)": "CGPA 5.00 or above",
+                        "Condition (PG)": "CGPA 6.00 or above",
+                        "Consequence": "No restriction"
+                    },
+                    {
+                        "Standing": "Academic Warning",
+                        "Condition (UG)": "SGPA below 5.00 in a semester while CGPA remains 5.00 or above",
+                        "Condition (PG)": "SGPA below 6.00 in a semester while CGPA remains 6.00 or above",
+                        "Consequence": "Written warning and mandatory advising meeting"
+                    },
+                    {
+                        "Standing": "Academic Probation",
+                        "Condition (UG)": "CGPA below 5.00 at the end of a semester",
+                        "Condition (PG)": "CGPA below 6.00 at the end of a semester",
+                        "Consequence": "Credit load capped at 16 (UG) or 12 (PG); ineligible for scholarships (see Scholarship Guidelines (NIT-SG-2026))"
+                    },
+                    {
+                        "Standing": "Academic Dismissal",
+                        "Condition (UG)": "On probation for 3 consecutive semesters",
+                        "Condition (PG)": "On probation for 3 consecutive semesters",
+                        "Consequence": "Required to leave NIT; appeal within 10 working days to the Academic Council"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 18,
+                "markdown": "Table 4.1: Attendance requirements, condonation ranges and consequences\n\n| Course type                      | Minimum attendance   | Condonation range   | Below the condonation floor                       |\n|----------------------------------|----------------------|---------------------|---------------------------------------------------|\n| Theory courses                   | 75%                  | 65.00% - 74.99%     | Grade DT; not eligible for final examination      |\n| Laboratory and practical courses | 80%                  | 70.00% - 79.99%     | Grade DT; not eligible for end-semester practical |\n| Mandatory non-credit courses     | 75%                  | 65.00% - 74.99%     | Grade U; course must be repeated                  |",
+                "dataframe": [
+                    {
+                        "Course type": "Theory courses",
+                        "Minimum attendance": "75%",
+                        "Condonation range": "65.00% - 74.99%",
+                        "Below the condonation floor": "Grade DT; not eligible for final examination"
+                    },
+                    {
+                        "Course type": "Laboratory and practical courses",
+                        "Minimum attendance": "80%",
+                        "Condonation range": "70.00% - 79.99%",
+                        "Below the condonation floor": "Grade DT; not eligible for end-semester practical"
+                    },
+                    {
+                        "Course type": "Mandatory non-credit courses",
+                        "Minimum attendance": "75%",
+                        "Condonation range": "65.00% - 74.99%",
+                        "Below the condonation floor": "Grade U; course must be repeated"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 19,
+                "markdown": "Table 4.2: Acceptable grounds for condonation and required evidence\n\n| Ground                                 | Evidence required                                                        | Remarks                                                     |\n|----------------------------------------|--------------------------------------------------------------------------|-------------------------------------------------------------|\n| Illness                                | Certificate from a registered medical practitioner with dates of illness | Certificate must cover the absence period                   |\n| Hospitalisation                        | Admission and discharge summary                                          | Considered together with any related recovery period        |\n| Family emergency                       | Written statement and supporting evidence                                | Reviewed by the Dean of Student Affairs                     |\n| Institute activity beyond the duty cap | Letter from the Dean or faculty coordinator                              | Applies only to sessions above the 10% cap                  |\n| Documented technical or system error   | Instructor confirmation and portal log                                   | Corrected attendance may be recorded instead of condonation |",
+                "dataframe": [
+                    {
+                        "Ground": "Illness",
+                        "Evidence required": "Certificate from a registered medical practitioner with dates of illness",
+                        "Remarks": "Certificate must cover the absence period"
+                    },
+                    {
+                        "Ground": "Hospitalisation",
+                        "Evidence required": "Admission and discharge summary",
+                        "Remarks": "Considered together with any related recovery period"
+                    },
+                    {
+                        "Ground": "Family emergency",
+                        "Evidence required": "Written statement and supporting evidence",
+                        "Remarks": "Reviewed by the Dean of Student Affairs"
+                    },
+                    {
+                        "Ground": "Institute activity beyond the duty cap",
+                        "Evidence required": "Letter from the Dean or faculty coordinator",
+                        "Remarks": "Applies only to sessions above the 10% cap"
+                    },
+                    {
+                        "Ground": "Documented technical or system error",
+                        "Evidence required": "Instructor confirmation and portal log",
+                        "Remarks": "Corrected attendance may be recorded instead of condonation"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 20,
+                "markdown": "Table 5.1: Registration timeline for each semester\n\n|   Step | Activity                                      | Timing                                             | Responsible                    |\n|--------|-----------------------------------------------|----------------------------------------------------|--------------------------------|\n|      1 | Course offering list published                | 4 weeks before semester commencement               | Office of Academic Affairs     |\n|      2 | Academic advising meeting                     | Within the 3 weeks before commencement             | Faculty advisor                |\n|      3 | Pre-registration window (course selection)    | Opens 3 weeks before commencement; open for 7 days | Student                        |\n|      4 | Fee invoice generated                         | 2 weeks before commencement                        | Accounts Office                |\n|      5 | Fee payment due date                          | Friday before the first teaching week              | Student                        |\n|      6 | Registration confirmed                        | On receipt of payment                              | Office of Academic Affairs     |\n|      7 | Add/drop of courses                           | First 5 working days of Week 1                     | Student, with advisor approval |\n|      8 | Late payment period (late fee applies)        | Up to 15 calendar days after the due date          | Student                        |\n|      9 | Registration cancelled if unpaid              | On day 16 after the due date                       | Office of Academic Affairs     |\n|     10 | Last date to withdraw from a course (grade W) | End of Week 8                                      | Student, with advisor approval |",
+                "dataframe": [
+                    {
+                        "Step": "1",
+                        "Activity": "Course offering list published",
+                        "Timing": "4 weeks before semester commencement",
+                        "Responsible": "Office of Academic Affairs"
+                    },
+                    {
+                        "Step": "2",
+                        "Activity": "Academic advising meeting",
+                        "Timing": "Within the 3 weeks before commencement",
+                        "Responsible": "Faculty advisor"
+                    },
+                    {
+                        "Step": "3",
+                        "Activity": "Pre-registration window (course selection)",
+                        "Timing": "Opens 3 weeks before commencement; open for 7 days",
+                        "Responsible": "Student"
+                    },
+                    {
+                        "Step": "4",
+                        "Activity": "Fee invoice generated",
+                        "Timing": "2 weeks before commencement",
+                        "Responsible": "Accounts Office"
+                    },
+                    {
+                        "Step": "5",
+                        "Activity": "Fee payment due date",
+                        "Timing": "Friday before the first teaching week",
+                        "Responsible": "Student"
+                    },
+                    {
+                        "Step": "6",
+                        "Activity": "Registration confirmed",
+                        "Timing": "On receipt of payment",
+                        "Responsible": "Office of Academic Affairs"
+                    },
+                    {
+                        "Step": "7",
+                        "Activity": "Add/drop of courses",
+                        "Timing": "First 5 working days of Week 1",
+                        "Responsible": "Student, with advisor approval"
+                    },
+                    {
+                        "Step": "8",
+                        "Activity": "Late payment period (late fee applies)",
+                        "Timing": "Up to 15 calendar days after the due date",
+                        "Responsible": "Student"
+                    },
+                    {
+                        "Step": "9",
+                        "Activity": "Registration cancelled if unpaid",
+                        "Timing": "On day 16 after the due date",
+                        "Responsible": "Office of Academic Affairs"
+                    },
+                    {
+                        "Step": "10",
+                        "Activity": "Last date to withdraw from a course (grade W)",
+                        "Timing": "End of Week 8",
+                        "Responsible": "Student, with advisor approval"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 21,
+                "markdown": "Table 5.2: Minimum and maximum credit load per semester\n\n| Student category                                    | Minimum credits   | Normal maximum    | Maximum with approval                  |\n|-----------------------------------------------------|-------------------|-------------------|----------------------------------------|\n| UG, good standing                                   | 16                | 24                | 27 (CGPA 8.00 or above; Dean approval) |\n| PG, good standing                                   | 12                | 20                | 22 (CGPA 8.00 or above; Dean approval) |\n| UG, academic probation                              | -                 | 16                | Not permitted                          |\n| PG, academic probation                              | -                 | 12                | Not permitted                          |\n| Final-semester student with fewer credits remaining | None              | Credits remaining | Not applicable                         |",
+                "dataframe": [
+                    {
+                        "Student category": "UG, good standing",
+                        "Minimum credits": "16",
+                        "Normal maximum": "24",
+                        "Maximum with approval": "27 (CGPA 8.00 or above; Dean approval)"
+                    },
+                    {
+                        "Student category": "PG, good standing",
+                        "Minimum credits": "12",
+                        "Normal maximum": "20",
+                        "Maximum with approval": "22 (CGPA 8.00 or above; Dean approval)"
+                    },
+                    {
+                        "Student category": "UG, academic probation",
+                        "Minimum credits": "-",
+                        "Normal maximum": "16",
+                        "Maximum with approval": "Not permitted"
+                    },
+                    {
+                        "Student category": "PG, academic probation",
+                        "Minimum credits": "-",
+                        "Normal maximum": "12",
+                        "Maximum with approval": "Not permitted"
+                    },
+                    {
+                        "Student category": "Final-semester student with fewer credits remaining",
+                        "Minimum credits": "None",
+                        "Normal maximum": "Credits remaining",
+                        "Maximum with approval": "Not applicable"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 22,
+                "markdown": "Table 6.1: Minimum credits earned to register for a semester\n\n| Programme group                              |   To register for Semester 3 | To register for Semester 5   | To register for Semester 7   |\n|----------------------------------------------|------------------------------|------------------------------|------------------------------|\n| Four-year B.Tech programmes                  |                           30 | 60                           | 90                           |\n| Three-year B.Sc programme (BS-AM)            |                           30 | 60                           | Not applicable               |\n| Two-year PG programmes (MT-CS, MT-SE, MB-TM) |                           27 | Not applicable               | Not applicable               |",
+                "dataframe": [
+                    {
+                        "Programme group": "Four-year B.Tech programmes",
+                        "To register for Semester 3": "30",
+                        "To register for Semester 5": "60",
+                        "To register for Semester 7": "90"
+                    },
+                    {
+                        "Programme group": "Three-year B.Sc programme (BS-AM)",
+                        "To register for Semester 3": "30",
+                        "To register for Semester 5": "60",
+                        "To register for Semester 7": "Not applicable"
+                    },
+                    {
+                        "Programme group": "Two-year PG programmes (MT-CS, MT-SE, MB-TM)",
+                        "To register for Semester 3": "27",
+                        "To register for Semester 5": "Not applicable",
+                        "To register for Semester 7": "Not applicable"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 23,
+                "markdown": "Table 6.2: Nominal and maximum duration by programme\n\n| Programme code   | Level   |   Nominal duration (years) |   Maximum duration (years) |   Latest semester count |\n|------------------|---------|----------------------------|----------------------------|-------------------------|\n| BT-CS            | UG      |                          4 |                          6 |                      12 |\n| BT-IS            | UG      |                          4 |                          6 |                      12 |\n| BT-DS            | UG      |                          4 |                          6 |                      12 |\n| BT-EE            | UG      |                          4 |                          6 |                      12 |\n| BT-EC            | UG      |                          4 |                          6 |                      12 |\n| BT-ME            | UG      |                          4 |                          6 |                      12 |\n| BT-CE            | UG      |                          4 |                          6 |                      12 |\n| BS-AM            | UG      |                          3 |                          5 |                      10 |\n| MT-CS            | PG      |                          2 |                          3 |                       6 |\n| MT-SE            | PG      |                          2 |                          3 |                       6 |\n| MB-TM            | PG      |                          2 |                          3 |                       6 |",
+                "dataframe": [
+                    {
+                        "Programme code": "BT-CS",
+                        "Level": "UG",
+                        "Nominal duration (years)": "4",
+                        "Maximum duration (years)": "6",
+                        "Latest semester count": "12"
+                    },
+                    {
+                        "Programme code": "BT-IS",
+                        "Level": "UG",
+                        "Nominal duration (years)": "4",
+                        "Maximum duration (years)": "6",
+                        "Latest semester count": "12"
+                    },
+                    {
+                        "Programme code": "BT-DS",
+                        "Level": "UG",
+                        "Nominal duration (years)": "4",
+                        "Maximum duration (years)": "6",
+                        "Latest semester count": "12"
+                    },
+                    {
+                        "Programme code": "BT-EE",
+                        "Level": "UG",
+                        "Nominal duration (years)": "4",
+                        "Maximum duration (years)": "6",
+                        "Latest semester count": "12"
+                    },
+                    {
+                        "Programme code": "BT-EC",
+                        "Level": "UG",
+                        "Nominal duration (years)": "4",
+                        "Maximum duration (years)": "6",
+                        "Latest semester count": "12"
+                    },
+                    {
+                        "Programme code": "BT-ME",
+                        "Level": "UG",
+                        "Nominal duration (years)": "4",
+                        "Maximum duration (years)": "6",
+                        "Latest semester count": "12"
+                    },
+                    {
+                        "Programme code": "BT-CE",
+                        "Level": "UG",
+                        "Nominal duration (years)": "4",
+                        "Maximum duration (years)": "6",
+                        "Latest semester count": "12"
+                    },
+                    {
+                        "Programme code": "BS-AM",
+                        "Level": "UG",
+                        "Nominal duration (years)": "3",
+                        "Maximum duration (years)": "5",
+                        "Latest semester count": "10"
+                    },
+                    {
+                        "Programme code": "MT-CS",
+                        "Level": "PG",
+                        "Nominal duration (years)": "2",
+                        "Maximum duration (years)": "3",
+                        "Latest semester count": "6"
+                    },
+                    {
+                        "Programme code": "MT-SE",
+                        "Level": "PG",
+                        "Nominal duration (years)": "2",
+                        "Maximum duration (years)": "3",
+                        "Latest semester count": "6"
+                    },
+                    {
+                        "Programme code": "MB-TM",
+                        "Level": "PG",
+                        "Nominal duration (years)": "2",
+                        "Maximum duration (years)": "3",
+                        "Latest semester count": "6"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 24,
+                "markdown": "Table 7.1: Conditions for graduation\n\n| Requirement                            | UG programmes                                         | PG programmes                                         |\n|----------------------------------------|-------------------------------------------------------|-------------------------------------------------------|\n| Minimum credits earned                 | As in Table 2.1 (120 - 164)                           | As in Table 2.1 (72 - 80)                             |\n| Minimum CGPA                           | 5.00                                                  | 6.00                                                  |\n| Outstanding F, DT, AB, MP or I grades  | None                                                  | None                                                  |\n| Mandatory non-credit courses           | All marked S                                          | All marked S                                          |\n| Final-year project                     | Passed with at least 50 total marks                   | Dissertation passed with at least 50 total marks      |\n| Industrial internship (B.Tech)         | At least 6 weeks, marked Satisfactory                 | Not applicable                                        |\n| Completion within the maximum duration | See Table 6.2                                         | See Table 6.2                                         |\n| Clearance of dues                      | No dues at Accounts, Library, Hostel and Laboratories | No dues at Accounts, Library, Hostel and Laboratories |\n| Pending disciplinary action            | No unresolved Class II or Class III case              | No unresolved Class II or Class III case              |",
+                "dataframe": [
+                    {
+                        "Requirement": "Minimum credits earned",
+                        "UG programmes": "As in Table 2.1 (120 - 164)",
+                        "PG programmes": "As in Table 2.1 (72 - 80)"
+                    },
+                    {
+                        "Requirement": "Minimum CGPA",
+                        "UG programmes": "5.00",
+                        "PG programmes": "6.00"
+                    },
+                    {
+                        "Requirement": "Outstanding F, DT, AB, MP or I grades",
+                        "UG programmes": "None",
+                        "PG programmes": "None"
+                    },
+                    {
+                        "Requirement": "Mandatory non-credit courses",
+                        "UG programmes": "All marked S",
+                        "PG programmes": "All marked S"
+                    },
+                    {
+                        "Requirement": "Final-year project",
+                        "UG programmes": "Passed with at least 50 total marks",
+                        "PG programmes": "Dissertation passed with at least 50 total marks"
+                    },
+                    {
+                        "Requirement": "Industrial internship (B.Tech)",
+                        "UG programmes": "At least 6 weeks, marked Satisfactory",
+                        "PG programmes": "Not applicable"
+                    },
+                    {
+                        "Requirement": "Completion within the maximum duration",
+                        "UG programmes": "See Table 6.2",
+                        "PG programmes": "See Table 6.2"
+                    },
+                    {
+                        "Requirement": "Clearance of dues",
+                        "UG programmes": "No dues at Accounts, Library, Hostel and Laboratories",
+                        "PG programmes": "No dues at Accounts, Library, Hostel and Laboratories"
+                    },
+                    {
+                        "Requirement": "Pending disciplinary action",
+                        "UG programmes": "No unresolved Class II or Class III case",
+                        "PG programmes": "No unresolved Class II or Class III case"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 25,
+                "markdown": "Table 7.2: Degree classification by CGPA\n\n| Class                        | CGPA (UG)      | CGPA (PG)      | Additional condition                                                            |\n|------------------------------|----------------|----------------|---------------------------------------------------------------------------------|\n| First Class with Distinction | 8.00 and above | 8.00 and above | Completed within the nominal duration with no F, DT or AB grade in any semester |\n| First Class                  | 6.50 - 7.99    | 7.00 - 7.99    | None                                                                            |\n| Second Class                 | 5.00 - 6.49    | 6.00 - 6.99    | None                                                                            |",
+                "dataframe": [
+                    {
+                        "Class": "First Class with Distinction",
+                        "CGPA (UG)": "8.00 and above",
+                        "CGPA (PG)": "8.00 and above",
+                        "Additional condition": "Completed within the nominal duration with no F, DT or AB grade in any semester"
+                    },
+                    {
+                        "Class": "First Class",
+                        "CGPA (UG)": "6.50 - 7.99",
+                        "CGPA (PG)": "7.00 - 7.99",
+                        "Additional condition": "None"
+                    },
+                    {
+                        "Class": "Second Class",
+                        "CGPA (UG)": "5.00 - 6.49",
+                        "CGPA (PG)": "6.00 - 6.99",
+                        "Additional condition": "None"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 26,
+                "markdown": "Table A.1: Quick reference of academic thresholds\n\n| Parameter                              | Value                                                   | Defined in   |\n|----------------------------------------|---------------------------------------------------------|--------------|\n| Minimum attendance, theory course      | 75%                                                     | Section 4.2  |\n| Minimum attendance, laboratory course  | 80%                                                     | Section 4.2  |\n| Condonation floor, theory / laboratory | 65% / 70%                                               | Table 4.1    |\n| Condonation limit                      | 2 courses per semester; 6 per programme                 | Section 4.3  |\n| Condonation application deadline       | 3 working days after the shortage list (end of Week 14) | Section 4.3  |\n| Institute-duty attendance cap          | 10% of sessions conducted                               | Section 4.1  |\n| Course withdrawal deadline             | End of Week 8                                           | Table 1.1    |\n| Pass mark, theory (total)              | 40 out of 100                                           | ??           |\n| Pass mark, laboratory (total)          | 50 out of 100                                           | ??           |\n| Maximum attempts per course            | 3 (1 regular + 2 supplementary)                         | Section 5.5  |\n| Minimum CGPA to graduate (UG / PG)     | 5.00 / 6.00                                             | Table 7.1    |\n| Credit load, UG (min / normal max)     | 16 / 24                                                 | Table 5.2    |\n| Maximum duration (UG / PG)             | Nominal + 2 years / nominal + 1 year                    | Section 6.3  |",
+                "dataframe": [
+                    {
+                        "Parameter": "Minimum attendance, theory course",
+                        "Value": "75%",
+                        "Defined in": "Section 4.2"
+                    },
+                    {
+                        "Parameter": "Minimum attendance, laboratory course",
+                        "Value": "80%",
+                        "Defined in": "Section 4.2"
+                    },
+                    {
+                        "Parameter": "Condonation floor, theory / laboratory",
+                        "Value": "65% / 70%",
+                        "Defined in": "Table 4.1"
+                    },
+                    {
+                        "Parameter": "Condonation limit",
+                        "Value": "2 courses per semester; 6 per programme",
+                        "Defined in": "Section 4.3"
+                    },
+                    {
+                        "Parameter": "Condonation application deadline",
+                        "Value": "3 working days after the shortage list (end of Week 14)",
+                        "Defined in": "Section 4.3"
+                    },
+                    {
+                        "Parameter": "Institute-duty attendance cap",
+                        "Value": "10% of sessions conducted",
+                        "Defined in": "Section 4.1"
+                    },
+                    {
+                        "Parameter": "Course withdrawal deadline",
+                        "Value": "End of Week 8",
+                        "Defined in": "Table 1.1"
+                    },
+                    {
+                        "Parameter": "Pass mark, theory (total)",
+                        "Value": "40 out of 100",
+                        "Defined in": "??"
+                    },
+                    {
+                        "Parameter": "Pass mark, laboratory (total)",
+                        "Value": "50 out of 100",
+                        "Defined in": "??"
+                    },
+                    {
+                        "Parameter": "Maximum attempts per course",
+                        "Value": "3 (1 regular + 2 supplementary)",
+                        "Defined in": "Section 5.5"
+                    },
+                    {
+                        "Parameter": "Minimum CGPA to graduate (UG / PG)",
+                        "Value": "5.00 / 6.00",
+                        "Defined in": "Table 7.1"
+                    },
+                    {
+                        "Parameter": "Credit load, UG (min / normal max)",
+                        "Value": "16 / 24",
+                        "Defined in": "Table 5.2"
+                    },
+                    {
+                        "Parameter": "Maximum duration (UG / PG)",
+                        "Value": "Nominal + 2 years / nominal + 1 year",
+                        "Defined in": "Section 6.3"
+                    }
+                ],
+                "caption": null
+            }
+        ],
+        "pictures": []
+    },
+    {
+        "file_name": "03_examination_guidelines.pdf",
+        "file_path": "D:\\RAG\\data\\pdfs\\03_examination_guidelines.pdf",
+        "num_pages": 5,
+        "file_size_bytes": 34791,
+        "paragraphs": [],
+        "headings": [
+            {
+                "label": "SECTION_HEADER",
+                "text": "NORTHBRIDGE INSTITUTE OF TECHNOLOGY"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "Examination Guidelines"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "Table of Contents"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "1. Examination Framework"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "2. Examination Eligibility"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "3. Examination Pattern"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "4. Before the Examination"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "5. Permitted and Prohibited Items"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "6. Examination Conduct"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "7. Misconduct Process"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "8. Passing Requirements"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "9. Revaluation and Result Review"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "10. Supplementary Examination"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "11. Special Circumstances"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "12. Related Documents"
+            }
+        ],
+        "list_items": [
+            "Examination Framework",
+            "Examination Eligibility",
+            "Examination Pattern",
+            "Before the Examination",
+            "Permitted and Prohibited Items",
+            "Examination Conduct",
+            "Misconduct Process",
+            "Passing Requirements",
+            "Revaluation and Result Review",
+            "Supplementary Examination",
+            "Special Circumstances",
+            "Related Documents",
+            "1 Check the examination timetable and venue.",
+            "2 Carry the required student identification.",
+            "3 Arrive at the venue before the reporting time.",
+            "4 Bring only permitted materials.",
+            "5 Follow seating and invigilation instructions.",
+            "Do not access unauthorized materials.",
+            "Do not copy another candidate's work.",
+            "Do not attempt to obtain advance access to examination content.",
+            "Do not impersonate another student.",
+            "Do not remove examination materials unless instructed.",
+            "1 Obtain the published review window.",
+            "2 Submit the request using the approved form.",
+            "3 Pay any applicable review fee listed in the Fee Structure.",
+            "4 Retain the submission confirmation.",
+            "5 Review the updated result when issued."
+        ],
+        "tables": [
+            {
+                "table_id": 1,
+                "markdown": "| Condition           | Standard Requirement              | Evidence / Record       |\n|---------------------|-----------------------------------|-------------------------|\n| Course Registration | Student registered for the course | Registration record     |\n| Attendance          | Normally at least 75%             | Attendance record       |\n| Academic Status     | No applicable restriction         | Academic record         |\n| Examination Form    | Submitted where required          | Submission confirmation |",
+                "dataframe": [
+                    {
+                        "Condition": "Course Registration",
+                        "Standard Requirement": "Student registered for the course",
+                        "Evidence / Record": "Registration record"
+                    },
+                    {
+                        "Condition": "Attendance",
+                        "Standard Requirement": "Normally at least 75%",
+                        "Evidence / Record": "Attendance record"
+                    },
+                    {
+                        "Condition": "Academic Status",
+                        "Standard Requirement": "No applicable restriction",
+                        "Evidence / Record": "Academic record"
+                    },
+                    {
+                        "Condition": "Examination Form",
+                        "Standard Requirement": "Submitted where required",
+                        "Evidence / Record": "Submission confirmation"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 2,
+                "markdown": "| Component              | Typical Weight   |   Maximum Marks |\n|------------------------|------------------|-----------------|\n| Internal Assessment    | 20%              |              20 |\n| Laboratory / Practical | 20%              |              20 |\n| Final Examination      | 60%              |              60 |\n| Total                  | 100%             |             100 |",
+                "dataframe": [
+                    {
+                        "Component": "Internal Assessment",
+                        "Typical Weight": "20%",
+                        "Maximum Marks": "20"
+                    },
+                    {
+                        "Component": "Laboratory / Practical",
+                        "Typical Weight": "20%",
+                        "Maximum Marks": "20"
+                    },
+                    {
+                        "Component": "Final Examination",
+                        "Typical Weight": "60%",
+                        "Maximum Marks": "60"
+                    },
+                    {
+                        "Component": "Total",
+                        "Typical Weight": "100%",
+                        "Maximum Marks": "100"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 3,
+                "markdown": "| Item                        | Status                       | Notes                          |\n|-----------------------------|------------------------------|--------------------------------|\n| Student ID                  | Permitted / Required         | Present when requested         |\n| Approved stationery         | Permitted                    | Subject to course instructions |\n| Non-programmable calculator | Conditional                  | Only where explicitly allowed  |\n| Mobile phone                | Prohibited during assessment | Must be stored as instructed   |\n| Unapproved notes            | Prohibited                   | Unless explicitly authorized   |\n| Smart wearable device       | Prohibited                   | Must be stored as instructed   |",
+                "dataframe": [
+                    {
+                        "Item": "Student ID",
+                        "Status": "Permitted / Required",
+                        "Notes": "Present when requested"
+                    },
+                    {
+                        "Item": "Approved stationery",
+                        "Status": "Permitted",
+                        "Notes": "Subject to course instructions"
+                    },
+                    {
+                        "Item": "Non-programmable calculator",
+                        "Status": "Conditional",
+                        "Notes": "Only where explicitly allowed"
+                    },
+                    {
+                        "Item": "Mobile phone",
+                        "Status": "Prohibited during assessment",
+                        "Notes": "Must be stored as instructed"
+                    },
+                    {
+                        "Item": "Unapproved notes",
+                        "Status": "Prohibited",
+                        "Notes": "Unless explicitly authorized"
+                    },
+                    {
+                        "Item": "Smart wearable device",
+                        "Status": "Prohibited",
+                        "Notes": "Must be stored as instructed"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 4,
+                "markdown": "| Result   | Overall Mark   | General Outcome   |\n|----------|----------------|-------------------|\n| A+       | 90-100         | Pass              |\n| A        | 80-89          | Pass              |\n| B        | 70-79          | Pass              |\n| C        | 60-69          | Pass              |\n| D        | 50-59          | Pass              |\n| E        | 40-49          | Pass              |\n| F        | Below 40       | Fail              |",
+                "dataframe": [
+                    {
+                        "Result": "A+",
+                        "Overall Mark": "90-100",
+                        "General Outcome": "Pass"
+                    },
+                    {
+                        "Result": "A",
+                        "Overall Mark": "80-89",
+                        "General Outcome": "Pass"
+                    },
+                    {
+                        "Result": "B",
+                        "Overall Mark": "70-79",
+                        "General Outcome": "Pass"
+                    },
+                    {
+                        "Result": "C",
+                        "Overall Mark": "60-69",
+                        "General Outcome": "Pass"
+                    },
+                    {
+                        "Result": "D",
+                        "Overall Mark": "50-59",
+                        "General Outcome": "Pass"
+                    },
+                    {
+                        "Result": "E",
+                        "Overall Mark": "40-49",
+                        "General Outcome": "Pass"
+                    },
+                    {
+                        "Result": "F",
+                        "Overall Mark": "Below 40",
+                        "General Outcome": "Fail"
+                    }
+                ],
+                "caption": null
+            }
+        ],
+        "pictures": []
+    },
+    {
+        "file_name": "04_fee_structure.pdf",
+        "file_path": "D:\\RAG\\data\\pdfs\\04_fee_structure.pdf",
+        "num_pages": 5,
+        "file_size_bytes": 34567,
+        "paragraphs": [],
+        "headings": [
+            {
+                "label": "SECTION_HEADER",
+                "text": "NORTHBRIDGE INSTITUTE OF TECHNOLOGY"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "Fee Structure"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "Table of Contents"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "1. Fee Structure Overview"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "2. Tuition Fees"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "3. Student Service Charges"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "4. Examination Charges"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "5. Hostel Charges"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "6. Transportation Charges"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "7. Payment Schedule"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "8. Refund and Adjustment Principles"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "9. Late Payment"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "10. Financial Clearance"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "11. Relationship to Other Documents"
+            }
+        ],
+        "list_items": [
+            "Fee Structure Overview",
+            "Tuition Fees",
+            "Student Service Charges",
+            "Examination Charges",
+            "Hostel Charges",
+            "Transportation Charges",
+            "Payment Schedule",
+            "Refund and Adjustment Principles",
+            "Late Payment",
+            "Financial Clearance",
+            "Relationship to Other Documents",
+            "1 Review the account statement.",
+            "2 Resolve outstanding balances or approved payment arrangements.",
+            "3 Return required institutional property.",
+            "4 Complete applicable library and accommodation clearances.",
+            "5 Confirm the final clearance status."
+        ],
+        "tables": [
+            {
+                "table_id": 1,
+                "markdown": "| Program Category       |   Annual Tuition (NCU) | Payment Frequency              | Notes                      |\n|------------------------|------------------------|--------------------------------|----------------------------|\n| Computer Science       |                120,000 | Annual / approved installments | Illustrative standard rate |\n| Information Systems    |                112,000 | Annual / approved installments | Illustrative standard rate |\n| Data Analytics         |                116,000 | Annual / approved installments | Illustrative standard rate |\n| Engineering Technology |                124,000 | Annual / approved installments | Illustrative standard rate |\n| Business Technology    |                108,000 | Annual / approved installments | Illustrative standard rate |",
+                "dataframe": [
+                    {
+                        "Program Category": "Computer Science",
+                        "Annual Tuition (NCU)": "120,000",
+                        "Payment Frequency": "Annual / approved installments",
+                        "Notes": "Illustrative standard rate"
+                    },
+                    {
+                        "Program Category": "Information Systems",
+                        "Annual Tuition (NCU)": "112,000",
+                        "Payment Frequency": "Annual / approved installments",
+                        "Notes": "Illustrative standard rate"
+                    },
+                    {
+                        "Program Category": "Data Analytics",
+                        "Annual Tuition (NCU)": "116,000",
+                        "Payment Frequency": "Annual / approved installments",
+                        "Notes": "Illustrative standard rate"
+                    },
+                    {
+                        "Program Category": "Engineering Technology",
+                        "Annual Tuition (NCU)": "124,000",
+                        "Payment Frequency": "Annual / approved installments",
+                        "Notes": "Illustrative standard rate"
+                    },
+                    {
+                        "Program Category": "Business Technology",
+                        "Annual Tuition (NCU)": "108,000",
+                        "Payment Frequency": "Annual / approved installments",
+                        "Notes": "Illustrative standard rate"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 2,
+                "markdown": "| Charge                    |   Amount (NCU) | Frequency               |\n|---------------------------|----------------|-------------------------|\n| Library Services          |          2,000 | Annual                  |\n| Technology Services       |          3,500 | Annual                  |\n| Student Activities        |          1,500 | Annual                  |\n| Laboratory Services       |          6,000 | Annual where applicable |\n| Identity Card Replacement |            300 | Per replacement         |\n| Transcript Request        |            250 | Per request             |",
+                "dataframe": [
+                    {
+                        "Charge": "Library Services",
+                        "Amount (NCU)": "2,000",
+                        "Frequency": "Annual"
+                    },
+                    {
+                        "Charge": "Technology Services",
+                        "Amount (NCU)": "3,500",
+                        "Frequency": "Annual"
+                    },
+                    {
+                        "Charge": "Student Activities",
+                        "Amount (NCU)": "1,500",
+                        "Frequency": "Annual"
+                    },
+                    {
+                        "Charge": "Laboratory Services",
+                        "Amount (NCU)": "6,000",
+                        "Frequency": "Annual where applicable"
+                    },
+                    {
+                        "Charge": "Identity Card Replacement",
+                        "Amount (NCU)": "300",
+                        "Frequency": "Per replacement"
+                    },
+                    {
+                        "Charge": "Transcript Request",
+                        "Amount (NCU)": "250",
+                        "Frequency": "Per request"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 3,
+                "markdown": "| Service                      | Amount (NCU)                          | When Applied                      |\n|------------------------------|---------------------------------------|-----------------------------------|\n| Regular Examination          | Included in standard academic charges | Normal scheduled examination      |\n| Supplementary Examination    | 800                                   | Eligible supplementary attempt    |\n| Revaluation Request          | 500                                   | Per course request                |\n| Result Transcript - Standard | 250                                   | Per request                       |\n| Late Examination Form        | 300                                   | Where late submission is approved |",
+                "dataframe": [
+                    {
+                        "Service": "Regular Examination",
+                        "Amount (NCU)": "Included in standard academic charges",
+                        "When Applied": "Normal scheduled examination"
+                    },
+                    {
+                        "Service": "Supplementary Examination",
+                        "Amount (NCU)": "800",
+                        "When Applied": "Eligible supplementary attempt"
+                    },
+                    {
+                        "Service": "Revaluation Request",
+                        "Amount (NCU)": "500",
+                        "When Applied": "Per course request"
+                    },
+                    {
+                        "Service": "Result Transcript - Standard",
+                        "Amount (NCU)": "250",
+                        "When Applied": "Per request"
+                    },
+                    {
+                        "Service": "Late Examination Form",
+                        "Amount (NCU)": "300",
+                        "When Applied": "Where late submission is approved"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 4,
+                "markdown": "| Room Type            |   Annual Accommodation (NCU) |   Utilities Deposit (NCU) | Notes                                 |\n|----------------------|------------------------------|---------------------------|---------------------------------------|\n| Shared - Four Person |                       48,000 |                     3,000 | Standard shared room                  |\n| Shared - Two Person  |                       66,000 |                     3,000 | Two residents                         |\n| Single Room          |                       90,000 |                     3,000 | Subject to availability               |\n| Accessible Room      |                       66,000 |                     3,000 | Allocation subject to support process |",
+                "dataframe": [
+                    {
+                        "Room Type": "Shared - Four Person",
+                        "Annual Accommodation (NCU)": "48,000",
+                        "Utilities Deposit (NCU)": "3,000",
+                        "Notes": "Standard shared room"
+                    },
+                    {
+                        "Room Type": "Shared - Two Person",
+                        "Annual Accommodation (NCU)": "66,000",
+                        "Utilities Deposit (NCU)": "3,000",
+                        "Notes": "Two residents"
+                    },
+                    {
+                        "Room Type": "Single Room",
+                        "Annual Accommodation (NCU)": "90,000",
+                        "Utilities Deposit (NCU)": "3,000",
+                        "Notes": "Subject to availability"
+                    },
+                    {
+                        "Room Type": "Accessible Room",
+                        "Annual Accommodation (NCU)": "66,000",
+                        "Utilities Deposit (NCU)": "3,000",
+                        "Notes": "Allocation subject to support process"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 5,
+                "markdown": "| Route Category   |   Annual Pass (NCU) |   Semester Pass (NCU) |\n|------------------|---------------------|-----------------------|\n| Route A          |              18,000 |                10,000 |\n| Route B          |              22,000 |                12,000 |\n| Route C          |              26,000 |                14,000 |\n| Route D          |              30,000 |                16,000 |",
+                "dataframe": [
+                    {
+                        "Route Category": "Route A",
+                        "Annual Pass (NCU)": "18,000",
+                        "Semester Pass (NCU)": "10,000"
+                    },
+                    {
+                        "Route Category": "Route B",
+                        "Annual Pass (NCU)": "22,000",
+                        "Semester Pass (NCU)": "12,000"
+                    },
+                    {
+                        "Route Category": "Route C",
+                        "Annual Pass (NCU)": "26,000",
+                        "Semester Pass (NCU)": "14,000"
+                    },
+                    {
+                        "Route Category": "Route D",
+                        "Annual Pass (NCU)": "30,000",
+                        "Semester Pass (NCU)": "16,000"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 6,
+                "markdown": "| Installment   | Indicative Due Point           | Share of Annual Tuition   |\n|---------------|--------------------------------|---------------------------|\n| Installment 1 | Before semester 1 registration | 50%                       |\n| Installment 2 | Before semester 2 registration | 50%                       |",
+                "dataframe": [
+                    {
+                        "Installment": "Installment 1",
+                        "Indicative Due Point": "Before semester 1 registration",
+                        "Share of Annual Tuition": "50%"
+                    },
+                    {
+                        "Installment": "Installment 2",
+                        "Indicative Due Point": "Before semester 2 registration",
+                        "Share of Annual Tuition": "50%"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 7,
+                "markdown": "| Situation                                 | Illustrative Treatment                                         |\n|-------------------------------------------|----------------------------------------------------------------|\n| Program withdrawal before registration    | May be eligible for adjustment subject to published conditions |\n| Withdrawal after academic activity begins | Adjustment depends on applicable schedule                      |\n| Duplicate payment                         | May be reviewed for correction                                 |\n| Processed service fee                     | May be non-refundable                                          |\n| Security / utility deposit                | Returned subject to applicable clearance and deductions        |",
+                "dataframe": [
+                    {
+                        "0": "Situation",
+                        "1": "Illustrative Treatment"
+                    },
+                    {
+                        "0": "Program withdrawal before registration",
+                        "1": "May be eligible for adjustment subject to published conditions"
+                    },
+                    {
+                        "0": "Withdrawal after academic activity begins",
+                        "1": "Adjustment depends on applicable schedule"
+                    },
+                    {
+                        "0": "Duplicate payment",
+                        "1": "May be reviewed for correction"
+                    },
+                    {
+                        "0": "Processed service fee",
+                        "1": "May be non-refundable"
+                    },
+                    {
+                        "0": "Security / utility deposit",
+                        "1": "Returned subject to applicable clearance and deductions"
+                    }
+                ],
+                "caption": null
+            }
+        ],
+        "pictures": []
+    },
+    {
+        "file_name": "05_scholarship_guidelines.pdf",
+        "file_path": "D:\\RAG\\data\\pdfs\\05_scholarship_guidelines.pdf",
+        "num_pages": 5,
+        "file_size_bytes": 35300,
+        "paragraphs": [],
+        "headings": [
+            {
+                "label": "SECTION_HEADER",
+                "text": "NORTHBRIDGE INSTITUTE OF TECHNOLOGY"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "Scholarship Guidelines"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "Table of Contents"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "1. Scholarship Framework"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "2. Scholarship Categories"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "3. Academic Excellence Scholarship"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "4. Progress Award"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "5. Need Support Award"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "6. Application Process"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "7. Renewal Requirements"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "8. Scholarship Amount and Fee Interaction"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "9. Disqualification and Suspension"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "10. Appeal and Review"
+            },
+            {
+                "label": "SECTION_HEADER",
+                "text": "11. Related Documents"
+            }
+        ],
+        "list_items": [
+            "Scholarship Framework",
+            "Scholarship Categories",
+            "Academic Excellence Scholarship",
+            "Progress Award",
+            "Need Support Award",
+            "Application Process",
+            "Renewal Requirements",
+            "Scholarship Amount and Fee Interaction",
+            "Disqualification and Suspension",
+            "Appeal and Review",
+            "Related Documents",
+            "Submit the application within the published period.",
+            "Provide the requested supporting documentation.",
+            "Maintain the academic and attendance conditions stated in the award notice.",
+            "Notify the scholarship service if a material circumstance changes.",
+            "1 Review the scholarship categories and eligibility criteria.",
+            "2 Select the appropriate application category.",
+            "3 Complete the application form.",
+            "4 Attach required supporting documents.",
+            "5 Submit before the published deadline.",
+            "6 Respond to clarification requests if required.",
+            "7 Review the award decision and any conditions.",
+            "Failure to meet renewal criteria.",
+            "Withdrawal from the program.",
+            "Unresolved academic misconduct finding.",
+            "Material misrepresentation in an application.",
+            "Failure to provide required renewal documentation."
+        ],
+        "tables": [
+            {
+                "table_id": 1,
+                "markdown": "| Scholarship          | Primary Basis                        |   Annual Award (NCU) | Typical Availability   |\n|----------------------|--------------------------------------|----------------------|------------------------|\n| Academic Excellence  | Academic performance                 |               30,000 | Limited                |\n| Progress Award       | Improved academic performance        |               18,000 | Limited                |\n| Participation Award  | Approved institutional participation |               12,000 | Limited                |\n| Need Support Award   | Documented financial need            |               24,000 | Limited                |\n| Access Support Award | Approved access-related criteria     |               20,000 | Limited                |",
+                "dataframe": [
+                    {
+                        "Scholarship": "Academic Excellence",
+                        "Primary Basis": "Academic performance",
+                        "Annual Award (NCU)": "30,000",
+                        "Typical Availability": "Limited"
+                    },
+                    {
+                        "Scholarship": "Progress Award",
+                        "Primary Basis": "Improved academic performance",
+                        "Annual Award (NCU)": "18,000",
+                        "Typical Availability": "Limited"
+                    },
+                    {
+                        "Scholarship": "Participation Award",
+                        "Primary Basis": "Approved institutional participation",
+                        "Annual Award (NCU)": "12,000",
+                        "Typical Availability": "Limited"
+                    },
+                    {
+                        "Scholarship": "Need Support Award",
+                        "Primary Basis": "Documented financial need",
+                        "Annual Award (NCU)": "24,000",
+                        "Typical Availability": "Limited"
+                    },
+                    {
+                        "Scholarship": "Access Support Award",
+                        "Primary Basis": "Approved access-related criteria",
+                        "Annual Award (NCU)": "20,000",
+                        "Typical Availability": "Limited"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 2,
+                "markdown": "| Criterion                                    | Minimum Requirement                               |\n|----------------------------------------------|---------------------------------------------------|\n| Completed credits in prior assessment period | At least 20 credits                               |\n| Grade point average                          | At least 8.5 / 10                                 |\n| Attendance                                   | At least 80% unless an approved exception applies |\n| Academic misconduct finding                  | No unresolved finding                             |\n| Application                                  | Submitted within published period                 |",
+                "dataframe": [
+                    {
+                        "Criterion": "Completed credits in prior assessment period",
+                        "Minimum Requirement": "At least 20 credits"
+                    },
+                    {
+                        "Criterion": "Grade point average",
+                        "Minimum Requirement": "At least 8.5 / 10"
+                    },
+                    {
+                        "Criterion": "Attendance",
+                        "Minimum Requirement": "At least 80% unless an approved exception applies"
+                    },
+                    {
+                        "Criterion": "Academic misconduct finding",
+                        "Minimum Requirement": "No unresolved finding"
+                    },
+                    {
+                        "Criterion": "Application",
+                        "Minimum Requirement": "Submitted within published period"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 3,
+                "markdown": "| Measure            | Illustrative Requirement                  |\n|--------------------|-------------------------------------------|\n| Previous GPA       | Below 7.0                                 |\n| Current GPA        | At least 7.5                              |\n| Improvement        | At least 0.8 GPA points                   |\n| Attendance         | At least 75%                              |\n| Required documents | Academic record and application statement |",
+                "dataframe": [
+                    {
+                        "Measure": "Previous GPA",
+                        "Illustrative Requirement": "Below 7.0"
+                    },
+                    {
+                        "Measure": "Current GPA",
+                        "Illustrative Requirement": "At least 7.5"
+                    },
+                    {
+                        "Measure": "Improvement",
+                        "Illustrative Requirement": "At least 0.8 GPA points"
+                    },
+                    {
+                        "Measure": "Attendance",
+                        "Illustrative Requirement": "At least 75%"
+                    },
+                    {
+                        "Measure": "Required documents",
+                        "Illustrative Requirement": "Academic record and application statement"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 4,
+                "markdown": "| Scholarship Category   | Core Documents                                                 |\n|------------------------|----------------------------------------------------------------|\n| Academic Excellence    | Academic record; application form                              |\n| Progress Award         | Academic records for relevant periods; application statement   |\n| Need Support           | Academic record; financial-support documents; application form |\n| Participation Award    | Participation evidence; application form                       |\n| Access Support         | Eligibility/support documentation; application form            |",
+                "dataframe": [
+                    {
+                        "0": "Scholarship Category",
+                        "1": "Core Documents"
+                    },
+                    {
+                        "0": "Academic Excellence",
+                        "1": "Academic record; application form"
+                    },
+                    {
+                        "0": "Progress Award",
+                        "1": "Academic records for relevant periods; application statement"
+                    },
+                    {
+                        "0": "Need Support",
+                        "1": "Academic record; financial-support documents; application form"
+                    },
+                    {
+                        "0": "Participation Award",
+                        "1": "Participation evidence; application form"
+                    },
+                    {
+                        "0": "Access Support",
+                        "1": "Eligibility/support documentation; application form"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 5,
+                "markdown": "| Condition                      | Academic Excellence   | Need Support   |\n|--------------------------------|-----------------------|----------------|\n| Minimum GPA                    | 8.5                   | 7.0            |\n| Minimum Attendance             | 80%                   | 75%            |\n| Required credit completion     | 20 credits            | 18 credits     |\n| Unresolved academic misconduct | Not permitted         | Not permitted  |\n| Application / confirmation     | Required              | Required       |",
+                "dataframe": [
+                    {
+                        "Condition": "Minimum GPA",
+                        "Academic Excellence": "8.5",
+                        "Need Support": "7.0"
+                    },
+                    {
+                        "Condition": "Minimum Attendance",
+                        "Academic Excellence": "80%",
+                        "Need Support": "75%"
+                    },
+                    {
+                        "Condition": "Required credit completion",
+                        "Academic Excellence": "20 credits",
+                        "Need Support": "18 credits"
+                    },
+                    {
+                        "Condition": "Unresolved academic misconduct",
+                        "Academic Excellence": "Not permitted",
+                        "Need Support": "Not permitted"
+                    },
+                    {
+                        "Condition": "Application / confirmation",
+                        "Academic Excellence": "Required",
+                        "Need Support": "Required"
+                    }
+                ],
+                "caption": null
+            },
+            {
+                "table_id": 6,
+                "markdown": "| Award                |   Annual Amount (NCU) | Illustrative Application                     |\n|----------------------|-----------------------|----------------------------------------------|\n| Academic Excellence  |                30,000 | Eligible tuition-related charges             |\n| Progress Award       |                18,000 | Eligible tuition-related charges             |\n| Participation Award  |                12,000 | Eligible academic charges                    |\n| Need Support Award   |                24,000 | Eligible tuition or approved support charges |\n| Access Support Award |                20,000 | Eligible approved charges                    |",
+                "dataframe": [
+                    {
+                        "Award": "Academic Excellence",
+                        "Annual Amount (NCU)": "30,000",
+                        "Illustrative Application": "Eligible tuition-related charges"
+                    },
+                    {
+                        "Award": "Progress Award",
+                        "Annual Amount (NCU)": "18,000",
+                        "Illustrative Application": "Eligible tuition-related charges"
+                    },
+                    {
+                        "Award": "Participation Award",
+                        "Annual Amount (NCU)": "12,000",
+                        "Illustrative Application": "Eligible academic charges"
+                    },
+                    {
+                        "Award": "Need Support Award",
+                        "Annual Amount (NCU)": "24,000",
+                        "Illustrative Application": "Eligible tuition or approved support charges"
+                    },
+                    {
+                        "Award": "Access Support Award",
+                        "Annual Amount (NCU)": "20,000",
+                        "Illustrative Application": "Eligible approved charges"
+                    }
+                ],
+                "caption": null
+            }
+        ],
+        "pictures": []
+    }
+]
