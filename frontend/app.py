@@ -1,394 +1,158 @@
-import asyncio
-import logging
 import sys
+import asyncio
+import shutil
 import threading
 from pathlib import Path
 
+# Resolve the project root: D:\RAG
+PROJECT_DIR = Path(__file__).resolve().parent.parent
+
+# Add the project root to Python's import path
+if str(PROJECT_DIR) not in sys.path:
+    sys.path.insert(0, str(PROJECT_DIR))
+
 import streamlit as st
 
-# CONFIGURATION
+from src.dcoument_pipeline.pipeline import run_document_pipeline
+from src.dcoument_pipeline.embedding import (
+    create_embeddings,
+    load_vector_store,
+)
+from src.dcoument_pipeline.rag import RAGAgent
+
+DATA_DIR = PROJECT_DIR / "data"
+
+# Temporary directory containing only the PDFs being indexed
+UPLOAD_DIR = DATA_DIR / "uploads" / "current_batch"
+
+# The pipeline will create data/vector_store under this directory.
+OUTPUT_DIR = DATA_DIR
+
+# Must match the vector-store directory used by RAGAgent.
+VECTOR_STORE_DIR = DATA_DIR / "vector_store"
 
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
-
-UPLOAD_DIRECTORY = PROJECT_ROOT / "data" / "uploads"
-UPLOAD_DIRECTORY.mkdir(parents=True, exist_ok=True)
-
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
-
-
-# PAGE CONFIGURATION
-
+# ============================================================
+# STREAMLIT CONFIGURATION
+# ============================================================
 
 st.set_page_config(
-    page_title="Northbridge AI",
+    page_title="Document Intelligence",
     page_icon="📚",
     layout="wide",
     initial_sidebar_state="expanded",
 )
 
 
-# CUSTOM UI
-
-
-# CUSTOM DARK THEME
-
+# ============================================================
+# DARK THEME
+# ============================================================
 
 st.markdown(
     """
     <style>
-    /* =========================================
-       GLOBAL THEME
-    ========================================= */
-
     .stApp {
         background-color: #0f1117;
-        color: #e5e7eb;
+        color: #f9fafb;
     }
 
-    .block-container {
-        max-width: 1050px;
-        padding: 2rem 2rem 7rem 2rem;
-    }
-
-    header[data-testid="stHeader"] {
-        background: rgba(15, 17, 23, 0.95);
-    }
-
-    footer,
-    #MainMenu {
-        visibility: hidden;
-    }
-
-    /* =========================================
-       SIDEBAR
-    ========================================= */
-
-    section[data-testid="stSidebar"] {
+    [data-testid="stSidebar"] {
         background-color: #15171e;
-        border-right: 1px solid #282b36;
+        border-right: 1px solid #292c36;
     }
 
-    section[data-testid="stSidebar"] > div {
-        padding-top: 1.5rem;
+    [data-testid="stHeader"] {
+        background-color: #0f1117;
     }
 
-    section[data-testid="stSidebar"] p,
-    section[data-testid="stSidebar"] label {
-        color: #c4c7d0;
+    h1, h2, h3, p, label {
+        color: #f9fafb;
     }
 
-    .brand {
-        display: flex;
-        align-items: center;
-        gap: 12px;
+    .main-title {
+        font-size: 2.3rem;
+        font-weight: 750;
+        margin-bottom: 0.25rem;
+        color: #f9fafb;
+    }
+
+    .subtitle {
+        color: #9296a5;
+        font-size: 1rem;
         margin-bottom: 1.5rem;
     }
 
-    .brand-icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 42px;
-        height: 42px;
+    .info-card {
+        background-color: #171922;
+        border: 1px solid #292c36;
         border-radius: 12px;
-        background: linear-gradient(135deg, #7c3aed, #4f46e5);
-        color: white;
-        font-size: 22px;
+        padding: 18px;
+        margin-bottom: 12px;
     }
 
-    .brand-name {
-        font-size: 19px;
-        font-weight: 700;
+    .info-label {
+        color: #9296a5;
+        font-size: 0.9rem;
+    }
+
+    .info-value {
         color: #f9fafb;
-        margin: 0;
-    }
-
-    .brand-caption {
-        font-size: 12px;
-        color: #9296a5;
-        margin-top: 3px;
-    }
-
-    .sidebar-label {
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 0.8px;
-        text-transform: uppercase;
-        color: #9296a5;
-        margin-top: 1.5rem;
-        margin-bottom: 0.7rem;
-    }
-
-    .sidebar-note {
-        font-size: 12px;
-        line-height: 1.7;
-        color: #9296a5;
-    }
-
-    /* =========================================
-       MAIN HEADING
-    ========================================= */
-
-    .page-heading {
-        text-align: center;
-        margin-top: 5rem;
-        margin-bottom: 0.7rem;
-        color: #f9fafb;
-        font-size: 38px;
+        font-size: 1.2rem;
         font-weight: 650;
-        letter-spacing: -1.2px;
     }
 
-    .page-subheading {
-        text-align: center;
-        color: #9296a5;
-        font-size: 15px;
-        line-height: 1.8;
-        margin-bottom: 2.5rem;
-    }
-
-    .section-label {
-        color: #9296a5;
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 0.8px;
-        margin-top: 1.2rem;
-        margin-bottom: 0.8rem;
-    }
-
-    /* =========================================
-       SUGGESTION CARDS
-    ========================================= */
-
-    div.stButton > button {
-        width: 100%;
-        min-height: 75px;
-        padding: 14px 16px;
-
-        background: #171922;
-        color: #e5e7eb;
-
-        border: 1px solid #2b2e3b;
-        border-radius: 14px;
-
-        font-size: 13px;
-        font-weight: 500;
-        text-align: left;
-
-        transition:
-            background 0.2s ease,
-            border-color 0.2s ease,
-            transform 0.2s ease;
-    }
-
-    div.stButton > button:hover {
-        background: #202231;
-        border-color: #7c3aed;
-        color: #ffffff;
-        transform: translateY(-2px);
-    }
-
-    div.stButton > button:focus {
-        box-shadow: none;
-        border-color: #8b5cf6;
-        color: #ffffff;
-    }
-
-    /* =========================================
-       CHAT MESSAGES
-    ========================================= */
-
-    div[data-testid="stChatMessage"] {
-        background: transparent;
+    .stButton > button {
+        background-color: #7c3aed;
+        color: white;
         border: none;
-        padding: 1.1rem 0.5rem;
-        gap: 12px;
+        border-radius: 8px;
+        padding: 0.55rem 1rem;
+        font-weight: 600;
     }
 
-    div[data-testid="stChatMessage"] p {
-        color: #e5e7eb;
-        font-size: 15px;
-        line-height: 1.9;
+    .stButton > button:hover {
+        background-color: #6d28d9;
+        color: white;
+        border: none;
     }
 
-    div[data-testid="stChatMessage"] li {
-        color: #d1d5db;
-        line-height: 1.9;
+    [data-testid="stChatMessage"] {
+        background-color: #171922;
+        border: 1px solid #292c36;
+        border-radius: 12px;
+        padding: 12px;
     }
 
-    div[data-testid="stChatMessage"] h1,
-    div[data-testid="stChatMessage"] h2,
-    div[data-testid="stChatMessage"] h3 {
-        color: #f9fafb;
+    [data-testid="stFileUploader"] {
+        background-color: #171922;
+        border: 1px dashed #454957;
+        border-radius: 12px;
+        padding: 12px;
     }
 
-    div[data-testid="stChatMessage"] code {
-        background: #242632;
+    code {
         color: #c4b5fd;
-        border-radius: 5px;
     }
-
-    /* =========================================
-       CHAT INPUT
-    ========================================= */
-
-    div[data-testid="stChatInput"] {
-        background: #191b25;
-        border: 1px solid #303342;
-        border-radius: 18px;
-
-        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
-    }
-
-    div[data-testid="stChatInput"]:focus-within {
-        border-color: #7c3aed;
-        box-shadow: 0 0 0 1px #7c3aed;
-    }
-
-    div[data-testid="stChatInput"] textarea {
-        color: #f9fafb;
-        font-size: 15px;
-        caret-color: #a78bfa;
-    }
-
-    div[data-testid="stChatInput"] textarea::placeholder {
-        color: #85899a;
-    }
-
-    /* =========================================
-       SOURCES
-    ========================================= */
-
-    div[data-testid="stExpander"] {
-        background: #171922;
-        border: 1px solid #2b2e3b;
-        border-radius: 12px;
-    }
-
-    div[data-testid="stExpander"] summary {
-        color: #d1d5db;
-    }
-
-    div[data-testid="stExpander"] p {
-        color: #c4c7d0;
-    }
-
-    /* =========================================
-       STATUS INDICATOR
-    ========================================= */
-
-    .status-indicator {
-        display: flex;
-        align-items: center;
-        gap: 9px;
-
-        padding: 11px 12px;
-
-        background: #191b25;
-        border: 1px solid #2b2e3b;
-        border-radius: 10px;
-
-        font-size: 13px;
-        color: #e5e7eb;
-    }
-
-    .status-dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: #34d399;
-        box-shadow: 0 0 8px rgba(52, 211, 153, 0.4);
-    }
-
-    .status-dot-error {
-        background: #f87171;
-        box-shadow: 0 0 8px rgba(248, 113, 113, 0.4);
-    }
-
-    /* =========================================
-       INFORMATION BOXES
-    ========================================= */
-
-    div[data-testid="stAlert"] {
-        background: #191b25;
-        border: 1px solid #303342;
-        border-radius: 12px;
-        color: #e5e7eb;
-    }
-
-    .bottom-caption {
-        text-align: center;
-        color: #777c8d;
-        font-size: 12px;
-        margin-top: 1.5rem;
-        line-height: 1.7;
-    }
-
-    /* =========================================
-       FILE UPLOADER
-    ========================================= */
-
-    div[data-testid="stFileUploader"] {
-        background: #191b25;
-        border: 1px dashed #3a3d4d;
-        border-radius: 12px;
-        padding: 10px;
-    }
-
-    div[data-testid="stFileUploader"] section {
-        background: #191b25;
-    }
-
-    div[data-testid="stFileUploader"] button {
-        background: #242632;
-        color: #e5e7eb;
-        border: 1px solid #3a3d4d;
-    }
-
-    /* =========================================
-       DIVIDERS
-    ========================================= */
 
     hr {
-        border-color: #292c38;
+        border-color: #292c36;
     }
-
-    /* =========================================
-       SCROLLBAR
-    ========================================= */
-
-    ::-webkit-scrollbar {
-        width: 7px;
-    }
-
-    ::-webkit-scrollbar-track {
-        background: #0f1117;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background: #353847;
-        border-radius: 10px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-        background: #555a6d;
-    }
-
     </style>
     """,
     unsafe_allow_html=True,
 )
 
-# PERSISTENT ASYNCIO EVENT LOOP
 
+# ============================================================
+# PERSISTENT ASYNCIO EVENT LOOP
+# ============================================================
 
 @st.cache_resource
 def get_event_loop():
+    """
+    Create one persistent event loop for asynchronous agent calls.
+    """
+
     loop = asyncio.new_event_loop()
 
     def run_loop():
@@ -403,381 +167,331 @@ def get_event_loop():
 
     thread.start()
 
-    logger.info("Persistent asyncio event loop started.")
-
     return loop
 
 
 def run_async(coroutine):
+    """
+    Execute a coroutine on the persistent event loop.
+    """
+
     loop = get_event_loop()
 
     if loop.is_closed():
         coroutine.close()
-        raise RuntimeError("The persistent asyncio event loop has been closed.")
+        raise RuntimeError("The RAG event loop has been closed.")
 
-    future = asyncio.run_coroutine_threadsafe(
-        coroutine,
-        loop,
-    )
+    future = asyncio.run_coroutine_threadsafe(coroutine, loop)
 
     return future.result()
 
 
-# RAG INITIALIZATION
+# ============================================================
+# INITIALIZE RAG AGENT
+# ============================================================
 
-
-@st.cache_resource(show_spinner=False)
+@st.cache_resource
 def get_rag_agent():
-    from src.dcoument_pipeline.rag import RAGAgent
+    agent = RAGAgent(
+        model_id="qwen2.5:3b",
+        vector_store_directory=str(VECTOR_STORE_DIR),
+    )
 
-    logger.info("Initializing RAG agent.")
+    agent.initialize_session()
 
-    return RAGAgent()
+    return agent
+def refresh_vector_store():
+    """
+    Reload the persisted FAISS index after document indexing.
 
+    This prevents the running agent from continuing to use
+    an older in-memory vector store.
+    """
 
-def initialize_session_state():
+    embeddings = create_embeddings()
 
-    defaults = {
-        "messages": [],
-        "rag_agent": None,
-        "rag_initialization_error": None,
-        "pending_query": None,
-    }
+    updated_vector_store = load_vector_store(
+        directory=str(VECTOR_STORE_DIR),
+        embeddings=embeddings,
+    )
 
-    for key, value in defaults.items():
-        if key not in st.session_state:
-            st.session_state[key] = value
+    agent = get_rag_agent()
 
+    # Update the vector store used by the existing RAG agent.
+    agent.vector_store = updated_vector_store
 
-def initialize_rag_agent():
-
-    if st.session_state.rag_agent is not None:
-        return
-
-    try:
-        with st.spinner("Starting document assistant..."):
-            st.session_state.rag_agent = get_rag_agent()
-
-        st.session_state.rag_initialization_error = None
-
-    except Exception as exc:
-        logger.exception("RAG initialization failed.")
-
-        st.session_state.rag_initialization_error = str(exc)
+    return agent
 
 
-# SIDEBAR
+# ============================================================
+# SESSION STATE
+# ============================================================
+
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+
+if "indexed_files" not in st.session_state:
+    st.session_state.indexed_files = []
+
+if "last_index_result" not in st.session_state:
+    st.session_state.last_index_result = None
 
 
-def render_sidebar():
+# ============================================================
+# HEADER
+# ============================================================
 
-    with st.sidebar:
-        # Brand
+st.markdown(
+    """
+    <div class="main-title">📚 Document Intelligence</div>
+    <div class="subtitle">
+        Upload your PDFs, index their contents, and ask questions
+        using retrieval-augmented generation.
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
 
-        st.markdown(
-            """
-            <div class="brand">
-                <div class="brand-icon">📚</div>
-                <div>
-                    <div class="brand-name">Northbridge AI</div>
-                    <div class="brand-caption">
-                        Document Intelligence
-                    </div>
-                </div>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
 
-        # New conversation
+# ============================================================
+# SIDEBAR: DOCUMENT UPLOAD AND INDEXING
+# ============================================================
 
-        if st.button(
-            "＋  New conversation",
-            use_container_width=True,
-        ):
-            st.session_state.messages = []
-            st.session_state.pending_query = None
+with st.sidebar:
+    st.header("📂 Knowledge Base")
 
-            st.rerun()
+    st.write(
+        "Upload PDF documents and index their contents "
+        "to make them searchable."
+    )
 
-        # System status
+    uploaded_files = st.file_uploader(
+        "Choose PDF files",
+        type=["pdf"],
+        accept_multiple_files=True,
+        key="pdf_uploader",
+    )
 
-        st.markdown(
-            '<div class="sidebar-label">System status</div>',
-            unsafe_allow_html=True,
-        )
+    if uploaded_files:
+        st.markdown("### Selected documents")
 
-        if st.session_state.rag_agent is not None:
-            st.markdown(
-                """
-                <div class="status-indicator">
-                    <span class="status-dot"></span>
-                    <span>Assistant ready</span>
-                </div>
-                """,
-                unsafe_allow_html=True,
+        for uploaded_file in uploaded_files:
+            file_size_mb = uploaded_file.size / (1024 * 1024)
+
+            st.caption(
+                f"📄 {uploaded_file.name} "
+                f"({file_size_mb:.2f} MB)"
             )
 
-            st.caption("Model: Ollama")
-            st.caption("Retrieval: FAISS")
+    st.divider()
 
-        else:
-            st.markdown(
-                """
-                <div class="status-indicator">
-                    <span class="status-dot-error status-dot"></span>
-                    <span>Assistant unavailable</span>
-                </div>
-                """,
-                unsafe_allow_html=True,
-            )
+    index_button = st.button(
+        "⚡ Index PDFs",
+        use_container_width=True,
+        disabled=not uploaded_files,
+    )
 
-            if st.session_state.rag_initialization_error:
-                with st.expander("Initialization details"):
-                    st.code(st.session_state.rag_initialization_error)
+    if index_button:
+        try:
+            # Create the temporary upload directory.
+            UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
-            if st.button(
-                "Retry connection",
-                use_container_width=True,
-            ):
-                get_rag_agent.clear()
+            # Remove files from the previous upload batch.
+            # This prevents accidentally indexing all previous
+            # uploads again during every indexing operation.
+            for existing_file in UPLOAD_DIR.iterdir():
+                if existing_file.is_dir():
+                    shutil.rmtree(existing_file)
+                else:
+                    existing_file.unlink()
 
-                st.session_state.rag_agent = None
-                st.session_state.rag_initialization_error = None
-
-                st.rerun()
-
-        st.divider()
-
-        # Document upload
-
-        st.markdown(
-            '<div class="sidebar-label">Your documents</div>',
-            unsafe_allow_html=True,
-        )
-
-        uploaded_files = st.file_uploader(
-            "Add PDF files",
-            type=["pdf"],
-            accept_multiple_files=True,
-            label_visibility="collapsed",
-            help="Choose PDF documents.",
-        )
-
-        if uploaded_files:
-            st.caption(f"{len(uploaded_files)} PDF file(s) selected")
+            # Save the selected PDFs.
+            saved_files = []
 
             for uploaded_file in uploaded_files:
-                st.markdown(f"📄 {uploaded_file.name}")
+                filename = Path(uploaded_file.name).name
 
-            st.info(
-                "PDF indexing is not connected yet. "
-                "Selected files are not searchable until "
-                "the document-processing pipeline is integrated."
-            )
+                if not filename.lower().endswith(".pdf"):
+                    continue
 
-        else:
-            st.markdown(
-                """
-                <div class="sidebar-note">
-                    Upload support is being prepared.
-                    The current assistant searches documents
-                    already indexed in FAISS.
-                </div>
-                """,
-                unsafe_allow_html=True,
-            )
+                destination = UPLOAD_DIR / filename
 
-        st.divider()
+                with destination.open("wb") as file:
+                    file.write(uploaded_file.getbuffer())
 
-        # Conversation controls
+                if destination.stat().st_size == 0:
+                    destination.unlink()
+                    raise ValueError(
+                        f"The uploaded file is empty: {filename}"
+                    )
 
-        st.markdown(
-            '<div class="sidebar-label">Conversation</div>',
-            unsafe_allow_html=True,
-        )
+                saved_files.append(destination)
 
-        st.caption(f"{len(st.session_state.messages)} messages in this session")
+            if not saved_files:
+                st.error("No valid PDF files were uploaded.")
 
-        if st.button(
-            "Clear conversation",
-            use_container_width=True,
-        ):
-            st.session_state.messages = []
-            st.session_state.pending_query = None
+            else:
+                # Execute the existing document pipeline.
+                with st.spinner(
+                    "Extracting, chunking, embedding, and indexing PDFs..."
+                ):
+                    result = run_document_pipeline(
+                        upload_folder=UPLOAD_DIR,
+                        output_folder=OUTPUT_DIR,
+                    )
 
-            st.rerun()
+                # Reload the vector store used by the RAG agent.
+                with st.spinner("Refreshing the RAG knowledge base..."):
+                    refresh_vector_store()
 
-        # Footer
+                st.session_state.indexed_files = [
+                    file.name for file in saved_files
+                ]
 
-        st.markdown(
-            """
-            <br>
-            <div class="sidebar-note">
-                Built with Python, Streamlit, Ollama and FAISS.
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
+                st.session_state.last_index_result = result
 
-
-# WELCOME SCREEN
-
-
-SUGGESTIONS = [
-    (
-        "🎓",
-        "Student services",
-        "What student services are available at the institute?",
-    ),
-    (
-        "📝",
-        "Enrollment",
-        "Which form is used for enrollment requests?",
-    ),
-    (
-        "📖",
-        "Student policies",
-        "What information is available about student policies?",
-    ),
-    (
-        "🔎",
-        "Explore documents",
-        "Summarize the main information in the student handbook.",
-    ),
-]
-
-
-def render_welcome_screen():
-
-    st.markdown(
-        """
-        <div class="page-heading">
-            What would you like to know?
-        </div>
-
-        <div class="page-subheading">
-            Ask questions about your documents.
-            <br>
-            Get answers grounded in your indexed knowledge base.
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-
-    st.markdown(
-        '<div class="section-label">GET STARTED</div>',
-        unsafe_allow_html=True,
-    )
-
-    first_row = st.columns(2)
-
-    second_row = st.columns(2)
-
-    columns = first_row + second_row
-
-    for index, (icon, title, question) in enumerate(SUGGESTIONS):
-        with columns[index]:
-            if st.button(
-                f"{icon}  {title}\n\n{question}",
-                key=f"suggestion_{index}",
-                use_container_width=True,
-            ):
-                st.session_state.pending_query = question
+                st.success(
+                    f"Successfully indexed {len(saved_files)} PDF(s)."
+                )
 
                 st.rerun()
 
+        except Exception as exc:
+            st.error(
+                "PDF indexing failed. Check the application logs "
+                "for the underlying error."
+            )
+
+            st.exception(exc)
+
+    # Show the latest indexing result.
+    if st.session_state.last_index_result:
+        st.divider()
+
+        st.markdown("### Latest indexing result")
+
+        st.success("Indexing completed")
+
+        st.caption(
+            f"Files: "
+            f"{len(st.session_state.last_index_result['uploaded_files'])}"
+        )
+
+        st.caption(
+            f"Vector store: {st.session_state.last_index_result['vector_store']}"
+        )
+
+    st.divider()
+
+    if st.button("🗑️ Clear chat", use_container_width=True):
+        st.session_state.messages = []
+        st.rerun()
+
+
+# ============================================================
+# MAIN CONTENT: KNOWLEDGE BASE STATUS
+# ============================================================
+
+col1, col2 = st.columns(2)
+
+with col1:
     st.markdown(
         """
-        <div class="bottom-caption">
-            Answers are generated from your indexed documents.
-            Always verify important information against the source.
+        <div class="info-card">
+            <div class="info-label">Embedding model</div>
+            <div class="info-value">qwen3-embedding:0.6b</div>
         </div>
         """,
         unsafe_allow_html=True,
     )
 
+with col2:
+    st.markdown(
+        """
+        <div class="info-card">
+            <div class="info-label">Language model</div>
+            <div class="info-value">qwen2.5:3b</div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
-# CHAT HISTORY
+st.divider()
+
+st.subheader("💬 Ask your documents")
+
+st.caption(
+    "Ask questions about your indexed PDFs. "
+    "Answers are generated using retrieved document content."
+)
 
 
-def render_chat_history():
+# ============================================================
+# DISPLAY CHAT HISTORY
+# ============================================================
 
-    for message in st.session_state.messages:
-        with st.chat_message(message["role"]):
-            st.markdown(message["content"])
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
 
-            sources = message.get("sources", [])
-
-            if message["role"] == "assistant" and sources:
-                with st.expander(f"📚 Sources ({len(sources)})"):
-                    for source in sources:
-                        st.markdown(f"- `{source}`")
-
-
-# CHAT PROCESSING
+        if message.get("sources"):
+            with st.expander("📑 Sources"):
+                for source in message["sources"]:
+                    st.write(f"- {source}")
 
 
-def process_query(query: str):
+# ============================================================
+# CHAT INPUT
+# ============================================================
 
-    query = query.strip()
+query = st.chat_input(
+    "Ask a question about your indexed documents..."
+)
 
-    if not query:
-        return
-
-    # Save the user message.
-
+if query:
+    # Display the user's message.
     st.session_state.messages.append(
         {
             "role": "user",
             "content": query,
-            "sources": [],
         }
     )
-
-    # Show the question.
 
     with st.chat_message("user"):
         st.markdown(query)
 
-    # Check agent availability.
-
-    rag_agent = st.session_state.rag_agent
-
-    if rag_agent is None:
-        answer = (
-            "The assistant is currently unavailable. "
-            "Please check the system status and try again."
-        )
-
-        with st.chat_message("assistant"):
-            st.error(answer)
-
-        st.session_state.messages.append(
-            {
-                "role": "assistant",
-                "content": answer,
-                "sources": [],
-            }
-        )
-
-        return
-
-    # Generate response.
-
-    with st.chat_message("assistant"), st.spinner("Searching your documents..."):
+    with st.chat_message("assistant"):
         try:
-            response = run_async(rag_agent.route_request(query))
+            with st.spinner("Searching documents and generating an answer..."):
+                agent = get_rag_agent()
 
-            answer = response.answer
-            sources = response.sources or []
+                response = run_async(
+                    agent.route_request(query)
+                )
+
+            # Support a Pydantic response or a dictionary.
+            if hasattr(response, "answer"):
+                answer = response.answer
+                sources = response.sources
+
+            elif isinstance(response, dict):
+                answer = response.get(
+                    "answer",
+                    "The agent did not return an answer.",
+                )
+
+                sources = response.get("sources", [])
+
+            else:
+                answer = str(response)
+                sources = []
 
             st.markdown(answer)
 
             if sources:
-                with st.expander(f"📚 Sources ({len(sources)})"):
+                with st.expander("📑 Sources"):
                     for source in sources:
-                        st.markdown(f"- `{source}`")
+                        st.write(f"- {source}")
 
             st.session_state.messages.append(
                 {
@@ -787,76 +501,12 @@ def process_query(query: str):
                 }
             )
 
-            logger.info("Response generated successfully.")
-
-        except Exception as exc:
-            logger.exception("Failed to generate the RAG response.")
-
-            answer = "I couldn't generate a response this time. Please try again."
-
-            st.error(answer)
-
-            with st.expander("Technical details"):
-                st.code(f"{type(exc).__name__}: {exc}")
-
-            st.session_state.messages.append(
-                {
-                    "role": "assistant",
-                    "content": answer,
-                    "sources": [],
-                }
+        except Exception:
+            st.error(
+                "The RAG agent failed to generate an answer. "
+                "Check the application logs for details."
             )
 
-
-# MAIN APPLICATION
-
-
-def main():
-
-    initialize_session_state()
-
-    initialize_rag_agent()
-
-    render_sidebar()
-
-    # Welcome screen or existing conversation.
-
-    if not st.session_state.messages:
-        render_welcome_screen()
-
-    else:
-        st.markdown(
-            """
-            <div style="
-                font-size: 24px;
-                font-weight: 650;
-                color: #202123;
-                margin-bottom: 1.5rem;
-            ">
-                Northbridge AI
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-
-        render_chat_history()
-
-    # Chat input.
-
-    query = st.chat_input("Ask anything about your documents...")
-
-    # Handle a selected suggestion.
-
-    if st.session_state.pending_query:
-        query = st.session_state.pending_query
-
-        st.session_state.pending_query = None
-
-    if query:
-        process_query(query)
-
-        st.rerun()
-
-
-if __name__ == "__main__":
-    main()
+            st.exception(
+                __import__("sys").exc_info()[1]
+            )

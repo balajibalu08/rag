@@ -229,63 +229,74 @@ def retrieve_documents(vector_store: FAISS, query: str, k: int = TOP_K):
     return retrieved_docs
 
 
-def build_vector_store(chunks_file: str, vector_store_dir: str):
+def build_vector_store(chunks_file: str, vector_store_dir: str) -> FAISS:
     """
-    Build and persist the vector store from final chunks.
+    Build or update a persistent FAISS vector store.
 
-    If a vector store already exists, it will be loaded
-    instead of generating embeddings again.
+    If the vector store already exists, add the supplied documents
+    to it. Otherwise, create a new vector store.
+
+    Args:
+        chunks_file: Path to final_chunks.json.
+        vector_store_dir: Directory for the FAISS index.
+
+    Returns:
+        The updated or newly created FAISS vector store.
     """
-
     logger.info("Starting vector store build: %s", chunks_file)
 
     try:
-        # Create embedding model
-
+        # 1. Initialize the embedding model
         embeddings = create_embeddings()
 
         vector_store_path = Path(vector_store_dir)
-
         index_file = vector_store_path / "index.faiss"
         metadata_file = vector_store_path / "index.pkl"
 
-        # Existing vector store
+        # 2. Load the documents to be indexed
+        documents = load_documents(chunks_file)
 
+        logger.info("Loaded %d documents for indexing.", len(documents))
+
+        # 3. Check whether a vector store already exists
         if index_file.exists() and metadata_file.exists():
             logger.info("Existing vector store found. Loading it.")
 
             vector_store = load_vector_store(
-                directory=vector_store_dir, embeddings=embeddings
+                directory=vector_store_dir,
+                embeddings=embeddings,
             )
 
-            logger.info("Existing vector store loaded successfully.")
+            # 4. Add the new documents to the existing index
+            vector_store.add_documents(documents)
 
-            return vector_store
+            logger.info(
+                "Added %d documents to the existing vector store.",
+                len(documents),
+            )
 
-        # Create new vector store
+        else:
+            # 5. Create a new vector store
+            logger.info("No existing vector store found. Creating a new one.")
 
-        logger.info("No existing vector store found.")
+            vector_store = create_vector_store(
+                documents=documents,
+                embeddings=embeddings,
+            )
 
-        documents = load_documents(chunks_file)
+        # 6. Persist the updated or newly created index
+        save_vector_store(
+            vector_store=vector_store,
+            directory=vector_store_dir,
+        )
 
-        logger.info("Creating embeddings for %d documents.", len(documents))
-
-        vector_store = create_vector_store(documents=documents, embeddings=embeddings)
-
-        # Save locally
-
-        save_vector_store(vector_store=vector_store, directory=vector_store_dir)
-
-        logger.info("Vector store created and saved successfully.")
+        logger.info("Vector store saved successfully.")
 
         return vector_store
 
     except Exception:
-        logger.exception("Failed to build vector store.")
-
+        logger.exception("Failed to build or update the vector store.")
         raise
-
-
 # PRINT RESULTS
 
 

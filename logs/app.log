@@ -1403,3 +1403,811 @@ Traceback (most recent call last):
   File "D:\RAG\.venv\Lib\site-packages\agent_framework_ollama\_chat_client.py", line 384, in _get_response
     raise ChatClientException(f"Ollama chat request failed : {ex}", ex) from ex
 agent_framework.exceptions.ChatClientException: ('Ollama chat request failed : Event loop is closed', RuntimeError('Event loop is closed'))
+2026-10-09 14:45:26,973 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-10-09 14:45:26,998 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-10-09 14:45:27,012 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-10-09 14:45:27,031 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-10-09 14:45:27,042 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-10-09 14:45:27,059 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-10-09 14:45:27,072 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-10-09 14:46:51,561 | INFO     | src.dcoument_pipeline.pipeline | Found 5 PDF files in D:\RAG\data\uploads\current_batch
+2026-10-09 14:46:51,562 | INFO     | src.dcoument_pipeline.pipeline | [1/4] Starting document extraction
+2026-10-09 14:46:51,893 | INFO     | docling.datamodel.document | detected formats: [<InputFormat.PDF: 'pdf'>]
+2026-10-09 14:46:55,226 | INFO     | docling.document_converter | Going to convert document batch...
+2026-10-09 14:46:55,230 | INFO     | docling.document_converter | Initializing pipeline for StandardPdfPipeline with options hash 9e1bf18eeb7e4a6616c964e31cde46ca
+2026-10-09 14:46:55,267 | INFO     | docling.models.factories.base_factory | Loading plugin 'docling_defaults'
+2026-10-09 14:46:55,278 | INFO     | docling.models.factories | Registered picture descriptions: ['picture_description_vlm_engine', 'vlm', 'api']
+2026-10-09 14:46:55,322 | INFO     | docling.models.factories.base_factory | Loading plugin 'docling_defaults'
+2026-10-09 14:46:55,367 | INFO     | docling.models.factories | Registered ocr engines: ['auto', 'easyocr', 'kserve_v2_ocr', 'nemotron-ocr', 'ocrmac', 'rapidocr', 'tesserocr', 'tesseract']
+2026-10-09 14:46:55,368 | INFO     | docling.models.stages.ocr.auto_ocr_model | rapidocr cannot be used because onnxruntime is not installed.
+2026-10-09 14:46:55,368 | INFO     | docling.models.stages.ocr.auto_ocr_model | easyocr cannot be used because it is not installed.
+2026-10-09 14:46:55,924 | INFO     | docling.utils.accelerator_utils | Accelerator device: 'cpu'
+2026-10-09 14:46:56,578 | INFO     | docling.models.stages.ocr.auto_ocr_model | Auto OCR model selected rapidocr with torch.
+2026-10-09 14:46:56,613 | INFO     | docling.models.factories.base_factory | Loading plugin 'docling_defaults'
+2026-10-09 14:46:56,633 | INFO     | docling.models.factories | Registered layout engines: ['layout_object_detection', 'docling_layout_default', 'docling_experimental_table_crops_layout']
+2026-10-09 14:46:56,636 | INFO     | docling.models.inference_engines.object_detection.transformers_engine | Initializing Transformers object-detection engine
+2026-10-09 14:46:56,636 | INFO     | docling.models.inference_engines.common.hf_vision_base | Downloading object-detection model from HuggingFace: docling-project/docling-layout-heron@main
+2026-10-09 14:46:56,636 | INFO     | docling.models.utils.hf_model_download | Fetching model docling-project/docling-layout-heron (revision: main)...
+2026-10-09 14:46:56,862 | DEBUG    | httpcore.connection | connect_tcp.started host='huggingface.co' port=443 local_address=None timeout=None socket_options=None
+2026-10-09 14:46:57,064 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001CEB3E69910>
+2026-10-09 14:46:57,064 | DEBUG    | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x000001CEB78E63D0> server_hostname='huggingface.co' timeout=None
+2026-10-09 14:46:57,091 | DEBUG    | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001CE83671520>
+2026-10-09 14:46:57,091 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'GET']>
+2026-10-09 14:46:57,091 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-10-09 14:46:57,091 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'GET']>
+2026-10-09 14:46:57,091 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-10-09 14:46:57,092 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'GET']>
+2026-10-09 14:46:57,312 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Date', b'Fri, 09 Oct 2026 09:17:00 GMT'), (b'content-encoding', b'gzip'), (b'ETag', b'W/"43d-iJoNntHvdpszL38XDNv/jM6IkTI"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-6ac8b10c-6629a1fe6f434bab25ca669d;8296855b-7ec8-4b38-85c6-16ac9ee9efed'), (b'RateLimit', b'"api";r=499;t=224'), (b'RateLimit-Policy', b'"fixed window";"api";q=500;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'vary', b'Accept-Encoding'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 0b0818f864d09dfd4adfbe002dd2d0e8.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'HYD57-P7'), (b'Alt-Svc', b'h3=":443"; ma=86400'), (b'X-Amz-Cf-Id', b'dM5-q3x_3ugAnaRqHP1AwGGxqT8fbAnFRatll4ZI7Q8js3rY9EMB_Q=='), (b'Strict-Transport-Security', b'max-age=31536000')])
+2026-10-09 14:46:57,313 | INFO     | httpx | HTTP Request: GET https://huggingface.co/api/models/docling-project/docling-layout-heron/revision/main "HTTP/1.1 200 OK"
+2026-10-09 14:46:57,313 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'GET']>
+2026-10-09 14:46:57,322 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-10-09 14:46:57,322 | DEBUG    | httpcore.http11 | response_closed.started
+2026-10-09 14:46:57,322 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-10-09 14:46:57,350 | INFO     | docling.models.utils.hf_model_download | Model docling-project/docling-layout-heron already cached at C:\Users\balaj\.cache\huggingface\hub\models--docling-project--docling-layout-heron\snapshots\8f39ad3c0b4c58e9c2d2c84a38465abf757272d8
+2026-10-09 14:46:57,351 | DEBUG    | docling.models.inference_engines.object_detection.transformers_engine | Using model at C:\Users\balaj\.cache\huggingface\hub\models--docling-project--docling-layout-heron\snapshots\8f39ad3c0b4c58e9c2d2c84a38465abf757272d8
+2026-10-09 14:46:57,351 | INFO     | docling.utils.accelerator_utils | Accelerator device: 'cpu'
+2026-10-09 14:46:57,353 | DEBUG    | docling.models.inference_engines.common.hf_vision_base | Loading image processor from C:\Users\balaj\.cache\huggingface\hub\models--docling-project--docling-layout-heron\snapshots\8f39ad3c0b4c58e9c2d2c84a38465abf757272d8
+2026-10-09 14:46:57,373 | DEBUG    | docling.models.inference_engines.object_detection.transformers_engine | Loaded preprocessor with size: SizeDict(height=640, width=640, longest_edge=None, shortest_edge=None, max_height=None, max_width=None, min_pixels=None, max_pixels=None)
+2026-10-09 14:46:57,391 | DEBUG    | docling.models.inference_engines.object_detection.transformers_engine | Loaded label mapping with 17 labels
+2026-10-09 14:46:57,391 | DEBUG    | docling.models.inference_engines.object_detection.transformers_engine | Loading model from C:\Users\balaj\.cache\huggingface\hub\models--docling-project--docling-layout-heron\snapshots\8f39ad3c0b4c58e9c2d2c84a38465abf757272d8 to device cpu
+2026-10-09 14:46:57,999 | INFO     | docling.models.inference_engines.object_detection.transformers_engine | Transformers engine ready (device=cpu, dtype=torch.float32)
+2026-10-09 14:46:58,025 | INFO     | docling.models.factories.base_factory | Loading plugin 'docling_defaults'
+2026-10-09 14:46:58,033 | INFO     | docling.models.factories | Registered table structure engines: ['docling_tableformer', 'docling_tableformer_v2', 'granite_vision_table']
+2026-10-09 14:46:58,033 | INFO     | docling.models.utils.hf_model_download | Fetching model docling-project/docling-models (revision: v2.3.0)...
+2026-10-09 14:46:58,034 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'GET']>
+2026-10-09 14:46:58,035 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-10-09 14:46:58,035 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'GET']>
+2026-10-09 14:46:58,035 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-10-09 14:46:58,035 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'GET']>
+2026-10-09 14:46:58,295 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Date', b'Fri, 09 Oct 2026 09:17:01 GMT'), (b'content-encoding', b'gzip'), (b'ETag', b'W/"520-iF1IhULFSsMEjbOwsstPizX1pmM"'), (b'X-Powered-By', b'huggingface-moon'), (b'X-Request-Id', b'Root=1-6ac8b10d-7068d07a701177457bb450a7;21f6bf6f-93c9-4669-83b7-af16d6118614'), (b'RateLimit', b'"api";r=498;t=223'), (b'RateLimit-Policy', b'"fixed window";"api";q=500;w=300'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Access-Control-Max-Age', b'86400'), (b'Access-Control-Allow-Origin', b'https://huggingface.co'), (b'Vary', b'Origin'), (b'vary', b'Accept-Encoding'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 0b0818f864d09dfd4adfbe002dd2d0e8.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'HYD57-P7'), (b'Alt-Svc', b'h3=":443"; ma=86400'), (b'X-Amz-Cf-Id', b'Alou_6Z8MRfYHlwEnyDiCnGjEA4phoaGeeyt5UnZK10UbHPw3jblLQ=='), (b'Strict-Transport-Security', b'max-age=31536000')])
+2026-10-09 14:46:58,296 | INFO     | httpx | HTTP Request: GET https://huggingface.co/api/models/docling-project/docling-models/revision/v2.3.0 "HTTP/1.1 200 OK"
+2026-10-09 14:46:58,296 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'GET']>
+2026-10-09 14:46:58,296 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-10-09 14:46:58,296 | DEBUG    | httpcore.http11 | response_closed.started
+2026-10-09 14:46:58,296 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-10-09 14:46:58,332 | INFO     | docling.models.utils.hf_model_download | Model docling-project/docling-models already cached at C:\Users\balaj\.cache\huggingface\hub\models--docling-project--docling-models\snapshots\fc0f2d45e2218ea24bce5045f58a389aed16dc23
+2026-10-09 14:46:58,371 | INFO     | docling.utils.accelerator_utils | Accelerator device: 'cpu'
+2026-10-09 14:46:59,035 | INFO     | docling.pipeline.base_pipeline | Processing document 01_student_handbook.pdf
+2026-10-09 14:46:59,105 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=1 pages=[2] start=1791537419.090 end=1791537419.105 duration=0.015s
+2026-10-09 14:46:59,111 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=1 pages=[1] start=1791537419.105 end=1791537419.111 duration=0.016s
+2026-10-09 14:46:59,121 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=1 pages=[4] start=1791537419.111 end=1791537419.121 duration=0.000s
+2026-10-09 14:46:59,131 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=1 pages=[3] start=1791537419.121 end=1791537419.131 duration=0.015s
+2026-10-09 14:46:59,137 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=1 pages=[5] start=1791537419.131 end=1791537419.137 duration=0.000s
+2026-10-09 14:47:00,269 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout: run_id=1 pages=[2] start=1791537419.106 end=1791537420.270 duration=1.172s
+2026-10-09 14:47:00,298 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage ocr: run_id=1 pages=[2] start=1791537420.270 end=1791537420.299 duration=0.031s
+2026-10-09 14:47:00,302 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=1 pages=[2] start=1791537420.299 end=1791537420.303 duration=0.000s
+2026-10-09 14:47:00,302 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage table: run_id=1 pages=[2] start=1791537420.303 end=1791537420.303 duration=0.000s
+2026-10-09 14:47:00,303 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=1 pages=[2] start=1791537420.304 end=1791537420.304 duration=0.000s
+2026-10-09 14:47:04,047 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout: run_id=1 pages=[1, 4, 3, 5] start=1791537420.270 end=1791537424.047 duration=3.781s
+2026-10-09 14:47:09,735 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage ocr: run_id=1 pages=[1, 4, 3, 5] start=1791537424.047 end=1791537429.736 duration=5.688s
+2026-10-09 14:47:09,738 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=1 pages=[1] start=1791537429.737 end=1791537429.739 duration=0.000s
+2026-10-09 14:47:09,738 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage table: run_id=1 pages=[1] start=1791537429.739 end=1791537429.739 duration=0.000s
+2026-10-09 14:47:09,739 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=1 pages=[1] start=1791537429.739 end=1791537429.740 duration=0.000s
+2026-10-09 14:47:09,744 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=1 pages=[4] start=1791537429.739 end=1791537429.745 duration=0.000s
+2026-10-09 14:47:09,748 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=1 pages=[3] start=1791537429.745 end=1791537429.749 duration=0.015s
+2026-10-09 14:47:09,750 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=1 pages=[5] start=1791537429.749 end=1791537429.751 duration=0.000s
+2026-10-09 14:47:11,758 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage table: run_id=1 pages=[4] start=1791537429.745 end=1791537431.759 duration=2.015s
+2026-10-09 14:47:11,769 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=1 pages=[4] start=1791537431.759 end=1791537431.770 duration=0.016s
+2026-10-09 14:47:12,738 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage table: run_id=1 pages=[3, 5] start=1791537431.759 end=1791537432.737 duration=0.985s
+2026-10-09 14:47:12,738 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=1 pages=[3] start=1791537432.738 end=1791537432.738 duration=0.000s
+2026-10-09 14:47:12,742 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=1 pages=[5] start=1791537432.742 end=1791537432.742 duration=0.000s
+2026-10-09 14:47:12,775 | INFO     | docling.document_converter | Finished converting document 01_student_handbook.pdf in 20.91 sec.
+2026-10-09 14:47:12,880 | INFO     | docling.datamodel.document | detected formats: [<InputFormat.PDF: 'pdf'>]
+2026-10-09 14:47:13,102 | INFO     | docling.document_converter | Going to convert document batch...
+2026-10-09 14:47:13,103 | DEBUG    | docling.document_converter | Reusing cached pipeline for StandardPdfPipeline with options hash 9e1bf18eeb7e4a6616c964e31cde46ca
+2026-10-09 14:47:13,103 | INFO     | docling.pipeline.base_pipeline | Processing document 02_academic_regulations.pdf
+2026-10-09 14:47:13,131 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=2 pages=[4] start=1791537433.127 end=1791537433.132 duration=0.000s
+2026-10-09 14:47:13,137 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=2 pages=[1] start=1791537433.133 end=1791537433.138 duration=0.000s
+2026-10-09 14:47:13,146 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=2 pages=[2] start=1791537433.139 end=1791537433.146 duration=0.016s
+2026-10-09 14:47:13,172 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=2 pages=[5] start=1791537433.157 end=1791537433.172 duration=0.015s
+2026-10-09 14:47:13,184 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=2 pages=[7] start=1791537433.172 end=1791537433.184 duration=0.000s
+2026-10-09 14:47:13,199 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=2 pages=[6] start=1791537433.185 end=1791537433.200 duration=0.016s
+2026-10-09 14:47:13,211 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=2 pages=[8] start=1791537433.200 end=1791537433.211 duration=0.016s
+2026-10-09 14:47:13,255 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=2 pages=[3] start=1791537433.212 end=1791537433.256 duration=0.046s
+2026-10-09 14:47:13,265 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=2 pages=[9] start=1791537433.256 end=1791537433.266 duration=0.016s
+2026-10-09 14:47:13,588 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=2 pages=[10] start=1791537433.266 end=1791537433.589 duration=0.313s
+2026-10-09 14:47:13,598 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=2 pages=[12] start=1791537433.589 end=1791537433.599 duration=0.015s
+2026-10-09 14:47:13,609 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=2 pages=[13] start=1791537433.599 end=1791537433.610 duration=0.016s
+2026-10-09 14:47:13,618 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=2 pages=[11] start=1791537433.610 end=1791537433.619 duration=0.000s
+2026-10-09 14:47:13,631 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=2 pages=[14] start=1791537433.619 end=1791537433.632 duration=0.015s
+2026-10-09 14:47:13,639 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=2 pages=[15] start=1791537433.632 end=1791537433.640 duration=0.016s
+2026-10-09 14:47:14,615 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout: run_id=2 pages=[4] start=1791537433.133 end=1791537434.616 duration=1.485s
+2026-10-09 14:47:19,192 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage ocr: run_id=2 pages=[4] start=1791537434.616 end=1791537439.192 duration=4.578s
+2026-10-09 14:47:19,196 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=2 pages=[4] start=1791537439.193 end=1791537439.196 duration=0.000s
+2026-10-09 14:47:20,512 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage table: run_id=2 pages=[4] start=1791537439.197 end=1791537440.513 duration=1.312s
+2026-10-09 14:47:20,512 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=2 pages=[4] start=1791537440.513 end=1791537440.513 duration=0.000s
+2026-10-09 14:47:20,991 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout: run_id=2 pages=[1, 2, 5, 7] start=1791537434.616 end=1791537440.991 duration=6.375s
+2026-10-09 14:47:27,241 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout: run_id=2 pages=[6, 8, 3, 9] start=1791537440.991 end=1791537447.241 duration=6.250s
+2026-10-09 14:47:33,499 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout: run_id=2 pages=[10, 12, 13, 11] start=1791537447.241 end=1791537453.500 duration=6.265s
+2026-10-09 14:47:37,039 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout: run_id=2 pages=[14, 15] start=1791537453.500 end=1791537457.040 duration=3.532s
+2026-10-09 14:47:54,242 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage ocr: run_id=2 pages=[1, 2, 5, 7] start=1791537440.991 end=1791537474.243 duration=33.250s
+2026-10-09 14:47:54,246 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=2 pages=[1] start=1791537474.244 end=1791537474.246 duration=0.000s
+2026-10-09 14:47:54,255 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=2 pages=[2] start=1791537474.246 end=1791537474.255 duration=0.015s
+2026-10-09 14:47:54,261 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=2 pages=[5] start=1791537474.256 end=1791537474.262 duration=0.000s
+2026-10-09 14:47:54,284 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=2 pages=[7] start=1791537474.262 end=1791537474.285 duration=0.032s
+2026-10-09 14:47:56,441 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage table: run_id=2 pages=[1] start=1791537474.246 end=1791537476.441 duration=2.203s
+2026-10-09 14:47:56,442 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=2 pages=[1] start=1791537476.442 end=1791537476.442 duration=0.000s
+2026-10-09 14:48:12,634 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage table: run_id=2 pages=[2, 5, 7] start=1791537476.441 end=1791537492.634 duration=16.187s
+2026-10-09 14:48:12,635 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=2 pages=[2] start=1791537492.635 end=1791537492.635 duration=0.000s
+2026-10-09 14:48:12,637 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=2 pages=[5] start=1791537492.637 end=1791537492.637 duration=0.000s
+2026-10-09 14:48:12,639 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=2 pages=[7] start=1791537492.639 end=1791537492.639 duration=0.000s
+2026-10-09 14:48:15,282 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage ocr: run_id=2 pages=[6, 8, 3, 9] start=1791537474.243 end=1791537495.283 duration=21.047s
+2026-10-09 14:48:15,291 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=2 pages=[6] start=1791537495.284 end=1791537495.291 duration=0.000s
+2026-10-09 14:48:15,300 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=2 pages=[8] start=1791537495.292 end=1791537495.300 duration=0.015s
+2026-10-09 14:48:15,317 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=2 pages=[3] start=1791537495.300 end=1791537495.317 duration=0.016s
+2026-10-09 14:48:15,346 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=2 pages=[9] start=1791537495.320 end=1791537495.347 duration=0.031s
+2026-10-09 14:48:28,301 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage table: run_id=2 pages=[6] start=1791537495.292 end=1791537508.302 duration=13.015s
+2026-10-09 14:48:28,301 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=2 pages=[6] start=1791537508.302 end=1791537508.302 duration=0.000s
+2026-10-09 14:48:45,154 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage ocr: run_id=2 pages=[10, 12, 13, 11] start=1791537495.284 end=1791537525.154 duration=29.859s
+2026-10-09 14:48:45,171 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=2 pages=[10] start=1791537525.155 end=1791537525.171 duration=0.015s
+2026-10-09 14:48:45,182 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=2 pages=[12] start=1791537525.171 end=1791537525.182 duration=0.000s
+2026-10-09 14:48:45,204 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=2 pages=[13] start=1791537525.182 end=1791537525.205 duration=0.032s
+2026-10-09 14:48:45,218 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=2 pages=[11] start=1791537525.206 end=1791537525.219 duration=0.015s
+2026-10-09 14:48:58,497 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage table: run_id=2 pages=[8, 3, 9] start=1791537508.302 end=1791537538.498 duration=30.188s
+2026-10-09 14:48:58,498 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=2 pages=[8] start=1791537538.498 end=1791537538.498 duration=0.000s
+2026-10-09 14:48:58,501 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=2 pages=[3] start=1791537538.502 end=1791537538.502 duration=0.000s
+2026-10-09 14:48:58,512 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=2 pages=[9] start=1791537538.513 end=1791537538.513 duration=0.000s
+2026-10-09 14:48:59,550 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage ocr: run_id=2 pages=[14, 15] start=1791537525.154 end=1791537539.550 duration=14.406s
+2026-10-09 14:48:59,567 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=2 pages=[14] start=1791537539.551 end=1791537539.568 duration=0.016s
+2026-10-09 14:48:59,578 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=2 pages=[15] start=1791537539.569 end=1791537539.579 duration=0.016s
+2026-10-09 14:49:16,189 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage table: run_id=2 pages=[10, 12, 13, 11] start=1791537538.498 end=1791537556.190 duration=17.703s
+2026-10-09 14:49:16,190 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=2 pages=[10] start=1791537556.190 end=1791537556.191 duration=0.000s
+2026-10-09 14:49:16,193 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=2 pages=[12] start=1791537556.194 end=1791537556.194 duration=0.000s
+2026-10-09 14:49:16,196 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=2 pages=[13] start=1791537556.197 end=1791537556.197 duration=0.000s
+2026-10-09 14:49:16,201 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=2 pages=[11] start=1791537556.202 end=1791537556.202 duration=0.000s
+2026-10-09 14:49:24,749 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage table: run_id=2 pages=[14, 15] start=1791537556.190 end=1791537564.749 duration=8.562s
+2026-10-09 14:49:24,749 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=2 pages=[14] start=1791537564.749 end=1791537564.749 duration=0.000s
+2026-10-09 14:49:24,752 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=2 pages=[15] start=1791537564.752 end=1791537564.752 duration=0.000s
+2026-10-09 14:49:24,818 | INFO     | docling.document_converter | Finished converting document 02_academic_regulations.pdf in 132.05 sec.
+2026-10-09 14:49:25,063 | INFO     | docling.datamodel.document | detected formats: [<InputFormat.PDF: 'pdf'>]
+2026-10-09 14:49:25,245 | INFO     | docling.document_converter | Going to convert document batch...
+2026-10-09 14:49:25,245 | DEBUG    | docling.document_converter | Reusing cached pipeline for StandardPdfPipeline with options hash 9e1bf18eeb7e4a6616c964e31cde46ca
+2026-10-09 14:49:25,245 | INFO     | docling.pipeline.base_pipeline | Processing document 03_examination_guidelines.pdf
+2026-10-09 14:49:25,258 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=3 pages=[2] start=1791537565.256 end=1791537565.259 duration=0.000s
+2026-10-09 14:49:25,262 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=3 pages=[1] start=1791537565.259 end=1791537565.263 duration=0.000s
+2026-10-09 14:49:25,280 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=3 pages=[4] start=1791537565.270 end=1791537565.281 duration=0.016s
+2026-10-09 14:49:25,286 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=3 pages=[3] start=1791537565.281 end=1791537565.287 duration=0.000s
+2026-10-09 14:49:25,294 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=3 pages=[5] start=1791537565.287 end=1791537565.295 duration=0.000s
+2026-10-09 14:49:26,212 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout: run_id=3 pages=[2] start=1791537565.259 end=1791537566.212 duration=0.954s
+2026-10-09 14:49:26,220 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage ocr: run_id=3 pages=[2] start=1791537566.212 end=1791537566.220 duration=0.015s
+2026-10-09 14:49:26,222 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=3 pages=[2] start=1791537566.220 end=1791537566.223 duration=0.000s
+2026-10-09 14:49:26,222 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage table: run_id=3 pages=[2] start=1791537566.223 end=1791537566.223 duration=0.000s
+2026-10-09 14:49:26,223 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=3 pages=[2] start=1791537566.223 end=1791537566.224 duration=0.000s
+2026-10-09 14:49:30,294 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout: run_id=3 pages=[1, 4, 3, 5] start=1791537566.212 end=1791537570.294 duration=4.078s
+2026-10-09 14:49:38,480 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage ocr: run_id=3 pages=[1, 4, 3, 5] start=1791537570.294 end=1791537578.480 duration=8.187s
+2026-10-09 14:49:38,482 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=3 pages=[1] start=1791537578.480 end=1791537578.482 duration=0.000s
+2026-10-09 14:49:38,483 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage table: run_id=3 pages=[1] start=1791537578.483 end=1791537578.483 duration=0.000s
+2026-10-09 14:49:38,483 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=3 pages=[1] start=1791537578.483 end=1791537578.483 duration=0.000s
+2026-10-09 14:49:38,493 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=3 pages=[4] start=1791537578.483 end=1791537578.494 duration=0.000s
+2026-10-09 14:49:38,500 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=3 pages=[3] start=1791537578.494 end=1791537578.500 duration=0.015s
+2026-10-09 14:49:38,503 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=3 pages=[5] start=1791537578.500 end=1791537578.503 duration=0.000s
+2026-10-09 14:49:42,428 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage table: run_id=3 pages=[4] start=1791537578.494 end=1791537582.429 duration=3.937s
+2026-10-09 14:49:42,429 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=3 pages=[4] start=1791537582.430 end=1791537582.430 duration=0.000s
+2026-10-09 14:49:44,656 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage table: run_id=3 pages=[3, 5] start=1791537582.429 end=1791537584.656 duration=2.235s
+2026-10-09 14:49:44,657 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=3 pages=[3] start=1791537584.657 end=1791537584.657 duration=0.000s
+2026-10-09 14:49:44,659 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=3 pages=[5] start=1791537584.659 end=1791537584.659 duration=0.000s
+2026-10-09 14:49:44,680 | INFO     | docling.document_converter | Finished converting document 03_examination_guidelines.pdf in 19.86 sec.
+2026-10-09 14:49:44,712 | INFO     | docling.datamodel.document | detected formats: [<InputFormat.PDF: 'pdf'>]
+2026-10-09 14:49:44,901 | INFO     | docling.document_converter | Going to convert document batch...
+2026-10-09 14:49:44,901 | DEBUG    | docling.document_converter | Reusing cached pipeline for StandardPdfPipeline with options hash 9e1bf18eeb7e4a6616c964e31cde46ca
+2026-10-09 14:49:44,901 | INFO     | docling.pipeline.base_pipeline | Processing document 04_fee_structure.pdf
+2026-10-09 14:49:44,914 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=4 pages=[2] start=1791537584.911 end=1791537584.915 duration=0.000s
+2026-10-09 14:49:44,918 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=4 pages=[1] start=1791537584.915 end=1791537584.919 duration=0.000s
+2026-10-09 14:49:44,923 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=4 pages=[5] start=1791537584.920 end=1791537584.924 duration=0.015s
+2026-10-09 14:49:44,933 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=4 pages=[3] start=1791537584.926 end=1791537584.934 duration=0.000s
+2026-10-09 14:49:44,944 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=4 pages=[4] start=1791537584.934 end=1791537584.945 duration=0.016s
+2026-10-09 14:49:45,737 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout: run_id=4 pages=[2] start=1791537584.915 end=1791537585.737 duration=0.828s
+2026-10-09 14:49:45,746 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage ocr: run_id=4 pages=[2] start=1791537585.738 end=1791537585.747 duration=0.000s
+2026-10-09 14:49:45,748 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=4 pages=[2] start=1791537585.747 end=1791537585.749 duration=0.015s
+2026-10-09 14:49:45,748 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage table: run_id=4 pages=[2] start=1791537585.749 end=1791537585.749 duration=0.000s
+2026-10-09 14:49:45,749 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=4 pages=[2] start=1791537585.750 end=1791537585.750 duration=0.000s
+2026-10-09 14:49:49,295 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout: run_id=4 pages=[1, 5, 3, 4] start=1791537585.738 end=1791537589.295 duration=3.547s
+2026-10-09 14:50:01,281 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage ocr: run_id=4 pages=[1, 5, 3, 4] start=1791537589.296 end=1791537601.282 duration=11.985s
+2026-10-09 14:50:01,283 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=4 pages=[1] start=1791537601.283 end=1791537601.284 duration=0.000s
+2026-10-09 14:50:01,283 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage table: run_id=4 pages=[1] start=1791537601.284 end=1791537601.284 duration=0.000s
+2026-10-09 14:50:01,283 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=4 pages=[1] start=1791537601.284 end=1791537601.284 duration=0.000s
+2026-10-09 14:50:01,285 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=4 pages=[5] start=1791537601.284 end=1791537601.286 duration=0.000s
+2026-10-09 14:50:01,285 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage table: run_id=4 pages=[5] start=1791537601.286 end=1791537601.286 duration=0.000s
+2026-10-09 14:50:01,285 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=4 pages=[5] start=1791537601.286 end=1791537601.286 duration=0.000s
+2026-10-09 14:50:01,292 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=4 pages=[3] start=1791537601.286 end=1791537601.293 duration=0.000s
+2026-10-09 14:50:01,296 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=4 pages=[4] start=1791537601.293 end=1791537601.297 duration=0.015s
+2026-10-09 14:50:05,219 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage table: run_id=4 pages=[3] start=1791537601.293 end=1791537605.220 duration=3.937s
+2026-10-09 14:50:05,219 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=4 pages=[3] start=1791537605.220 end=1791537605.220 duration=0.000s
+2026-10-09 14:50:09,268 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage table: run_id=4 pages=[4] start=1791537605.220 end=1791537609.268 duration=4.047s
+2026-10-09 14:50:09,268 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=4 pages=[4] start=1791537609.268 end=1791537609.268 duration=0.000s
+2026-10-09 14:50:09,290 | INFO     | docling.document_converter | Finished converting document 04_fee_structure.pdf in 24.61 sec.
+2026-10-09 14:50:09,325 | INFO     | docling.datamodel.document | detected formats: [<InputFormat.PDF: 'pdf'>]
+2026-10-09 14:50:09,515 | INFO     | docling.document_converter | Going to convert document batch...
+2026-10-09 14:50:09,516 | DEBUG    | docling.document_converter | Reusing cached pipeline for StandardPdfPipeline with options hash 9e1bf18eeb7e4a6616c964e31cde46ca
+2026-10-09 14:50:09,517 | INFO     | docling.pipeline.base_pipeline | Processing document 05_scholarship_guidelines.pdf
+2026-10-09 14:50:09,529 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=5 pages=[2] start=1791537609.527 end=1791537609.530 duration=0.000s
+2026-10-09 14:50:09,535 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=5 pages=[1] start=1791537609.530 end=1791537609.536 duration=0.016s
+2026-10-09 14:50:09,553 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=5 pages=[3] start=1791537609.544 end=1791537609.553 duration=0.015s
+2026-10-09 14:50:09,560 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=5 pages=[4] start=1791537609.554 end=1791537609.560 duration=0.000s
+2026-10-09 14:50:09,565 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage preprocess: run_id=5 pages=[5] start=1791537609.560 end=1791537609.565 duration=0.016s
+2026-10-09 14:50:22,692 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout: run_id=5 pages=[2] start=1791537609.531 end=1791537622.693 duration=13.156s
+2026-10-09 14:50:22,711 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage ocr: run_id=5 pages=[2] start=1791537622.694 end=1791537622.712 duration=0.016s
+2026-10-09 14:50:22,719 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=5 pages=[2] start=1791537622.712 end=1791537622.720 duration=0.015s
+2026-10-09 14:50:22,719 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage table: run_id=5 pages=[2] start=1791537622.720 end=1791537622.720 duration=0.000s
+2026-10-09 14:50:22,720 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=5 pages=[2] start=1791537622.720 end=1791537622.721 duration=0.000s
+2026-10-09 14:50:26,810 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout: run_id=5 pages=[1, 3, 4, 5] start=1791537622.694 end=1791537626.811 duration=4.109s
+2026-10-09 14:50:36,632 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage ocr: run_id=5 pages=[1, 3, 4, 5] start=1791537626.811 end=1791537636.632 duration=9.828s
+2026-10-09 14:50:36,635 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=5 pages=[1] start=1791537636.633 end=1791537636.635 duration=0.000s
+2026-10-09 14:50:36,635 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage table: run_id=5 pages=[1] start=1791537636.635 end=1791537636.635 duration=0.000s
+2026-10-09 14:50:36,636 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=5 pages=[1] start=1791537636.635 end=1791537636.636 duration=0.000s
+2026-10-09 14:50:36,641 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=5 pages=[3] start=1791537636.635 end=1791537636.641 duration=0.016s
+2026-10-09 14:50:36,646 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=5 pages=[4] start=1791537636.641 end=1791537636.646 duration=0.000s
+2026-10-09 14:50:36,657 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage layout_postprocess: run_id=5 pages=[5] start=1791537636.653 end=1791537636.657 duration=0.016s
+2026-10-09 14:50:40,155 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage table: run_id=5 pages=[3] start=1791537636.642 end=1791537640.155 duration=3.516s
+2026-10-09 14:50:40,156 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=5 pages=[3] start=1791537640.155 end=1791537640.156 duration=0.000s
+2026-10-09 14:50:43,538 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage table: run_id=5 pages=[4, 5] start=1791537640.155 end=1791537643.539 duration=3.375s
+2026-10-09 14:50:43,539 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=5 pages=[4] start=1791537643.539 end=1791537643.540 duration=0.000s
+2026-10-09 14:50:43,543 | DEBUG    | docling.pipeline.standard_pdf_pipeline | PIPELINE_PROFILING Stage assemble: run_id=5 pages=[5] start=1791537643.542 end=1791537643.542 duration=0.000s
+2026-10-09 14:50:43,574 | INFO     | docling.document_converter | Finished converting document 05_scholarship_guidelines.pdf in 34.28 sec.
+2026-10-09 14:50:43,688 | INFO     | src.dcoument_pipeline.pipeline | [1/4] Document extraction completed
+2026-10-09 14:50:43,688 | INFO     | src.dcoument_pipeline.pipeline | [2/4] Starting document chunking
+2026-10-09 14:50:43,723 | INFO     | src.dcoument_pipeline.pipeline | [2/4] Document chunking completed
+2026-10-09 14:50:43,723 | INFO     | src.dcoument_pipeline.pipeline | [3/4] Starting chunk refinement
+2026-10-09 14:50:43,723 | INFO     | src.utils.logger | ========== CHUNK REFINEMENT STARTED ==========
+2026-10-09 14:50:43,724 | INFO     | src.utils.logger | Loading chunks from: D:\RAG\data\chunks\chunks.json
+2026-10-09 14:50:43,748 | INFO     | src.utils.logger | Successfully loaded 102 chunks.
+2026-10-09 14:50:43,749 | DEBUG    | src.utils.logger | Chunk 01_student_handbook_chunk_1 is within size limit: 37 characters.
+2026-10-09 14:50:43,749 | DEBUG    | src.utils.logger | Chunk 01_student_handbook_chunk_2 is within size limit: 374 characters.
+2026-10-09 14:50:43,749 | DEBUG    | src.utils.logger | Chunk 01_student_handbook_chunk_3 is within size limit: 331 characters.
+2026-10-09 14:50:43,749 | DEBUG    | src.utils.logger | Chunk 01_student_handbook_chunk_4 is within size limit: 796 characters.
+2026-10-09 14:50:43,749 | DEBUG    | src.utils.logger | Chunk 01_student_handbook_chunk_5 is within size limit: 908 characters.
+2026-10-09 14:50:43,749 | DEBUG    | src.utils.logger | Chunk 01_student_handbook_chunk_6 is within size limit: 652 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 01_student_handbook_chunk_7 is within size limit: 1116 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 01_student_handbook_chunk_8 is within size limit: 796 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 01_student_handbook_chunk_9 is within size limit: 963 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 01_student_handbook_chunk_10 is within size limit: 533 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 01_student_handbook_chunk_11 is within size limit: 562 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 01_student_handbook_chunk_12 is within size limit: 476 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 01_student_handbook_chunk_13 is within size limit: 526 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 01_student_handbook_chunk_14 is within size limit: 351 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_1 is within size limit: 37 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_2 is within size limit: 1157 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_3 is within size limit: 2027 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_4 is within size limit: 780 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_5 is within size limit: 733 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_6 is within size limit: 19 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_7 is within size limit: 11 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_8 is within size limit: 1009 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_9 is within size limit: 858 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_10 is within size limit: 2039 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_11 is within size limit: 315 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_12 is within size limit: 11 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_13 is within size limit: 3388 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_14 is within size limit: 1321 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_15 is within size limit: 2200 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_16 is within size limit: 1768 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_17 is within size limit: 989 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_18 is within size limit: 11 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_19 is within size limit: 371 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_20 is within size limit: 1639 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_21 is within size limit: 1516 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_22 is within size limit: 1599 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_23 is within size limit: 1693 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_24 is within size limit: 11 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_25 is within size limit: 693 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_26 is within size limit: 1256 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_27 is within size limit: 2388 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_28 is within size limit: 912 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_29 is within size limit: 11 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_30 is within size limit: 2160 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_31 is within size limit: 1095 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_32 is within size limit: 464 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_33 is within size limit: 206 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_34 is within size limit: 635 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_35 is within size limit: 11 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_36 is within size limit: 1314 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_37 is within size limit: 240 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_38 is within size limit: 1892 characters.
+2026-10-09 14:50:43,750 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_39 is within size limit: 355 characters.
+2026-10-09 14:50:43,751 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_40 is within size limit: 11 characters.
+2026-10-09 14:50:43,751 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_41 is within size limit: 1928 characters.
+2026-10-09 14:50:43,751 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_42 is within size limit: 865 characters.
+2026-10-09 14:50:43,751 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_43 is within size limit: 334 characters.
+2026-10-09 14:50:43,751 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_44 is within size limit: 12 characters.
+2026-10-09 14:50:43,751 | DEBUG    | src.utils.logger | Chunk 02_academic_regulations_chunk_45 is within size limit: 2002 characters.
+2026-10-09 14:50:43,751 | DEBUG    | src.utils.logger | Chunk 03_examination_guidelines_chunk_1 is within size limit: 37 characters.
+2026-10-09 14:50:43,751 | DEBUG    | src.utils.logger | Chunk 03_examination_guidelines_chunk_2 is within size limit: 378 characters.
+2026-10-09 14:50:43,751 | DEBUG    | src.utils.logger | Chunk 03_examination_guidelines_chunk_3 is within size limit: 343 characters.
+2026-10-09 14:50:43,751 | DEBUG    | src.utils.logger | Chunk 03_examination_guidelines_chunk_4 is within size limit: 435 characters.
+2026-10-09 14:50:43,751 | DEBUG    | src.utils.logger | Chunk 03_examination_guidelines_chunk_5 is within size limit: 879 characters.
+2026-10-09 14:50:43,751 | DEBUG    | src.utils.logger | Chunk 03_examination_guidelines_chunk_6 is within size limit: 653 characters.
+2026-10-09 14:50:43,751 | DEBUG    | src.utils.logger | Chunk 03_examination_guidelines_chunk_7 is within size limit: 415 characters.
+2026-10-09 14:50:43,751 | DEBUG    | src.utils.logger | Chunk 03_examination_guidelines_chunk_8 is within size limit: 933 characters.
+2026-10-09 14:50:43,751 | DEBUG    | src.utils.logger | Chunk 03_examination_guidelines_chunk_9 is within size limit: 463 characters.
+2026-10-09 14:50:43,751 | DEBUG    | src.utils.logger | Chunk 03_examination_guidelines_chunk_10 is within size limit: 398 characters.
+2026-10-09 14:50:43,751 | DEBUG    | src.utils.logger | Chunk 03_examination_guidelines_chunk_11 is within size limit: 795 characters.
+2026-10-09 14:50:43,751 | DEBUG    | src.utils.logger | Chunk 03_examination_guidelines_chunk_12 is within size limit: 493 characters.
+2026-10-09 14:50:43,751 | DEBUG    | src.utils.logger | Chunk 03_examination_guidelines_chunk_13 is within size limit: 353 characters.
+2026-10-09 14:50:43,751 | DEBUG    | src.utils.logger | Chunk 03_examination_guidelines_chunk_14 is within size limit: 267 characters.
+2026-10-09 14:50:43,751 | DEBUG    | src.utils.logger | Chunk 03_examination_guidelines_chunk_15 is within size limit: 245 characters.
+2026-10-09 14:50:43,751 | DEBUG    | src.utils.logger | Chunk 04_fee_structure_chunk_1 is within size limit: 37 characters.
+2026-10-09 14:50:43,751 | DEBUG    | src.utils.logger | Chunk 04_fee_structure_chunk_2 is within size limit: 371 characters.
+2026-10-09 14:50:43,751 | DEBUG    | src.utils.logger | Chunk 04_fee_structure_chunk_3 is within size limit: 296 characters.
+2026-10-09 14:50:43,752 | DEBUG    | src.utils.logger | Chunk 04_fee_structure_chunk_4 is within size limit: 425 characters.
+2026-10-09 14:50:43,752 | DEBUG    | src.utils.logger | Chunk 04_fee_structure_chunk_5 is within size limit: 919 characters.
+2026-10-09 14:50:43,752 | DEBUG    | src.utils.logger | Chunk 04_fee_structure_chunk_6 is within size limit: 614 characters.
+2026-10-09 14:50:43,752 | DEBUG    | src.utils.logger | Chunk 04_fee_structure_chunk_7 is within size limit: 955 characters.
+2026-10-09 14:50:43,752 | DEBUG    | src.utils.logger | Chunk 04_fee_structure_chunk_8 is within size limit: 880 characters.
+2026-10-09 14:50:43,752 | DEBUG    | src.utils.logger | Chunk 04_fee_structure_chunk_9 is within size limit: 534 characters.
+2026-10-09 14:50:43,752 | DEBUG    | src.utils.logger | Chunk 04_fee_structure_chunk_10 is within size limit: 575 characters.
+2026-10-09 14:50:43,752 | DEBUG    | src.utils.logger | Chunk 04_fee_structure_chunk_11 is within size limit: 972 characters.
+2026-10-09 14:50:43,752 | DEBUG    | src.utils.logger | Chunk 04_fee_structure_chunk_12 is within size limit: 246 characters.
+2026-10-09 14:50:43,752 | DEBUG    | src.utils.logger | Chunk 04_fee_structure_chunk_13 is within size limit: 451 characters.
+2026-10-09 14:50:43,752 | DEBUG    | src.utils.logger | Chunk 04_fee_structure_chunk_14 is within size limit: 357 characters.
+2026-10-09 14:50:43,752 | DEBUG    | src.utils.logger | Chunk 05_scholarship_guidelines_chunk_1 is within size limit: 37 characters.
+2026-10-09 14:50:43,752 | DEBUG    | src.utils.logger | Chunk 05_scholarship_guidelines_chunk_2 is within size limit: 369 characters.
+2026-10-09 14:50:43,752 | DEBUG    | src.utils.logger | Chunk 05_scholarship_guidelines_chunk_3 is within size limit: 322 characters.
+2026-10-09 14:50:43,752 | DEBUG    | src.utils.logger | Chunk 05_scholarship_guidelines_chunk_4 is within size limit: 512 characters.
+2026-10-09 14:50:43,752 | DEBUG    | src.utils.logger | Chunk 05_scholarship_guidelines_chunk_5 is within size limit: 931 characters.
+2026-10-09 14:50:43,752 | DEBUG    | src.utils.logger | Chunk 05_scholarship_guidelines_chunk_6 is within size limit: 1091 characters.
+2026-10-09 14:50:43,752 | DEBUG    | src.utils.logger | Chunk 05_scholarship_guidelines_chunk_7 is within size limit: 738 characters.
+2026-10-09 14:50:43,752 | DEBUG    | src.utils.logger | Chunk 05_scholarship_guidelines_chunk_8 is within size limit: 629 characters.
+2026-10-09 14:50:43,752 | DEBUG    | src.utils.logger | Chunk 05_scholarship_guidelines_chunk_9 is within size limit: 1017 characters.
+2026-10-09 14:50:43,752 | DEBUG    | src.utils.logger | Chunk 05_scholarship_guidelines_chunk_10 is within size limit: 776 characters.
+2026-10-09 14:50:43,752 | DEBUG    | src.utils.logger | Chunk 05_scholarship_guidelines_chunk_11 is within size limit: 1102 characters.
+2026-10-09 14:50:43,752 | DEBUG    | src.utils.logger | Chunk 05_scholarship_guidelines_chunk_12 is within size limit: 432 characters.
+2026-10-09 14:50:43,753 | DEBUG    | src.utils.logger | Chunk 05_scholarship_guidelines_chunk_13 is within size limit: 265 characters.
+2026-10-09 14:50:43,753 | DEBUG    | src.utils.logger | Chunk 05_scholarship_guidelines_chunk_14 is within size limit: 360 characters.
+2026-10-09 14:50:43,757 | INFO     | src.utils.logger | ========== CHUNK REFINEMENT COMPLETED ==========
+2026-10-09 14:50:43,757 | INFO     | src.utils.logger | Original chunks     : 102
+2026-10-09 14:50:43,757 | INFO     | src.utils.logger | Processed chunks    : 102
+2026-10-09 14:50:43,757 | INFO     | src.utils.logger | Skipped chunks      : 0
+2026-10-09 14:50:43,757 | INFO     | src.utils.logger | Failed chunks       : 0
+2026-10-09 14:50:43,757 | INFO     | src.utils.logger | Oversized chunks    : 0
+2026-10-09 14:50:43,757 | INFO     | src.utils.logger | Final chunks        : 102
+2026-10-09 14:50:43,757 | INFO     | src.utils.logger | Still oversized     : 0
+2026-10-09 14:50:43,757 | INFO     | src.utils.logger | Output file         : D:\RAG\data\chunks\final_chunks.json
+2026-10-09 14:50:43,757 | INFO     | src.dcoument_pipeline.pipeline | [3/4] Chunk refinement completed
+2026-10-09 14:50:43,758 | INFO     | src.dcoument_pipeline.pipeline | [4/4] Starting embedding and vector indexing
+2026-10-09 14:50:43,758 | INFO     | src.utils.logger | Starting vector store build: D:\RAG\data\chunks\final_chunks.json
+2026-10-09 14:50:43,758 | INFO     | src.utils.logger | Initializing Ollama embedding model: qwen3-embedding:0.6b
+2026-10-09 14:50:44,127 | INFO     | src.utils.logger | Loading chunks from: D:\RAG\data\chunks\final_chunks.json
+2026-10-09 14:50:44,144 | INFO     | src.utils.logger | Successfully created 102 LangChain documents.
+2026-10-09 14:50:44,145 | INFO     | src.utils.logger | Loaded 102 documents for indexing.
+2026-10-09 14:50:44,145 | INFO     | src.utils.logger | Existing vector store found. Loading it.
+2026-10-09 14:50:44,145 | INFO     | src.utils.logger | Loading FAISS vector store from: D:\RAG\data\vector_store
+2026-10-09 14:50:44,161 | DEBUG    | faiss.loader | Environment variable FAISS_OPT_LEVEL is not set, so let's pick the instruction set according to the current CPU
+2026-10-09 14:50:44,161 | INFO     | faiss.loader | Loading faiss with AVX512 support.
+2026-10-09 14:50:44,162 | INFO     | faiss.loader | Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+2026-10-09 14:50:44,162 | INFO     | faiss.loader | Loading faiss with AVX2 support.
+2026-10-09 14:50:44,162 | INFO     | faiss.loader | Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-10-09 14:50:44,162 | INFO     | faiss.loader | Loading faiss.
+2026-10-09 14:50:44,200 | INFO     | faiss.loader | Successfully loaded faiss.
+2026-10-09 14:50:44,213 | INFO     | src.utils.logger | FAISS vector store loaded successfully.
+2026-10-09 14:50:44,215 | DEBUG    | httpcore.connection | connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-10-09 14:50:44,216 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001CED41E9F70>
+2026-10-09 14:50:44,216 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-10-09 14:50:44,217 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-10-09 14:50:44,217 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-10-09 14:50:44,217 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-10-09 14:50:44,217 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-10-09 14:51:02,567 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Fri, 09 Oct 2026 09:21:02 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-10-09 14:51:02,568 | INFO     | httpx | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-10-09 14:51:02,568 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-10-09 14:51:02,570 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-10-09 14:51:02,570 | DEBUG    | httpcore.http11 | response_closed.started
+2026-10-09 14:51:02,570 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-10-09 14:51:02,590 | INFO     | src.utils.logger | Added 102 documents to the existing vector store.
+2026-10-09 14:51:02,595 | INFO     | src.utils.logger | Vector store saved successfully: D:\RAG\data\vector_store
+2026-10-09 14:51:02,595 | INFO     | src.utils.logger | Vector store saved successfully.
+2026-10-09 14:51:02,596 | INFO     | src.dcoument_pipeline.pipeline | [4/4] Embedding and vector indexing completed
+2026-10-09 14:51:02,597 | INFO     | src.dcoument_pipeline.pipeline | Document pipeline completed successfully
+2026-10-09 14:51:02,599 | INFO     | src.utils.logger | Initializing Ollama embedding model: qwen3-embedding:0.6b
+2026-10-09 14:51:02,966 | INFO     | src.utils.logger | Loading FAISS vector store from: D:\RAG\data\vector_store
+2026-10-09 14:51:03,012 | INFO     | src.utils.logger | FAISS vector store loaded successfully.
+2026-10-09 14:51:03,012 | INFO     | src.utils.logger | Initializing RAGAgent.
+2026-10-09 14:51:03,199 | INFO     | src.utils.logger | OllamaChatClient initialized with model_id: qwen2.5:3b
+2026-10-09 14:51:03,199 | INFO     | src.utils.logger | Initializing Ollama embedding model: qwen3-embedding:0.6b
+2026-10-09 14:51:03,649 | INFO     | src.utils.logger | Embedding model initialized successfully.
+2026-10-09 14:51:03,649 | INFO     | src.utils.logger | Loading FAISS vector store from: D:\RAG\data\vector_store
+2026-10-09 14:51:03,652 | INFO     | src.utils.logger | FAISS vector store loaded successfully.
+2026-10-09 14:51:03,652 | INFO     | src.utils.logger | FAISS vector store loaded from: D:\RAG\data\vector_store
+2026-10-09 14:51:03,708 | INFO     | src.utils.logger | RAGAgent initialized successfully.
+2026-10-09 14:52:29,775 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-10-09 14:52:29,779 | INFO     | src.utils.logger | Processing RAG query: What rules must students follow?
+2026-10-09 14:52:29,780 | INFO     | src.utils.logger | Running retrieval query: What rules must students follow?
+2026-10-09 14:52:29,814 | DEBUG    | httpcore.connection | connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-10-09 14:52:29,816 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001CEB7827050>
+2026-10-09 14:52:29,816 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-10-09 14:52:29,816 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-10-09 14:52:29,816 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-10-09 14:52:29,816 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-10-09 14:52:29,816 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-10-09 14:52:31,152 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Fri, 09 Oct 2026 09:22:31 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-10-09 14:52:31,152 | INFO     | httpx | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-10-09 14:52:31,152 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-10-09 14:52:31,153 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-10-09 14:52:31,153 | DEBUG    | httpcore.http11 | response_closed.started
+2026-10-09 14:52:31,153 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-10-09 14:52:31,168 | INFO     | src.utils.logger | Retrieved 3 documents.
+2026-10-09 14:52:31,168 | INFO     | src.utils.logger | Retrieved 3 documents for the query.
+2026-10-09 14:52:31,176 | DEBUG    | httpcore.connection | connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-10-09 14:52:31,178 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000001CEB74BF050>
+2026-10-09 14:52:31,178 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-10-09 14:52:31,179 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-10-09 14:52:31,179 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-10-09 14:52:31,180 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-10-09 14:52:31,180 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-10-09 14:52:38,387 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Fri, 09 Oct 2026 09:22:38 GMT'), (b'Content-Length', b'1395')])
+2026-10-09 14:52:38,387 | INFO     | httpx | HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-10-09 14:52:38,387 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-10-09 14:52:38,387 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-10-09 14:52:38,388 | DEBUG    | httpcore.http11 | response_closed.started
+2026-10-09 14:52:38,388 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-10-09 14:52:38,389 | DEBUG    | src.utils.logger | Raw model response: {
+    "answer": "Students must maintain accurate enrollment information, meet academic deadlines, attend required learning activities, comply with published examination procedures, maintain an active student account, keep contact details current, read official notices and course communications within a reasonable period, submit work through the designated academic system before stated deadlines, respect the learning environment, staff, visitors, and other students, protect passwords, access cards, and other credentials assigned to the student, report suspected safety incidents or serious policy violations through the appropriate channel, and seek clarification early when a rule or deadline is unclear. Requests for exceptions should be supported by relevant evidence and submitted through the prescribed process.",
+    "sources": [
+        "01_student_handbook.pdf, 2. Student Responsibilities, 1",
+        "01_student_handbook.pdf, 2. Student Responsibilities, 2",
+        "01_student_handbook.pdf, 2. Student Responsibilities, 3"
+    ]
+}
+2026-10-09 14:52:38,389 | WARNING  | src.utils.logger | Ignoring an unrecognized or duplicate source: 01_student_handbook.pdf, 2. Student Responsibilities, 1
+2026-10-09 14:52:38,390 | WARNING  | src.utils.logger | Ignoring an unrecognized or duplicate source: 01_student_handbook.pdf, 2. Student Responsibilities, 2
+2026-10-09 14:52:38,390 | WARNING  | src.utils.logger | Ignoring an unrecognized or duplicate source: 01_student_handbook.pdf, 2. Student Responsibilities, 3
+2026-10-09 14:52:38,390 | INFO     | src.utils.logger | RAG response generated successfully.
+2026-10-09 14:53:22,405 | INFO     | src.utils.logger | Processing RAG query: what did i asked you before
+2026-10-09 14:53:22,405 | INFO     | src.utils.logger | Running retrieval query: what did i asked you before
+2026-10-09 14:53:22,406 | DEBUG    | httpcore.connection | close.started
+2026-10-09 14:53:22,407 | DEBUG    | httpcore.connection | close.complete
+2026-10-09 14:53:22,407 | DEBUG    | httpcore.connection | connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-10-09 14:53:22,408 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001CEB77180E0>
+2026-10-09 14:53:22,408 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-10-09 14:53:22,409 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-10-09 14:53:22,409 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-10-09 14:53:22,410 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-10-09 14:53:22,410 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-10-09 14:53:23,751 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Fri, 09 Oct 2026 09:23:23 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-10-09 14:53:23,752 | INFO     | httpx | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-10-09 14:53:23,752 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-10-09 14:53:23,752 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-10-09 14:53:23,752 | DEBUG    | httpcore.http11 | response_closed.started
+2026-10-09 14:53:23,752 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-10-09 14:53:23,753 | INFO     | src.utils.logger | Retrieved 3 documents.
+2026-10-09 14:53:23,753 | INFO     | src.utils.logger | Retrieved 3 documents for the query.
+2026-10-09 14:53:23,754 | DEBUG    | httpcore.connection | close.started
+2026-10-09 14:53:23,755 | DEBUG    | httpcore.connection | close.complete
+2026-10-09 14:53:23,755 | DEBUG    | httpcore.connection | connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-10-09 14:53:23,756 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000001CF4A7BFFE0>
+2026-10-09 14:53:23,756 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-10-09 14:53:23,757 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-10-09 14:53:23,757 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-10-09 14:53:23,757 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-10-09 14:53:23,757 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-10-09 14:53:24,394 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Fri, 09 Oct 2026 09:23:24 GMT'), (b'Content-Length', b'431')])
+2026-10-09 14:53:24,395 | INFO     | httpx | HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-10-09 14:53:24,395 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-10-09 14:53:24,395 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-10-09 14:53:24,395 | DEBUG    | httpcore.http11 | response_closed.started
+2026-10-09 14:53:24,396 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-10-09 14:53:24,396 | DEBUG    | src.utils.logger | Raw model response: {
+    "answer": "I don't have enough information in the provided documents.",
+    "sources": []
+}
+2026-10-09 14:53:24,397 | INFO     | src.utils.logger | RAG response generated successfully.
+2026-10-09 14:53:53,207 | INFO     | src.utils.logger | Processing RAG query: my name is balaji im a student what rules i must follow
+2026-10-09 14:53:53,208 | INFO     | src.utils.logger | Running retrieval query: my name is balaji im a student what rules i must follow
+2026-10-09 14:53:53,209 | DEBUG    | httpcore.connection | close.started
+2026-10-09 14:53:53,209 | DEBUG    | httpcore.connection | close.complete
+2026-10-09 14:53:53,210 | DEBUG    | httpcore.connection | connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-10-09 14:53:53,211 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001CEB7719610>
+2026-10-09 14:53:53,211 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-10-09 14:53:53,212 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-10-09 14:53:53,212 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-10-09 14:53:53,212 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-10-09 14:53:53,212 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-10-09 14:53:54,556 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Fri, 09 Oct 2026 09:23:54 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-10-09 14:53:54,556 | INFO     | httpx | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-10-09 14:53:54,556 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-10-09 14:53:54,557 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-10-09 14:53:54,557 | DEBUG    | httpcore.http11 | response_closed.started
+2026-10-09 14:53:54,557 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-10-09 14:53:54,558 | INFO     | src.utils.logger | Retrieved 3 documents.
+2026-10-09 14:53:54,558 | INFO     | src.utils.logger | Retrieved 3 documents for the query.
+2026-10-09 14:53:54,559 | DEBUG    | httpcore.connection | close.started
+2026-10-09 14:53:54,560 | DEBUG    | httpcore.connection | close.complete
+2026-10-09 14:53:54,560 | DEBUG    | httpcore.connection | connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-10-09 14:53:54,561 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000001CEB7722F00>
+2026-10-09 14:53:54,561 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-10-09 14:53:54,562 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-10-09 14:53:54,562 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-10-09 14:53:54,562 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-10-09 14:53:54,562 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-10-09 14:53:56,810 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Fri, 09 Oct 2026 09:23:56 GMT'), (b'Content-Length', b'840')])
+2026-10-09 14:53:56,811 | INFO     | httpx | HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-10-09 14:53:56,811 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-10-09 14:53:56,811 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-10-09 14:53:56,812 | DEBUG    | httpcore.http11 | response_closed.started
+2026-10-09 14:53:56,812 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-10-09 14:53:56,812 | DEBUG    | src.utils.logger | Raw model response: {
+    "answer": "You must follow the rules outlined in the Student Handbook, which includes maintaining accurate enrollment information, attending required learning activities, and complying with academic deadlines. Additionally, you should respect the learning environment, report suspected safety incidents or serious policy violations, and protect passwords and credentials. For specific details, refer to the Student Handbook document.",
+    "sources": [
+        "01_student_handbook.pdf"
+    ]
+}
+2026-10-09 14:53:56,812 | INFO     | src.utils.logger | RAG response generated successfully.
+2026-10-09 14:54:08,321 | INFO     | src.utils.logger | Processing RAG query: who am i
+2026-10-09 14:54:08,321 | INFO     | src.utils.logger | Running retrieval query: who am i
+2026-10-09 14:54:08,322 | DEBUG    | httpcore.connection | close.started
+2026-10-09 14:54:08,323 | DEBUG    | httpcore.connection | close.complete
+2026-10-09 14:54:08,323 | DEBUG    | httpcore.connection | connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-10-09 14:54:08,324 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001CEB771AAE0>
+2026-10-09 14:54:08,324 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-10-09 14:54:08,324 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-10-09 14:54:08,325 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-10-09 14:54:08,325 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-10-09 14:54:08,325 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-10-09 14:54:08,411 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Fri, 09 Oct 2026 09:24:08 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-10-09 14:54:08,411 | INFO     | httpx | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-10-09 14:54:08,411 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-10-09 14:54:08,411 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-10-09 14:54:08,411 | DEBUG    | httpcore.http11 | response_closed.started
+2026-10-09 14:54:08,411 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-10-09 14:54:08,413 | INFO     | src.utils.logger | Retrieved 3 documents.
+2026-10-09 14:54:08,413 | INFO     | src.utils.logger | Retrieved 3 documents for the query.
+2026-10-09 14:54:08,414 | DEBUG    | httpcore.connection | close.started
+2026-10-09 14:54:08,415 | DEBUG    | httpcore.connection | close.complete
+2026-10-09 14:54:08,415 | DEBUG    | httpcore.connection | connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-10-09 14:54:08,416 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000001CEB7719DC0>
+2026-10-09 14:54:08,417 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-10-09 14:54:08,417 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-10-09 14:54:08,417 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-10-09 14:54:08,418 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-10-09 14:54:08,418 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-10-09 14:54:08,949 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Fri, 09 Oct 2026 09:24:08 GMT'), (b'Content-Length', b'430')])
+2026-10-09 14:54:08,950 | INFO     | httpx | HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-10-09 14:54:08,950 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-10-09 14:54:08,950 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-10-09 14:54:08,950 | DEBUG    | httpcore.http11 | response_closed.started
+2026-10-09 14:54:08,950 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-10-09 14:54:08,952 | DEBUG    | src.utils.logger | Raw model response: {
+    "answer": "I don't have enough information in the provided documents",
+    "sources": []
+}
+2026-10-09 14:54:08,952 | INFO     | src.utils.logger | RAG response generated successfully.
+2026-10-09 14:59:00,671 | DEBUG    | httpcore.connection | close.started
+2026-10-09 14:59:00,674 | DEBUG    | httpcore.connection | close.complete
+2026-10-09 14:59:07,973 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-10-09 14:59:07,990 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-10-09 14:59:08,019 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-10-09 15:03:28,956 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-10-09 15:03:29,984 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-10-09 15:03:29,999 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-10-09 15:03:30,015 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-10-09 15:03:30,030 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-10-09 15:03:30,046 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-10-09 15:03:30,063 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-10-09 15:03:30,949 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-10-09 15:05:02,977 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-10-09 15:05:03,002 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-10-09 15:05:47,296 | INFO     | src.utils.logger | Initializing RAGAgent.
+2026-10-09 15:05:47,635 | INFO     | src.utils.logger | OllamaChatClient initialized with model_id: qwen2.5:3b
+2026-10-09 15:05:47,636 | INFO     | src.utils.logger | Initializing Ollama embedding model: qwen3-embedding:0.6b
+2026-10-09 15:05:48,320 | INFO     | src.utils.logger | Embedding model initialized successfully.
+2026-10-09 15:05:48,321 | INFO     | src.utils.logger | Loading FAISS vector store from: D:\RAG\data\vector_store
+2026-10-09 15:05:48,327 | DEBUG    | faiss.loader | Environment variable FAISS_OPT_LEVEL is not set, so let's pick the instruction set according to the current CPU
+2026-10-09 15:05:48,327 | INFO     | faiss.loader | Loading faiss with AVX512 support.
+2026-10-09 15:05:48,327 | INFO     | faiss.loader | Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+2026-10-09 15:05:48,328 | INFO     | faiss.loader | Loading faiss with AVX2 support.
+2026-10-09 15:05:48,328 | INFO     | faiss.loader | Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-10-09 15:05:48,328 | INFO     | faiss.loader | Loading faiss.
+2026-10-09 15:05:48,778 | INFO     | faiss.loader | Successfully loaded faiss.
+2026-10-09 15:05:48,793 | INFO     | src.utils.logger | FAISS vector store loaded successfully.
+2026-10-09 15:05:48,794 | INFO     | src.utils.logger | FAISS vector store loaded from: D:\RAG\data\vector_store
+2026-10-09 15:05:48,841 | INFO     | src.utils.logger | RAGAgent initialized successfully.
+2026-10-09 15:05:48,842 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-10-09 15:07:18,964 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-10-09 15:07:18,984 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-10-09 15:07:19,966 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-10-09 15:08:08,171 | INFO     | src.utils.logger | Initializing RAGAgent.
+2026-10-09 15:08:08,522 | INFO     | src.utils.logger | OllamaChatClient initialized with model_id: qwen2.5:3b
+2026-10-09 15:08:08,523 | INFO     | src.utils.logger | Initializing Ollama embedding model: qwen3-embedding:0.6b
+2026-10-09 15:08:09,194 | INFO     | src.utils.logger | Embedding model initialized successfully.
+2026-10-09 15:08:09,194 | INFO     | src.utils.logger | Loading FAISS vector store from: D:\RAG\data\vector_store
+2026-10-09 15:08:09,199 | DEBUG    | faiss.loader | Environment variable FAISS_OPT_LEVEL is not set, so let's pick the instruction set according to the current CPU
+2026-10-09 15:08:09,199 | INFO     | faiss.loader | Loading faiss with AVX512 support.
+2026-10-09 15:08:09,200 | INFO     | faiss.loader | Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+2026-10-09 15:08:09,200 | INFO     | faiss.loader | Loading faiss with AVX2 support.
+2026-10-09 15:08:09,200 | INFO     | faiss.loader | Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-10-09 15:08:09,200 | INFO     | faiss.loader | Loading faiss.
+2026-10-09 15:08:09,659 | INFO     | faiss.loader | Successfully loaded faiss.
+2026-10-09 15:08:09,671 | INFO     | src.utils.logger | FAISS vector store loaded successfully.
+2026-10-09 15:08:09,672 | INFO     | src.utils.logger | FAISS vector store loaded from: D:\RAG\data\vector_store
+2026-10-09 15:08:09,709 | INFO     | src.utils.logger | RAGAgent initialized successfully.
+2026-10-09 15:08:09,710 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-10-09 15:10:14,202 | INFO     | src.utils.logger | Initializing RAGAgent.
+2026-10-09 15:10:14,524 | INFO     | src.utils.logger | OllamaChatClient initialized with model_id: qwen2.5:3b
+2026-10-09 15:10:14,524 | INFO     | src.utils.logger | Initializing Ollama embedding model: qwen3-embedding:0.6b
+2026-10-09 15:10:15,182 | INFO     | src.utils.logger | Embedding model initialized successfully.
+2026-10-09 15:10:15,183 | INFO     | src.utils.logger | Loading FAISS vector store from: D:\RAG\data\vector_store
+2026-10-09 15:10:15,188 | DEBUG    | faiss.loader | Environment variable FAISS_OPT_LEVEL is not set, so let's pick the instruction set according to the current CPU
+2026-10-09 15:10:15,188 | INFO     | faiss.loader | Loading faiss with AVX512 support.
+2026-10-09 15:10:15,189 | INFO     | faiss.loader | Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+2026-10-09 15:10:15,189 | INFO     | faiss.loader | Loading faiss with AVX2 support.
+2026-10-09 15:10:15,189 | INFO     | faiss.loader | Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-10-09 15:10:15,189 | INFO     | faiss.loader | Loading faiss.
+2026-10-09 15:10:15,228 | INFO     | faiss.loader | Successfully loaded faiss.
+2026-10-09 15:10:15,245 | INFO     | src.utils.logger | FAISS vector store loaded successfully.
+2026-10-09 15:10:15,245 | INFO     | src.utils.logger | FAISS vector store loaded from: D:\RAG\data\vector_store
+2026-10-09 15:10:15,295 | INFO     | src.utils.logger | RAGAgent initialized successfully.
+2026-10-09 15:10:15,299 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-10-09 15:10:15,304 | INFO     | src.utils.logger | Processing RAG query: hi, im balaji tadisetty and i am student please tell me what rules i must follow
+2026-10-09 15:10:15,304 | INFO     | src.utils.logger | Running retrieval query: hi, im balaji tadisetty and i am student please tell me what rules i must follow
+2026-10-09 15:10:15,330 | DEBUG    | httpcore.connection | connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-10-09 15:10:15,331 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000173DB1736E0>
+2026-10-09 15:10:15,332 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-10-09 15:10:15,332 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-10-09 15:10:15,333 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-10-09 15:10:15,333 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-10-09 15:10:15,333 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-10-09 15:10:19,666 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Fri, 09 Oct 2026 09:40:19 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-10-09 15:10:19,667 | INFO     | httpx | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-10-09 15:10:19,667 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-10-09 15:10:19,668 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-10-09 15:10:19,668 | DEBUG    | httpcore.http11 | response_closed.started
+2026-10-09 15:10:19,668 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-10-09 15:10:19,669 | INFO     | src.utils.logger | Retrieved 3 documents.
+2026-10-09 15:10:19,669 | INFO     | src.utils.logger | Retrieved 3 documents for the query.
+2026-10-09 15:10:19,676 | DEBUG    | httpcore.connection | connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-10-09 15:10:19,678 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000173DB12B350>
+2026-10-09 15:10:19,678 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-10-09 15:10:19,678 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-10-09 15:10:19,679 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-10-09 15:10:19,679 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-10-09 15:10:19,679 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-10-09 15:10:25,297 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Fri, 09 Oct 2026 09:40:25 GMT'), (b'Content-Length', b'1316')])
+2026-10-09 15:10:25,298 | INFO     | httpx | HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-10-09 15:10:25,298 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-10-09 15:10:25,298 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-10-09 15:10:25,298 | DEBUG    | httpcore.http11 | response_closed.started
+2026-10-09 15:10:25,299 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-10-09 15:10:25,300 | DEBUG    | src.utils.logger | Raw model response: {
+    "answer": "Students must follow the rules mentioned in Document 1 and Document 2, which include maintaining accurate enrollment information, meeting academic deadlines, attending required learning activities, complying with published examination procedures, maintaining an active student account, reading official notices, submitting work on time, respecting the learning environment, protecting credentials, reporting safety incidents, seeking clarification when rules or deadlines are unclear, and requesting exceptions through the prescribed process. Additionally, students must follow the instructions for examination conduct as outlined in Document 3, which include not accessing unauthorized materials, not copying work, not obtaining advance access to content, not impersonating another student, and not removing examination materials unless instructed.",
+    "sources": ["01_student_handbook.pdf", "01_student_handbook.pdf", "03_examination_guidelines.pdf"]
+}
+2026-10-09 15:10:25,301 | WARNING  | src.utils.logger | Ignoring an unrecognized or duplicate source: 01_student_handbook.pdf
+2026-10-09 15:10:25,301 | INFO     | src.utils.logger | RAG response generated successfully.
+2026-10-09 15:10:36,937 | INFO     | src.utils.logger | Processing RAG query: what is my name
+2026-10-09 15:10:36,937 | INFO     | src.utils.logger | Running retrieval query: what is my name
+2026-10-09 15:10:36,938 | DEBUG    | httpcore.connection | close.started
+2026-10-09 15:10:36,939 | DEBUG    | httpcore.connection | close.complete
+2026-10-09 15:10:36,940 | DEBUG    | httpcore.connection | connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-10-09 15:10:36,941 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000173DB1D9EB0>
+2026-10-09 15:10:36,941 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-10-09 15:10:36,941 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-10-09 15:10:36,941 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-10-09 15:10:36,942 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-10-09 15:10:36,942 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-10-09 15:10:37,561 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Fri, 09 Oct 2026 09:40:37 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-10-09 15:10:37,562 | INFO     | httpx | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-10-09 15:10:37,562 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-10-09 15:10:37,562 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-10-09 15:10:37,562 | DEBUG    | httpcore.http11 | response_closed.started
+2026-10-09 15:10:37,562 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-10-09 15:10:37,564 | INFO     | src.utils.logger | Retrieved 3 documents.
+2026-10-09 15:10:37,564 | INFO     | src.utils.logger | Retrieved 3 documents for the query.
+2026-10-09 15:10:37,566 | DEBUG    | httpcore.connection | close.started
+2026-10-09 15:10:37,567 | DEBUG    | httpcore.connection | close.complete
+2026-10-09 15:10:37,567 | DEBUG    | httpcore.connection | connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-10-09 15:10:37,568 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x00000173876900E0>
+2026-10-09 15:10:37,569 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-10-09 15:10:37,569 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-10-09 15:10:37,569 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-10-09 15:10:37,569 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-10-09 15:10:37,570 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-10-09 15:10:38,036 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Fri, 09 Oct 2026 09:40:38 GMT'), (b'Content-Length', b'431')])
+2026-10-09 15:10:38,037 | INFO     | httpx | HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-10-09 15:10:38,037 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-10-09 15:10:38,037 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-10-09 15:10:38,037 | DEBUG    | httpcore.http11 | response_closed.started
+2026-10-09 15:10:38,038 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-10-09 15:10:38,038 | DEBUG    | src.utils.logger | Raw model response: {
+    "answer": "I don't have enough information in the provided documents.",
+    "sources": []
+}
+2026-10-09 15:10:38,039 | INFO     | src.utils.logger | RAG response generated successfully.
+2026-10-09 15:13:16,174 | INFO     | src.utils.logger | Initializing RAGAgent.
+2026-10-09 15:13:16,509 | INFO     | src.utils.logger | OllamaChatClient initialized with model_id: qwen2.5:3b
+2026-10-09 15:13:16,509 | INFO     | src.utils.logger | Initializing Ollama embedding model: qwen3-embedding:0.6b
+2026-10-09 15:13:17,168 | INFO     | src.utils.logger | Embedding model initialized successfully.
+2026-10-09 15:13:17,168 | INFO     | src.utils.logger | Loading FAISS vector store from: D:\RAG\data\vector_store
+2026-10-09 15:13:17,173 | DEBUG    | faiss.loader | Environment variable FAISS_OPT_LEVEL is not set, so let's pick the instruction set according to the current CPU
+2026-10-09 15:13:17,173 | INFO     | faiss.loader | Loading faiss with AVX512 support.
+2026-10-09 15:13:17,173 | INFO     | faiss.loader | Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+2026-10-09 15:13:17,174 | INFO     | faiss.loader | Loading faiss with AVX2 support.
+2026-10-09 15:13:17,174 | INFO     | faiss.loader | Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-10-09 15:13:17,174 | INFO     | faiss.loader | Loading faiss.
+2026-10-09 15:13:17,570 | INFO     | faiss.loader | Successfully loaded faiss.
+2026-10-09 15:13:17,583 | INFO     | src.utils.logger | FAISS vector store loaded successfully.
+2026-10-09 15:13:17,584 | INFO     | src.utils.logger | FAISS vector store loaded from: D:\RAG\data\vector_store
+2026-10-09 15:13:17,622 | INFO     | src.utils.logger | RAGAgent initialized successfully.
+2026-10-09 15:13:17,625 | DEBUG    | asyncio | Using proactor: IocpProactor
+2026-10-09 15:13:17,627 | INFO     | src.utils.logger | Processing RAG query: hi, im balaji tadisetty and i am student please tell me what rules i must follow
+2026-10-09 15:13:17,627 | INFO     | src.utils.logger | Running retrieval query: hi, im balaji tadisetty and i am student please tell me what rules i must follow
+2026-10-09 15:13:17,638 | DEBUG    | httpcore.connection | connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-10-09 15:13:17,639 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B85808F6B0>
+2026-10-09 15:13:17,639 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-10-09 15:13:17,639 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-10-09 15:13:17,640 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-10-09 15:13:17,640 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-10-09 15:13:17,640 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-10-09 15:13:19,042 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Fri, 09 Oct 2026 09:43:19 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-10-09 15:13:19,042 | INFO     | httpx | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-10-09 15:13:19,043 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-10-09 15:13:19,043 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-10-09 15:13:19,043 | DEBUG    | httpcore.http11 | response_closed.started
+2026-10-09 15:13:19,043 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-10-09 15:13:19,044 | INFO     | src.utils.logger | Retrieved 3 documents.
+2026-10-09 15:13:19,044 | INFO     | src.utils.logger | Retrieved 3 documents for the query.
+2026-10-09 15:13:19,049 | DEBUG    | httpcore.connection | connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-10-09 15:13:19,050 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000001B8580D8E90>
+2026-10-09 15:13:19,050 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-10-09 15:13:19,051 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-10-09 15:13:19,051 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-10-09 15:13:19,051 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-10-09 15:13:19,051 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-10-09 15:13:22,970 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Fri, 09 Oct 2026 09:43:22 GMT'), (b'Content-Length', b'1318')])
+2026-10-09 15:13:22,971 | INFO     | httpx | HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-10-09 15:13:22,971 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-10-09 15:13:22,972 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-10-09 15:13:22,972 | DEBUG    | httpcore.http11 | response_closed.started
+2026-10-09 15:13:22,972 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-10-09 15:13:22,974 | DEBUG    | src.utils.logger | Raw model response: {
+    "answer": "You must follow the rules outlined in the student responsibilities section, as well as the examination conduct section. Specifically, you should maintain accurate enrollment information, meet academic deadlines, and comply with published examination procedures. Maintain your student account, keep your contact details current, submit work through the designated academic system before the deadlines, respect the learning environment, and protect your credentials. You should also seek clarification when a rule or deadline is unclear and support your requests for exceptions with relevant evidence. For examination conduct, you must follow instructions from authorized invigilators, do not access unauthorized materials, copy another candidate's work, obtain advance access to examination content, impersonate another student, or remove examination materials without instructions.",
+    "sources": ["01_student_handbook.pdf", "03_examination_guidelines.pdf"]
+}
+2026-10-09 15:13:22,974 | INFO     | src.utils.logger | RAG response generated successfully.
+2026-10-09 15:13:32,506 | INFO     | src.utils.logger | Processing RAG query: whats my name
+2026-10-09 15:13:32,506 | INFO     | src.utils.logger | Running retrieval query: whats my name
+2026-10-09 15:13:32,508 | DEBUG    | httpcore.connection | close.started
+2026-10-09 15:13:32,508 | DEBUG    | httpcore.connection | close.complete
+2026-10-09 15:13:32,508 | DEBUG    | httpcore.connection | connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-10-09 15:13:32,509 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001B858107A40>
+2026-10-09 15:13:32,509 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-10-09 15:13:32,510 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-10-09 15:13:32,510 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-10-09 15:13:32,511 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-10-09 15:13:32,511 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-10-09 15:13:32,606 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Fri, 09 Oct 2026 09:43:32 GMT'), (b'Transfer-Encoding', b'chunked')])
+2026-10-09 15:13:32,606 | INFO     | httpx | HTTP Request: POST http://127.0.0.1:11434/api/embed "HTTP/1.1 200 OK"
+2026-10-09 15:13:32,606 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-10-09 15:13:32,608 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-10-09 15:13:32,608 | DEBUG    | httpcore.http11 | response_closed.started
+2026-10-09 15:13:32,608 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-10-09 15:13:32,609 | INFO     | src.utils.logger | Retrieved 3 documents.
+2026-10-09 15:13:32,609 | INFO     | src.utils.logger | Retrieved 3 documents for the query.
+2026-10-09 15:13:32,612 | DEBUG    | httpcore.connection | close.started
+2026-10-09 15:13:32,613 | DEBUG    | httpcore.connection | close.complete
+2026-10-09 15:13:32,613 | DEBUG    | httpcore.connection | connect_tcp.started host='127.0.0.1' port=11434 local_address=None timeout=None socket_options=None
+2026-10-09 15:13:32,615 | DEBUG    | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x000001B7F7A878F0>
+2026-10-09 15:13:32,615 | DEBUG    | httpcore.http11 | send_request_headers.started request=<Request [b'POST']>
+2026-10-09 15:13:32,615 | DEBUG    | httpcore.http11 | send_request_headers.complete
+2026-10-09 15:13:32,615 | DEBUG    | httpcore.http11 | send_request_body.started request=<Request [b'POST']>
+2026-10-09 15:13:32,617 | DEBUG    | httpcore.http11 | send_request_body.complete
+2026-10-09 15:13:32,617 | DEBUG    | httpcore.http11 | receive_response_headers.started request=<Request [b'POST']>
+2026-10-09 15:13:33,099 | DEBUG    | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Date', b'Fri, 09 Oct 2026 09:43:33 GMT'), (b'Content-Length', b'431')])
+2026-10-09 15:13:33,099 | INFO     | httpx | HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2026-10-09 15:13:33,099 | DEBUG    | httpcore.http11 | receive_response_body.started request=<Request [b'POST']>
+2026-10-09 15:13:33,100 | DEBUG    | httpcore.http11 | receive_response_body.complete
+2026-10-09 15:13:33,100 | DEBUG    | httpcore.http11 | response_closed.started
+2026-10-09 15:13:33,100 | DEBUG    | httpcore.http11 | response_closed.complete
+2026-10-09 15:13:33,101 | DEBUG    | src.utils.logger | Raw model response: {
+    "answer": "I don't have enough information in the provided documents",
+    "sources": []
+}
+2026-10-09 15:13:33,101 | INFO     | src.utils.logger | RAG response generated successfully.

@@ -1,7 +1,7 @@
 [
   {
     "file_name": "01_student_handbook.pdf",
-    "file_path": "D:\\RAG\\data\\pdfs\\01_student_handbook.pdf",
+    "file_path": "D:\\RAG\\data\\uploads\\current_batch\\01_student_handbook.pdf",
     "num_pages": 5,
     "file_size_bytes": 35768,
     "elements": [
@@ -998,7 +998,7 @@
   },
   {
     "file_name": "02_academic_regulations.pdf",
-    "file_path": "D:\\RAG\\data\\pdfs\\02_academic_regulations.pdf",
+    "file_path": "D:\\RAG\\data\\uploads\\current_batch\\02_academic_regulations.pdf",
     "num_pages": 15,
     "file_size_bytes": 123298,
     "elements": [
@@ -3291,7 +3291,7 @@
   },
   {
     "file_name": "03_examination_guidelines.pdf",
-    "file_path": "D:\\RAG\\data\\pdfs\\03_examination_guidelines.pdf",
+    "file_path": "D:\\RAG\\data\\uploads\\current_batch\\03_examination_guidelines.pdf",
     "num_pages": 5,
     "file_size_bytes": 34791,
     "elements": [
@@ -4233,7 +4233,7 @@
   },
   {
     "file_name": "04_fee_structure.pdf",
-    "file_path": "D:\\RAG\\data\\pdfs\\04_fee_structure.pdf",
+    "file_path": "D:\\RAG\\data\\uploads\\current_batch\\04_fee_structure.pdf",
     "num_pages": 5,
     "file_size_bytes": 34567,
     "elements": [
@@ -5020,7 +5020,7 @@
   },
   {
     "file_name": "05_scholarship_guidelines.pdf",
-    "file_path": "D:\\RAG\\data\\pdfs\\05_scholarship_guidelines.pdf",
+    "file_path": "D:\\RAG\\data\\uploads\\current_batch\\05_scholarship_guidelines.pdf",
     "num_pages": 5,
     "file_size_bytes": 35300,
     "elements": [

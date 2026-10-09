@@ -11,8 +11,8 @@ from docling_core.types.doc import DocItemLabel, PictureItem, TableItem, TextIte
 @dataclass
 class DocumentElement:
     element_id: int
-    type: str  # "title", "heading", "paragraph", "list_item", "table", "document_index", "picture", "code", "caption"
-    content: str  # Direct text string or canonical Markdown string
+    type: str  
+    content: str  
     page_number: int
     section_path: list[str]  # e.g., ["Academic Regulations", "Table of Contents"]
     metadata: dict[str, Any] = field(default_factory=dict)
