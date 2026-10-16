@@ -1,8 +1,67 @@
+---
 Application:
-  max_chunk : 4000
-  chunk_overlap : 200
+  application_settings:
+    name: RagApp
+    version: 1.1.0
+    environment: development
   logging:
     level: DEBUG
     file: logs/app.log
-    format: "%(asctime)s | %(levelname)-8s | %(name)s | %(message)s"
-    datefmt: "%Y-%m-%d %H:%M:%S"
+    format: '%(asctime)s | %(levelname)-8s | %(name)s | %(message)s'
+    datefmt: '%Y-%m-%d %H:%M:%S'
+  file_upload_settings:
+    upload_directory: data/uploads
+    processed_directory: data/processed
+    max_file_size: 10
+    allowed_file_types: [pdf, docx, txt, csv, json, xlsx]
+    whether_multi_file_upload: true
+  document_extraction_settings:
+    ocr_enabled: true
+    table_extraction_enabled: true
+    image_extraction_enabled: true
+    page_information_preservation: true
+    header_footer_extraction: false
+    document_index_handling: true
+  structured_data_extraction_settings:
+    max_rows: 10000
+    max_columns: 100
+    encoding: utf-8
+    csv_delimiter: ','
+  chunking_settings:
+    chunk_size: 4000
+    chunk_overlap: 200
+    whether_headers_preserved: true
+    whether_metadata_preserved: true
+  embedding_settings:
+    provider: ollama
+    model: qwen3-embedding:0.6b
+  vector_database_settings:
+    index_name: ragapp_index
+    vector_store_directory: data/vector_store
+  rag:
+    llm_provider: ollama
+    llm_model: qwen2.5:3b
+    temperature: 0.7
+    top_k_retrievals: 3
+    confidence_threshold: 80
+    max_attempts: 3
+  ingestion:
+    embedding:
+      model: "qwen3-embedding:0.6b"
+    vector_store:
+      directory: "./data/vector_store"
+    chunking:
+      document:
+        max_chunk_size: 4000
+        chunk_overlap: 200
+      spreadsheet:
+        rows_per_chunk: 25
+        max_chunk_size: 4000
+        chunk_overlap: 200
+  paths:
+    document_data : "./data/raw_files/document_data.json"
+    final_document_chunks : "./data/raw_files/final_document_chunks.json"
+    document_chunks : "./data/raw_files/document_chunks.json"
+    spreadsheet_data: "./data/raw_files/spreadsheet_data.json"
+    spreadsheet_chunks: "./data/chunks/spreadsheet_chunks.json"
+    final_spreedsheet_chunks : "./data/raw_files/final_spreedsheet_chunks.json"

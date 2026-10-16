@@ -1,0 +1,55 @@
+project/
+│
+├── app/
+│   ├── presentation/
+│   │   ├── api/
+│   │   │   ├── routes_upload.py
+│   │   │   ├── routes_chat.py
+│   │   │   └── routes_health.py
+│   │   │
+│   │   └── schemas/
+│   │       ├── upload_schema.py
+│   │       ├── chat_schema.py
+│   │       └── response_schema.py
+│   │
+│   ├── business/
+│   │   ├── ingestion/
+│   │   │   ├── router.py
+│   │   │   ├── pdf_extractor.py
+│   │   │   ├── document_extractor.py
+│   │   │   ├── structured_parser.py
+│   │   │   ├── text_extractor.py
+│   │   │   ├── ocr_extractor.py
+│   │   │   └── sql_parser.py
+│   │   │
+│   │   ├── chunking/
+│   │   └── rag/
+│   │
+│   ├── data/
+│   │   ├── embeddings/
+│   │   └── vector_store/
+│   │
+│   └── core/
+│       ├── config.py
+│       ├── logging.py
+│       └── security.py   ← SECURITY
+│
+├── frontend/
+│   ├── index.html
+│   ├── css/
+│   │   └── style.css
+│   └── js/
+│       └── app.js
+│
+├── config/
+│   └── config.yaml
+│
+├── mcp/
+│   └── server.py
+│
+├── data/
+│   ├── uploads/
+│   ├── processed/
+│   └── vector_store/
+│
+└── main.py

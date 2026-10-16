@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7fb">
+    <title>RAG Knowledge Base</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="/static/app.js" defer></script>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="RAG Knowledge Base home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path
+                d="M5 5.5A2.5 2.5 0 0 1 7.5 3H20v15H7.5A2.5 2.5 0 0 0 5 20.5v-15Z"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M5 6v14.5A1.5 1.5 0 0 1 6.5 19H20M9 7h7M9 10.5h7"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+              />
+            </svg>
+          </span>
+          <span>RAG Knowledge Base</span>
+        </a>
+        <a class="api-link" href="/docs">API docs <span aria-hidden="true">↗</span></a>
+      </header>
+
+      <nav class="view-tabs" aria-label="Application">
+        <button
+          class="view-tab active"
+          id="upload-tab"
+          type="button"
+          role="tab"
+          aria-selected="true"
+          aria-controls="upload-view"
+        >
+          Add documents
+        </button>
+        <button
+          class="view-tab"
+          id="chat-tab"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="chat-view"
+        >
+          Ask a question
+        </button>
+      </nav>
+
+      <section
+        class="app-view"
+        id="upload-view"
+        role="tabpanel"
+        aria-labelledby="upload-tab"
+      >
+        <div class="intro">
+          <p class="eyebrow">Knowledge ingestion</p>
+          <h1>Add documents to your<br>knowledge base.</h1>
+          <p class="subtitle">
+            Upload documents to extract, process and index them for your RAG
+            assistant.
+          </p>
+        </div>
+
+        <section class="card" aria-label="Upload documents">
+          <div class="card-main">
+            <label class="dropzone" id="dropzone" for="file-input" tabindex="0">
+              <span class="upload-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 15V4m0 0L8 8m4-4 4 4M5 14v4.5A1.5 1.5 0 0 0 6.5 20h11a1.5 1.5 0 0 0 1.5-1.5V14"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <span class="drop-title">Drop your files here</span>
+              <span class="drop-hint">
+                or <span class="browse">browse files</span> from your device
+              </span>
+              <span
+                class="file-rules"
+                id="file-rules"
+                aria-label="Supported file types"
+              ></span>
+            </label>
+            <input id="file-input" type="file" multiple>
+
+            <div class="section-heading">
+              <span>Files to upload</span>
+              <span class="file-count" id="file-count">0 files selected</span>
+            </div>
+            <div class="file-list" id="file-list" aria-live="polite">
+              <div class="empty-files">Your selected files will appear here.</div>
+            </div>
+            <div class="notice" id="upload-notice" role="status" aria-live="polite"></div>
+          </div>
+
+          <footer class="card-footer">
+            <p class="footer-note">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M12 3 5 6v5c0 4.5 2.9 8.2 7 10 4.1-1.8 7-5.5 7-10V6l-7-3Z"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="m9 12 2 2 4-4"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              Files are checked before they are saved and indexed.
+            </p>
+            <button class="primary-button" id="upload-button" type="button" disabled>
+              <span class="spinner" aria-hidden="true"></span>
+              <svg class="button-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M12 15V4m0 0L8 8m4-4 4 4M5 14v4.5A1.5 1.5 0 0 0 6.5 20h11a1.5 1.5 0 0 0 1.5-1.5V14"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span id="upload-button-label">Upload and index</span>
+            </button>
+          </footer>
+        </section>
+
+        <p class="privacy-note">
+          Supported file types and size limits are set by the server.
+        </p>
+      </section>
+
+      <section
+        class="app-view hidden"
+        id="chat-view"
+        role="tabpanel"
+        aria-labelledby="chat-tab"
+        hidden
+      >
+        <div class="intro">
+          <p class="eyebrow">Ask your documents</p>
+          <h1>What would you<br>like to know?</h1>
+          <p class="subtitle">
+            Ask a question and get an answer grounded in the documents you have
+            uploaded.
+          </p>
+        </div>
+
+        <section class="card chat-card" aria-label="Chat with your documents">
+          <div
+            class="chat-messages"
+            id="chat-messages"
+            role="log"
+            aria-live="polite"
+            aria-relevant="additions"
+          >
+            <div class="chat-welcome" id="chat-welcome">
+              <span class="welcome-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H7l-4 2v-5.5A7.5 7.5 0 1 1 20 11.5Z"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M8 10h8M8 13.5h5"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+              <h2>Ask something about your files</h2>
+              <p>
+                Try asking about a policy, a deadline, or a detail in one of
+                your documents.
+              </p>
+            </div>
+          </div>
+
+          <div class="chat-notice" id="chat-notice" role="status" aria-live="polite"></div>
+
+          <form class="chat-form" id="chat-form">
+            <label class="visually-hidden" for="chat-query">Your question</label>
+            <textarea
+              id="chat-query"
+              name="query"
+              rows="1"
+              maxlength="2000"
+              placeholder="Ask a question about your documents..."
+              required
+            ></textarea>
+            <button class="send-button" id="send-button" type="submit" aria-label="Send question">
+              <span class="spinner" aria-hidden="true"></span>
+              <svg class="send-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M21 3 10.5 13.5M21 3l-6.5 18-4-7.5L3 9.5 21 3Z"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </form>
+          <p class="chat-hint">Enter to send · Shift + Enter for a new line</p>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
