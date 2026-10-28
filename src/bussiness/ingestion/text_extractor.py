@@ -1,13 +1,11 @@
+import asyncio
 from pathlib import Path
 
 from agent_framework import Executor, WorkflowContext, handler
 
-from src.bussiness.ingestion.document_extraction import (
-    DocumentData,
-    DocumentElement,
-)
-from src.bussiness.ingestion.models import Files
 from src.core.logger import logger
+from src.models.document import DocumentData, DocumentElement
+from src.models.ingestion import Files
 
 
 class TXTExecutor(Executor):
@@ -24,8 +22,10 @@ class TXTExecutor(Executor):
             file_path = Path(file.file_path)
 
             try:
-                with open(file_path, "r", encoding="utf-8") as f:
-                    text = f.read()
+                text = await asyncio.to_thread(
+                    file_path.read_text,
+                    encoding="utf-8",
+                )
 
                 document = DocumentData(
                     file_path=str(file_path),

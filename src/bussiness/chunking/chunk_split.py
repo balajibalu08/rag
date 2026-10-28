@@ -58,7 +58,7 @@ def load_chunks(json_path: str) -> list[dict[str, Any]]:
     if not isinstance(data, list):
         logger.error("Expected JSON root to be a list.")
 
-        raise ValueError("Expected JSON root to contain a list of chunks.")
+        raise TypeError("Expected JSON root to contain a list of chunks.")
 
     logger.info("Successfully loaded %d chunks.", len(data))
 
@@ -247,7 +247,7 @@ def refine_all_chunks(input_path: str, output_path: str) -> list[dict[str, Any]]
 
             final_chunks.extend(refined_chunks)
 
-        except Exception:
+        except Exception:  # noqa: BLE001 - Continue refining the remaining chunks.
             failed_count += 1
 
             logger.exception("Failed to process chunk: %s", chunk_id)

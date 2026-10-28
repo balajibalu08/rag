@@ -7,7 +7,6 @@ from src.bussiness.chunking.chunk_executor import (
     SpreadsheetChunkExecutor,
 )
 from src.bussiness.ingestion.filter import filter_files
-from src.bussiness.ingestion.models import ChunkData, Files
 from src.bussiness.ingestion.pdf_extractor import (
     DocumentExtractor,
 )
@@ -16,6 +15,7 @@ from src.bussiness.ingestion.spreedsheet_executor import (
 )
 from src.bussiness.ingestion.text_extractor import TXTExecutor
 from src.core.logger import logger
+from src.models.ingestion import ChunkData, Files
 
 
 class SpreadsheetPipelineExecutor(Executor):

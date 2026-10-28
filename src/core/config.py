@@ -20,4 +20,4 @@ except yaml.YAMLError as exc:
 
 
 if not isinstance(config, dict):
-    raise ValueError("Configuration must contain a YAML dictionary.")
+    raise TypeError("Configuration must contain a YAML dictionary.")

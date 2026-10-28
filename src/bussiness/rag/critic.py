@@ -1,3 +1,5 @@
+import os
+
 from agent_framework_ollama import OllamaChatClient
 
 from src.core.config import config
@@ -48,7 +50,10 @@ class CriticAgent:
     def __init__(self):
         self.model = config["Application"]["rag"]["llm_model"]
         try:
-            self.client = OllamaChatClient(model=self.model)
+            self.client = OllamaChatClient(
+                model=self.model,
+                host=os.getenv("OLLAMA_HOST"),
+            )
             logger.info(
                 "OllamaChatClient initialized with model_id: %s",
                 self.model,

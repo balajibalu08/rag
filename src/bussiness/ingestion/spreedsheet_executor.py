@@ -4,12 +4,8 @@ import pandas as pd
 from agent_framework import Executor, WorkflowContext, handler
 
 from src.bussiness.ingestion.filter import filter_files
-from src.bussiness.ingestion.models import (
-    Files,
-    SheetData,
-    SpreadsheetData,
-)
 from src.core.logger import logger
+from src.models.ingestion import Files, SheetData, SpreadsheetData
 
 
 class SpreadsheetExecutor(Executor):
@@ -82,7 +78,7 @@ class SpreadsheetExecutor(Executor):
 
                 logger.info(f"Spreadsheet extraction completed: {file_path}")
 
-            except Exception as e:
+            except Exception as e:  # noqa: BLE001 - Isolate extraction failures per file.
                 logger.exception(
                     f"Error in spreadsheet executor: {file.file_path} - {e}"
                 )

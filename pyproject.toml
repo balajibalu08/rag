@@ -14,9 +14,11 @@ dependencies = [
     "langchain>=1.4.5",
     "langchain-community>=0.4.2",
     "langchain-ollama>=0.3.10",
+    "mcp>=1.30.0",
     "pandas>=3.0.6",
     "ruff>=0.17.0",
     "streamlit>=1.65.0",
+    "uvicorn[standard]>=0.34.0",
     "yamlfix>=1.19.1",
     "yamlfmt>=1.1.1",
 ]

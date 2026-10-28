@@ -8,46 +8,25 @@ from docling_core.types.doc import (
     TableItem,
     TextItem,
 )
-from pydantic import BaseModel, Field
 
 from src.core.config import config
 from src.core.logger import logger
-
-
-class DocumentElement(BaseModel):
-    element_id: int
-    type: str
-    content: str
-    page_number: int
-    section_path: list[str] = Field(default_factory=list)
-    metadata: dict = Field(default_factory=dict)
-
-
-class DocumentData(BaseModel):
-    file_name: str
-    file_path: str
-    num_pages: int
-    file_size_bytes: int
-    elements: list[DocumentElement] = Field(default_factory=list)
+from src.models.document import DocumentData, DocumentElement
 
 
 def extract_table_headers(table_md: str, df: pd.DataFrame) -> list[str]:
 
     headers = []
-    #extracting Headers from tables
-    try:
-        lines = table_md.splitlines()
+    # extracting Headers from tables
+    lines = table_md.splitlines()
 
-        for line in lines:
-            if line.strip().startswith("|"):
-                parts = [item.strip() for item in line.strip().strip("|").split("|")]
+    for line in lines:
+        if line.strip().startswith("|"):
+            parts = [item.strip() for item in line.strip().strip("|").split("|")]
 
-                if parts and not all(set(item) <= {"-", ":"} for item in parts):
-                    headers = parts
-                    break
-
-    except Exception as e:
-        logger.warning(f"Unable to extract table headers: {e}")
+            if parts and not all(set(item) <= {"-", ":"} for item in parts):
+                headers = parts
+                break
 
     if not headers and not df.empty:
         headers = [str(column) for column in df.columns]
@@ -271,7 +250,7 @@ def extract_document(file_path: str | Path) -> DocumentData | None:
 
         return document_data
 
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 - Docling can raise parser-specific errors.
         logger.exception(f"Error while extracting {file_path}: {e}")
 
         return None
@@ -309,7 +288,7 @@ def extract_documents_from_upload_directory() -> list[DocumentData]:
 
         return documents
 
-    except Exception as e:
+    except OSError as e:
         logger.exception(f"Error while extracting documents from upload directory: {e}")
 
         return documents

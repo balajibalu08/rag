@@ -1,17 +1,21 @@
 import asyncio
 import json
+import os
 import re
+from collections.abc import Awaitable, Callable
+from contextvars import ContextVar
 from pathlib import Path
+from typing import Any
 
+from agent_framework import MCPStreamableHTTPTool
 from agent_framework_ollama import OllamaChatClient
-from pydantic import BaseModel, Field
 
+from mcp import types as mcp_types
 from src.bussiness.ingestion.embedding_executor import EmbeddingExecutor
 from src.bussiness.rag.critic import CriticAgent
-from src.bussiness.rag.models.critic_response_model import CriticResponse
-from src.bussiness.rag.models.rag_response_model import RagRespone
 from src.core.config import config
 from src.core.logger import logger
+from src.models.rag import CriticResponse, QueryContextDecision, RagRespone
 
 INSUFFICIENT_INFORMATION = "I don't have enough information in the provided documents."
 
@@ -27,57 +31,34 @@ Do not answer the question or add facts.
 """
 
 
-class QueryContextDecision(BaseModel):
-    depends_on_history: bool = Field(
-        ...,
-        description="Whether the latest question requires earlier conversation turns.",
-    )
-    standalone_query: str = Field(
-        ...,
-        description=(
-            "A standalone rewrite if history is needed; otherwise return "
-            "the latest question unchanged."
-        ),
-    )
-
-
 INSTRUCTIONS = """
 You are a document-based RAG assistant.
 
-You must answer questions using only the retrieved documents supplied
-in the prompt.
+You have access to the `retrieve_documents` MCP tool.
 
 Rules:
 
-1. Use the retrieved documents as the only source of factual information.
+1. The application has already called `retrieve_documents` for this request.
+   Use only the retrieved passages included in the user message.
 
-2. Never invent facts, sources, filenames, page numbers, or information.
+2. Do not call the retrieval tool again.
 
-3. If the documents do not contain enough information, respond with:
+3. If no relevant passages were retrieved or they do not
+   contain enough information, respond with:
    "I don't have enough information in the provided documents."
 
-4. Include only sources that actually support the answer.
+4. Never invent facts, sources, filenames, page numbers, or information.
 
 5. Answer the user's question directly and clearly.
 
 6. Do not use outside knowledge.
 
-7. Return a valid JSON object with exactly these fields:
-
-{
-    "query": "The user's question",
-    "answer": "Answer based on the retrieved documents",
-    "sources": ["source filename"]
-}
-
-8. Do not include Markdown code fences around the JSON.
-
-9. Do not provide explanations outside the JSON object.
+7. Return only the answer text. Do not include JSON, source lists, or
+   explanations outside the answer.
 """
 
-
 class RAGAgent:
-    def __init__( self):
+    def __init__(self):
 
         logger.info("Initializing RAGAgent.")
 
@@ -91,6 +72,9 @@ class RAGAgent:
         self.confidence_threshold = config["Application"]["rag"]["confidence_threshold"]
 
         self.max_attempts = config["Application"]["rag"]["max_attempts"]
+        self._retrieved_documents: ContextVar[list[dict[str, Any]] | None] = ContextVar(
+            f"rag_retrieved_documents_{id(self)}", default=None
+        )
 
         if (
             type(self.confidence_threshold) is not int
@@ -108,7 +92,10 @@ class RAGAgent:
         )
 
         try:
-            self.client = OllamaChatClient(model=self.model_id)
+            self.client = OllamaChatClient(
+                model=self.model_id,
+                host=os.getenv("OLLAMA_HOST"),
+            )
 
             logger.info(
                 "OllamaChatClient initialized with model_id: %s",
@@ -153,8 +140,18 @@ class RAGAgent:
             raise RuntimeError("Could not load the FAISS vector store.") from exc
 
         try:
+            mcp_settings = config["Application"]["mcp"]
+            self.mcp_tool = MCPStreamableHTTPTool(
+                name="rag_knowledge_base",
+                url=os.getenv("RAG_MCP_SERVER_URL", mcp_settings["server_url"]),
+                allowed_tools=["retrieve_documents"],
+                parse_tool_results=self._capture_mcp_tool_result,
+                description="Retrieve relevant document passages from the RAG vector store.",
+            )
+
             self.rag_agent = self.client.as_agent(
                 instructions=INSTRUCTIONS,
+                tools=[self.mcp_tool],
             )
 
             self.query_rewriter_agent = self.client.as_agent(
@@ -178,10 +175,29 @@ class RAGAgent:
 
             raise RuntimeError("Could not initialize the critic agent.") from exc
 
-    @staticmethod
-    def _get_source_reference( document ):
+    def reload_vector_store(self) -> None:
+        """Reload the on-disk index after newly uploaded documents are ingested."""
+        try:
+            self.vector_store = self.embedding.load_vector_store(
+                directory=str(self.vector_store_directory),
+                embeddings=self.embedding_model,
+            )
+        except Exception as exc:
+            logger.exception("Failed to reload the FAISS vector store.")
+            raise RuntimeError("Could not reload the FAISS vector store.") from exc
 
-        metadata = getattr(document, "metadata", {})
+        logger.info(
+            "FAISS vector store reloaded from: %s",
+            self.vector_store_directory.resolve(),
+        )
+
+    @staticmethod
+    def _get_source_reference(document):
+        metadata = (
+            document
+            if isinstance(document, dict)
+            else getattr(document, "metadata", {})
+        )
 
         if not metadata:
             return "Unknown source"
@@ -204,7 +220,7 @@ class RAGAgent:
         return "Unknown source"
 
     @staticmethod
-    def _extract_response_text( response ):
+    def _extract_response_text(response):
 
         text = getattr(response, "text", None)
 
@@ -221,9 +237,45 @@ class RAGAgent:
 
         raise ValueError("The agent returned an empty response.")
 
-    @staticmethod
-    def _parse_json_response( raw_response: str ):
+    def _capture_mcp_tool_result(self, result: mcp_types.CallToolResult) -> str:
+        structured_result = result.structuredContent
+        if isinstance(structured_result, dict):
+            documents = structured_result.get("result")
+            current_documents = self._retrieved_documents.get()
+            if isinstance(documents, list) and current_documents is not None:
+                current_documents.extend(
+                    document for document in documents if isinstance(document, dict)
+                )
+            return json.dumps(structured_result, ensure_ascii=False, default=str)
 
+        text_result = "\n".join(
+            item.text
+            for item in result.content
+            if isinstance(item, mcp_types.TextContent)
+        )
+        if text_result:
+            try:
+                parsed_result = json.loads(text_result)
+            except json.JSONDecodeError:
+                return text_result
+            if isinstance(parsed_result, dict):
+                documents = parsed_result.get("result")
+                current_documents = self._retrieved_documents.get()
+                if isinstance(documents, list) and current_documents is not None:
+                    current_documents.extend(
+                        document for document in documents if isinstance(document, dict)
+                    )
+            return text_result
+
+        return "The retrieval tool returned no document content."
+
+    @staticmethod
+    def _parse_json_response(raw_response: str):
+        """
+        This method is a helper function that takes the LLM's raw response, cleans it,
+        converts it from JSON text into a Python dictionary, and validates that the result
+        is actually a JSON object.
+        """
         cleaned = raw_response.strip()
 
         cleaned = re.sub(
@@ -242,125 +294,119 @@ class RAGAgent:
         parsed = json.loads(cleaned)
 
         if not isinstance(parsed, dict):
-            raise ValueError("The model response must be a JSON object.")
+            raise TypeError("The model response must be a JSON object.")
 
         return parsed
 
-    async def _generate_rag_response( self, query: str, context: str, feedback: str | None = None ) -> RagRespone:
-
-        if feedback:
-            prompt = f"""
-Improve the previous RAG answer using the critic feedback.
-
-Answer the user's question using ONLY the retrieved document context.
-
-Do not use outside knowledge.
-
-Do not invent information.
-
-Make sure the answer directly addresses the user's question.
-
-CRITIC FEEDBACK:
-{feedback}
-
-If the retrieved context does not contain sufficient information,
-return exactly:
-
-"{INSUFFICIENT_INFORMATION}"
-
-USER QUESTION:
-{query}
-
-RETRIEVED DOCUMENT CONTEXT:
-<context>
-{context}
-</context>
-
-Return ONLY a JSON object with this structure:
-
-{{
-    "query": "{query}",
-    "answer": "Answer based only on retrieved documents",
-    "sources": ["source filename"]
-}}
-"""
-
-        else:
-            prompt = f"""
-Answer the user's question using only the retrieved document context.
-
-If the context does not contain sufficient information to answer,
-return exactly:
-
-"{INSUFFICIENT_INFORMATION}"
-
-Do not infer missing facts from general knowledge.
-
-Do not invent information.
-
-The sources field must contain only source references listed
-in the retrieved context that support the answer.
-
-USER QUESTION:
-{query}
-
-RETRIEVED DOCUMENT CONTEXT:
-<context>
-{context}
-</context>
-
-Return ONLY a JSON object with this structure:
-
-{{
-    "query": "{query}",
-    "answer": "Answer based on the retrieved documents",
-    "sources": ["source filename"]
-}}
-"""
-
+    async def _generate_rag_response(
+        self,
+        query: str,
+        retrieval_query: str,
+        feedback: str | None = None,
+        on_answer_chunk: Callable[[str | None], Awaitable[None]] | None = None,
+    ) -> tuple[RagRespone, list[dict[str, Any]]]:
+        retrieved_documents: list[dict[str, Any]] = []
+        retrieval_token = self._retrieved_documents.set(retrieved_documents)
         try:
-            response = await self.rag_agent.run(prompt)
+            async with self.mcp_tool:
+                await self.mcp_tool.call_tool(
+                    "retrieve_documents",
+                    query=retrieval_query,
+                )
 
-            raw_response = self._extract_response_text(response)
+                logger.info(
+                    "MCP retrieval returned %d passages for query: %s",
+                    len(retrieved_documents),
+                    retrieval_query,
+                )
 
-            logger.debug("Raw model response: %s", raw_response)
+                context, _ = self._format_retrieved_documents(retrieved_documents)
+                if not context:
+                    return (
+                        RagRespone(
+                            query=query,
+                            answer=INSUFFICIENT_INFORMATION,
+                            sources=[],
+                        ),
+                        retrieved_documents,
+                    )
 
+                request_guidance = (
+                    "Answer the user's question using only the retrieved "
+                    "information below. If the information does not answer "
+                    "the question, respond exactly:\n"
+                    f'"{INSUFFICIENT_INFORMATION}"'
+                )
+                retry_guidance = f"\n\nCRITIC FEEDBACK:\n{feedback}" if feedback else ""
+                prompt = f"""
+{request_guidance}
+Do not infer missing facts from general knowledge or invent information.
+Return only the answer text, without JSON or a source list.
+{retry_guidance}
+
+USER QUESTION:
+{query}
+
+STANDALONE SEARCH QUERY:
+{retrieval_query}
+
+RETRIEVED INFORMATION:
+<context>
+{context}
+</context>
+"""
+
+                if on_answer_chunk is None:
+                    response = await self.rag_agent.run(prompt)
+                else:
+                    response_stream = self.rag_agent.run(prompt, stream=True)
+                    async for update in response_stream:
+                        if update.text and retrieved_documents:
+                            await on_answer_chunk(update.text)
+                    response = await response_stream.get_final_response()
+
+            answer = self._extract_response_text(response)
+            logger.debug("Generated RAG answer: %s", answer)
         except Exception as exc:
-            logger.exception("Ollama answer generation failed.")
-
+            logger.exception("RAG agent or MCP tool execution failed.")
             raise RuntimeError(
-                "The Ollama agent failed to generate an answer."
+                "The RAG agent failed to process the request using MCP tools."
             ) from exc
+        finally:
+            self._retrieved_documents.reset(retrieval_token)
 
-        try:
-            parsed_response = self._parse_json_response(raw_response)
+        return RagRespone(query=query, answer=answer, sources=[]), retrieved_documents
 
-            result = RagRespone.model_validate(parsed_response)
+    def _format_retrieved_documents(
+        self,
+        documents: list[dict[str, Any]],
+    ) -> tuple[str, list[str]]:
+        context_parts: list[str] = []
+        sources: list[str] = []
 
-        except (
-            json.JSONDecodeError,
-            ValueError,
-            TypeError,
-        ) as exc:
-            logger.warning(
-                "The model did not return a valid RAGResponse: %s",
-                exc,
+        for index, document in enumerate(documents, start=1):
+            content = document.get("content")
+            metadata = document.get("metadata", {})
+            if not isinstance(content, str) or not content.strip():
+                logger.warning("Retrieved document %d has empty content.", index)
+                continue
+
+            source_reference = self._get_source_reference(metadata)
+            if source_reference not in sources:
+                sources.append(source_reference)
+            context_parts.append(
+                f"Document {index}\n"
+                f"Source: {source_reference}\n"
+                f"Content:\n{content.strip()}"
             )
 
-            result = RagRespone(
-                query=query,
-                answer=(
-                    "The model returned an invalid "
-                    "response format. "
-                    "Please try the question again."
-                ),
-                sources=[],
-            )
+        return "\n\n---\n\n".join(context_parts), sources
 
-        return result
-
-    def _validate_sources( self, result: RagRespone, sources: list[str] ):
-
+    def _validate_sources(self, result: RagRespone, sources: list[str]):
+        """
+        This function is responsible for checking and
+        cleaning the sources returned by the critic/RAG response.
+        """
         allowed_sources = set(sources)
 
         validated_sources = []
@@ -382,8 +428,10 @@ Return ONLY a JSON object with this structure:
 
         return result
 
-    async def _rewrite_query(self,query: str ) -> str:
-
+    async def _rewrite_query(self, query: str) -> str:
+        """
+        this function is responsible for handling follow-up questions in s RAG system.
+        """
         if not self.conversation_history:
             return query
 
@@ -450,7 +498,7 @@ question unchanged. Do not answer the question.
 
         return rewritten_query
 
-    def _save_conversation_turn( self, query: str, answer: str ) -> None:
+    def _save_conversation_turn(self, query: str, answer: str) -> None:
 
         self.conversation_history.append(
             {
@@ -464,12 +512,17 @@ question unchanged. Do not answer the question.
                 : len(self.conversation_history) - self.max_history_turns
             ]
 
-    async def route_request( self, query: str ) -> RagRespone:
+    async def route_request(
+        self,
+        query: str,
+        *,
+        on_answer_chunk: Callable[[str | None], Awaitable[None]] | None = None,
+    ) -> RagRespone:
         """
         Retrieve documents first, then generate a grounded answer.
 
-        Retrieval is mandatory because it happens in application code
-        before the LLM is called.
+        Retrieval is mandatory because the agent must call the MCP retrieval
+        tool before answering.
         """
 
         if not isinstance(query, str) or not query.strip():
@@ -482,90 +535,28 @@ question unchanged. Do not answer the question.
         # Step 1: Resolve follow-up references using in-memory history.
         retrieval_query = await self._rewrite_query(query)
 
-        # Step 2: Retrieve documents from the existing FAISS index.
-
-        try:
-            retrieved_docs = self.embedding.retrieve_documents(
-                self.vector_store,
-                retrieval_query,
-                k=self.top_k,
-            )
-
-        except Exception as exc:
-            logger.exception("Document retrieval failed.")
-
-            raise RuntimeError(
-                "Could not retrieve documents from the FAISS vector store."
-            ) from exc
+        # Step 2: Generate with the MCP retrieval tool available to the agent.
+        result, retrieved_docs = await self._generate_rag_response(
+            query=query,
+            retrieval_query=retrieval_query,
+            on_answer_chunk=on_answer_chunk,
+        )
 
         if not retrieved_docs:
-            logger.warning("No documents were retrieved for the query.")
-
-            result = RagRespone(
-                query=query,
-                answer=INSUFFICIENT_INFORMATION,
-                sources=[],
-            )
-            self._save_conversation_turn(
-                query,
-                result.answer,
-            )
+            logger.warning("The MCP retrieval tool returned no documents.")
+            result.answer = INSUFFICIENT_INFORMATION
+            result.sources = []
+            self._save_conversation_turn(query, result.answer)
             return result
 
-        logger.info(
-            "Retrieved %d documents for the query.",
-            len(retrieved_docs),
-        )
+        # Step 3: Prepare retrieved context for critic evaluation and sources.
+        context, sources = self._format_retrieved_documents(retrieved_docs)
 
-        # Step 3: Prepare context and source references.
-
-        context_parts: list[str] = []
-        sources: list[str] = []
-
-        for index, doc in enumerate(retrieved_docs, start=1):
-            content = getattr(doc, "page_content", None)
-
-            if not isinstance(content, str) or not content.strip():
-                logger.warning(
-                    "Retrieved document %d has empty or invalid content.",
-                    index,
-                )
-
-                continue
-
-            source_reference = self._get_source_reference(doc)
-
-            if source_reference not in sources:
-                sources.append(source_reference)
-
-            context_parts.append(
-                f"Document {index}\n"
-                f"Source: {source_reference}\n"
-                f"Content:\n{content.strip()}"
-            )
-
-        if not context_parts:
+        if not context:
             logger.warning("Retrieved documents did not contain usable text.")
-
-            result = RagRespone(
-                query=query,
-                answer=INSUFFICIENT_INFORMATION,
-                sources=[],
-            )
-            self._save_conversation_turn(
-                query,
-                result.answer,
-            )
+            result.answer = INSUFFICIENT_INFORMATION
+            self._save_conversation_turn(query, result.answer)
             return result
-
-        context = "\n\n---\n\n".join(context_parts)
-
-        # Step 4: Generate the initial RAG response using the resolved query.
-
-        result = await self._generate_rag_response(
-            query=retrieval_query,
-            context=context,
-        )
 
         result = self._validate_sources(
             result,
@@ -690,11 +681,21 @@ Return only the required structured response.
 
                 logger.info("Retrying RAG generation using critic feedback.")
 
-                result = await self._generate_rag_response(
-                    query=retrieval_query,
-                    context=context,
+                if on_answer_chunk is not None:
+                    await on_answer_chunk(None)
+
+                result, retrieved_docs = await self._generate_rag_response(
+                    query=query,
+                    retrieval_query=retrieval_query,
                     feedback=critic_response.feedback,
+                    on_answer_chunk=on_answer_chunk,
                 )
+
+                context, sources = self._format_retrieved_documents(retrieved_docs)
+                if not context:
+                    result.answer = INSUFFICIENT_INFORMATION
+                    result.sources = []
+                    break
 
                 result = self._validate_sources(
                     result,
@@ -782,7 +783,7 @@ async def main():
 
             print("\n" + "=" * 60)
 
-    except Exception as exc:
+    except Exception as exc:  # noqa: BLE001 - Report failures in the CLI entry point.
         logger.exception("Unexpected application failure.")
 
         print(f"\nError: {exc}")

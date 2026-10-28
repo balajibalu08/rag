@@ -1,4 +1,4 @@
-from src.bussiness.ingestion.models import Files
+from src.models.ingestion import Files
 
 
 def filter_files(

@@ -47,7 +47,7 @@ def load_spreadsheet_data(json_path: str) -> list[dict[str, Any]]:
         raise ValueError("Input JSON contains invalid JSON.") from exc
 
     if not isinstance(data, list):
-        raise ValueError("Expected JSON root to contain a list.")
+        raise TypeError("Expected JSON root to contain a list.")
 
     logger.info("Successfully loaded %d spreadsheets.", len(data))
 

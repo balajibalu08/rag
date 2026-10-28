@@ -207,9 +207,7 @@ def chunk_document(document):
             dict.fromkeys(element["element_id"] for element in matched_elements)
         )
 
-        page_numbers = sorted(
-            set(element["page_number"] for element in matched_elements)
-        )
+        page_numbers = sorted({element["page_number"] for element in matched_elements})
 
         content_types = list(
             dict.fromkeys(element["type"] for element in matched_elements)

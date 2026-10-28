@@ -1,26 +1,18 @@
 import asyncio
-from functools import lru_cache
+import json
 
 from fastapi import APIRouter, HTTPException
+from fastapi.responses import StreamingResponse
 
-from src.bussiness.rag.models.rag_response_model import RagRespone
-from src.bussiness.rag.rag import RAGAgent
+from src.bussiness.rag.runtime import chat_lock, get_rag_agent
 from src.core.logger import logger
-from src.presentation.schemas.chat_schema import ChatRequest
-from src.presentation.schemas.response_schema import ChatResponse
+from src.models.chat import ChatRequest, ChatResponse
+from src.models.rag import RagRespone
 
 router = APIRouter(
     prefix="/chat",
     tags=["Chat"],
 )
-
-_chat_lock = asyncio.Lock()
-
-
-@lru_cache(maxsize=1)
-def get_rag_agent() -> RAGAgent:
-    """Keep one agent alive so its runtime conversation history is retained."""
-    return RAGAgent()
 
 
 def make_chat_response(result: RagRespone) -> ChatResponse:
@@ -42,7 +34,7 @@ async def chat(request: ChatRequest) -> ChatResponse:
     try:
         # The agent keeps conversation history in memory; serialize calls so
         # concurrent requests cannot interleave turns in that history.
-        async with _chat_lock:
+        async with chat_lock:
             result = await get_rag_agent().route_request(request.query)
 
     except RuntimeError as exc:
@@ -59,3 +51,70 @@ async def chat(request: ChatRequest) -> ChatResponse:
         ) from exc
 
     return make_chat_response(result)
+
+
+@router.post("/stream")
+async def chat_stream(request: ChatRequest):
+    async def events():
+        queue: asyncio.Queue[tuple[str, object]] = asyncio.Queue()
+
+        async def send_answer_chunk(chunk: str | None) -> None:
+            if chunk is None:
+                await queue.put(("reset", ""))
+            else:
+                await queue.put(("delta", chunk))
+
+        async def run_chat() -> None:
+            try:
+                async with chat_lock:
+                    result = await get_rag_agent().route_request(
+                        request.query,
+                        on_answer_chunk=send_answer_chunk,
+                    )
+                await queue.put(
+                    ("complete", make_chat_response(result).model_dump(mode="json"))
+                )
+            except RuntimeError:
+                logger.exception("RAG streaming request failed.")
+                await queue.put(
+                    (
+                        "error",
+                        {"detail": "The RAG service could not answer the question."},
+                    )
+                )
+            except Exception as exc:  # noqa: BLE001 - Report failures through SSE.
+                logger.exception(
+                    "Unexpected error while streaming a chat response: %s",
+                    exc,
+                )
+                await queue.put(
+                    (
+                        "error",
+                        {
+                            "detail": (
+                                "An unexpected error occurred while processing "
+                                "the question."
+                            )
+                        },
+                    )
+                )
+            finally:
+                await queue.put(("end", None))
+
+        task = asyncio.create_task(run_chat())
+        try:
+            while True:
+                event, payload = await queue.get()
+                if event == "end":
+                    break
+                yield f"event: {event}\ndata: {json.dumps(payload)}\n\n"
+        finally:
+            if not task.done():
+                task.cancel()
+                await asyncio.gather(task, return_exceptions=True)
+
+    return StreamingResponse(
+        events(),
+        media_type="text/event-stream",
+        headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
+    )

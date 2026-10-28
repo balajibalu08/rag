@@ -1,23 +1,23 @@
 from agent_framework import Executor, WorkflowContext, handler
 
-from bussiness.chunking.spreadsheet_chunking import (
-    chunk_spreadsheet,
-)
 from src.bussiness.chunking.document_chunking import (
     chunk_document,
 )
-from src.bussiness.ingestion.document_extraction import (
-    DocumentData,
-)
-from src.bussiness.ingestion.models import (
-    SpreadsheetData,
+from src.bussiness.chunking.spreadsheet_chunking import (
+    chunk_spreadsheet,
 )
 from src.core.logger import logger
+from src.models.document import DocumentData
+from src.models.ingestion import SpreadsheetData
 
 
 class DocumentChunkExecutor(Executor):
     @handler
-    async def chunk_document(self, document: DocumentData, ctx: WorkflowContext[list[dict]],):
+    async def chunk_document(
+        self,
+        document: DocumentData,
+        ctx: WorkflowContext[list[dict]],
+    ):
 
         logger.info("Document chunk executor initiated")
 
@@ -37,7 +37,7 @@ class DocumentChunkExecutor(Executor):
                 f"({len(chunks)} chunks)"
             )
 
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - Log and isolate a failed document.
             logger.exception(
                 f"Error while chunking document: {document.file_name} - {e}"
             )
@@ -45,7 +45,9 @@ class DocumentChunkExecutor(Executor):
 
 class SpreadsheetChunkExecutor(Executor):
     @handler
-    async def chunk_spreadsheet( self, spreadsheet: SpreadsheetData,ctx: WorkflowContext[list[dict]] ):
+    async def chunk_spreadsheet(
+        self, spreadsheet: SpreadsheetData, ctx: WorkflowContext[list[dict]]
+    ):
 
         logger.info("Spreadsheet chunk executor initiated")
 
@@ -65,7 +67,7 @@ class SpreadsheetChunkExecutor(Executor):
                 f"({len(chunks)} chunks)"
             )
 
-        except Exception as e:
+        except Exception as e:  # noqa: BLE001 - Log and isolate a failed spreadsheet.
             logger.exception(
                 f"Error while chunking spreadsheet: {spreadsheet.file_name} - {e}"
             )

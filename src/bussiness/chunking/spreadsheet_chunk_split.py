@@ -7,8 +7,12 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from src.core.config import config
 from src.core.logger import logger
 
-MAX_CHUNK_SIZE = config["Application"]["ingestion"]["chunking"]["spreadsheet"]["max_chunk_size"]
-CHUNK_OVERLAP = config["Application"]["ingestion"]["chunking"]["spreadsheet"]["chunk_overlap"]
+MAX_CHUNK_SIZE = config["Application"]["ingestion"]["chunking"]["spreadsheet"][
+    "max_chunk_size"
+]
+CHUNK_OVERLAP = config["Application"]["ingestion"]["chunking"]["spreadsheet"][
+    "chunk_overlap"
+]
 
 
 splitter = RecursiveCharacterTextSplitter(
@@ -42,7 +46,7 @@ def load_chunks(json_path: str) -> list[dict[str, Any]]:
         raise ValueError("Input JSON contains invalid JSON.") from exc
 
     if not isinstance(data, list):
-        raise ValueError("Expected JSON root to contain a list of chunks.")
+        raise TypeError("Expected JSON root to contain a list of chunks.")
 
     return data
 
@@ -164,7 +168,7 @@ def refine_all_chunks(input_path: str, output_path: str) -> list[dict[str, Any]]
 
             final_chunks.extend(refined_chunks)
 
-        except Exception:
+        except Exception:  # noqa: BLE001 - Continue refining the remaining chunks.
             logger.exception("Failed to process spreadsheet chunk: %s", chunk_id)
 
     output_path = Path(output_path)

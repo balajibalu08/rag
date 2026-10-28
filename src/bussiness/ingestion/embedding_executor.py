@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 from agent_framework import Executor, WorkflowContext, handler
@@ -5,9 +6,9 @@ from langchain_community.vectorstores import FAISS
 from langchain_core.documents import Document
 from langchain_ollama import OllamaEmbeddings
 
-from src.bussiness.ingestion.models import ChunkData
 from src.core.config import config
 from src.core.logger import logger
+from src.models.ingestion import ChunkData
 
 
 class EmbeddingExecutor(Executor):
@@ -111,6 +112,11 @@ class EmbeddingExecutor(Executor):
                     continue
 
                 metadata = chunk.get("metadata", {})
+                if not isinstance(metadata, dict):
+                    logger.warning(
+                        "Skipping chunk at index %d with invalid metadata", index
+                    )
+                    continue
 
                 metadata = {
                     **metadata,
@@ -125,7 +131,7 @@ class EmbeddingExecutor(Executor):
                     )
                 )
 
-            except Exception:
+            except (TypeError, ValueError):
                 logger.exception(f"Failed to convert chunk at index {index}")
 
         logger.info(f"Converted {len(documents)} chunks into LangChain documents")
@@ -136,11 +142,14 @@ class EmbeddingExecutor(Executor):
         self,
     ) -> OllamaEmbeddings:
 
-        embedding_model = config["Application"]["ingestion"]["embedding"]["model"]
+        embedding_model = config["Application"]["embedding_settings"]["model"]
 
         logger.info(f"Initializing embedding model: {embedding_model}")
 
-        return OllamaEmbeddings(model=embedding_model)
+        return OllamaEmbeddings(
+            model=embedding_model,
+            base_url=os.getenv("OLLAMA_HOST"),
+        )
 
     def _create_vector_store(
         self,

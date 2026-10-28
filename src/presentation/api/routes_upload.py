@@ -5,16 +5,11 @@ from tempfile import SpooledTemporaryFile
 
 from fastapi import APIRouter, File, HTTPException, UploadFile
 
-from src.bussiness.ingestion.router import ingest_uploaded_files
 from src.core.config import config
 from src.core.logger import logger
-from src.core.security import (
-    validate_file_extension,
-)
-from src.presentation.schemas.upload_schema import (
-    FileInformation,
-    UploadResponse,
-)
+from src.core.security import validate_file_content, validate_file_extension
+from src.mcp.server import mcp
+from src.models.upload import FileInformation, UploadResponse
 
 router = APIRouter(
     prefix="/upload",
@@ -69,7 +64,7 @@ async def upload_info() -> dict[str, int | list[str]]:
 
 @router.post("/", response_model=UploadResponse)
 async def upload_files(
-    files: list[UploadFile] = File(...),
+    files: list[UploadFile] = File(...),  # noqa: B008 - FastAPI request parameter.
 ) -> UploadResponse:
     """
     Upload multiple files and validate them before saving.
@@ -157,6 +152,23 @@ async def upload_files(
                         continue
 
                     temporary_file.seek(0)
+                    validation_error = validate_file_content(
+                        filename,
+                        temporary_file.read(),
+                    )
+
+                    if validation_error:
+                        failed_files.append(
+                            FileInformation(
+                                filename=filename,
+                                file_size=file_size,
+                                file_type=file_type,
+                                reason=validation_error,
+                            )
+                        )
+                        continue
+
+                    temporary_file.seek(0)
 
                     with tempfile.NamedTemporaryFile(
                         mode="wb",
@@ -233,17 +245,30 @@ async def upload_files(
 
         if uploaded_paths:
             try:
-                await ingest_uploaded_files(uploaded_paths)
+                ingestion_result = await mcp.call_tool(
+                    "ingest_documents",
+                    {"file_paths": uploaded_paths},
+                )
 
-            except RuntimeError as exc:
-                logger.exception("Files were saved but ingestion failed.")
+                if isinstance(ingestion_result, tuple) and len(ingestion_result) == 2:
+                    result_payload = ingestion_result[1]
+                else:
+                    result_payload = ingestion_result
+
+                if not isinstance(result_payload, dict):
+                    raise TypeError("The ingestion MCP tool returned an invalid response.")
+
+                if result_payload.get("success") is not True:
+                    raise RuntimeError("The ingestion MCP tool reported a failure.")
+
+            except Exception as exc:
+                logger.exception(
+                    "Files were saved but MCP ingestion or vector-store refresh failed."
+                )
 
                 raise HTTPException(
                     status_code=500,
-                    detail=(
-                        "Files were uploaded but ingestion failed. "
-                        "Check the server logs for details."
-                    ),
+                    detail="Document indexing failed. Please try again.",
                 ) from exc
 
         success = len(uploaded_files) > 0

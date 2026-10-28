@@ -1,0 +1,47 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    volumes:
+      - ollama-models:/root/.ollama
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 10s
+    restart: unless-stopped
+
+  ollama-model-setup:
+    image: ollama/ollama:latest
+    depends_on:
+      ollama:
+        condition: service_healthy
+    entrypoint: ["/bin/sh", "-c"]
+    command: >-
+      ollama pull qwen2.5:3b &&
+      ollama pull qwen3-embedding:0.6b
+    environment:
+      OLLAMA_HOST: http://ollama:11434
+    restart: "no"
+
+  rag-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      ollama-model-setup:
+        condition: service_completed_successfully
+    environment:
+      OLLAMA_HOST: http://ollama:11434
+      RAG_MCP_SERVER_URL: http://127.0.0.1:8000/mcp/
+    ports:
+      - "8000:8000"
+    volumes:
+      - rag-data:/app/data
+      - rag-logs:/app/logs
+    restart: unless-stopped
+
+volumes:
+  ollama-models:
+  rag-data:
+  rag-logs:

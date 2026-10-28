@@ -45,9 +45,9 @@ Application:
     top_k_retrievals: 3
     confidence_threshold: 80
     max_attempts: 3
+  mcp:
+    server_url: http://127.0.0.1:8000/mcp/
   ingestion:
-    embedding:
-      model: "qwen3-embedding:0.6b"
     vector_store:
       directory: "./data/vector_store"
     chunking:

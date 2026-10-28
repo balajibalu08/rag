@@ -4,14 +4,18 @@ from pathlib import Path
 from agent_framework import Executor, WorkflowBuilder, WorkflowContext, handler
 
 from src.bussiness.ingestion.embedding_executor import EmbeddingExecutor
-from src.bussiness.ingestion.models import ChunkData, File, Files
 from src.bussiness.ingestion.pipeline import (
     DocumentPipelineExecutor,
     SpreadsheetPipelineExecutor,
 )
 from src.core.config import config
 from src.core.logger import logger
-from src.core.security import validate_file_extension
+from src.core.security import (
+    validate_file_content,
+    validate_file_extension,
+    validate_file_size,
+)
+from src.models.ingestion import ChunkData, File, Files
 
 _ingestion_lock = asyncio.Lock()
 
@@ -57,6 +61,19 @@ class FileLoaderExecutor(Executor):
                 extension = file_path.suffix.lower()
 
                 if not validate_file_extension(str(file_path)):
+                    continue
+
+                if not validate_file_size(str(file_path)):
+                    continue
+
+                try:
+                    content = file_path.read_bytes()
+                except OSError:
+                    logger.exception("Could not read uploaded file: %s", file_path)
+                    continue
+
+                if error := validate_file_content(str(file_path), content):
+                    logger.warning("Skipping invalid upload %s: %s", file_path, error)
                     continue
 
                 files.append(File(file_path=str(file_path), extension=extension))
@@ -116,16 +133,25 @@ workflow = workflow_builder.build()
 async def ingest_uploaded_files(
     file_paths: list[str],
 ) -> None:
-
-    files = Files(
-        files=[
-            File(
-                file_path=file_path,
-                extension=Path(file_path).suffix.lower(),
+    validated_files = []
+    for file_path in file_paths:
+        path = Path(file_path)
+        if not path.is_file():
+            raise ValueError(f"Uploaded file does not exist: {path}")
+        if not validate_file_size(str(path)):
+            raise ValueError(
+                f"Uploaded file exceeds the configured size limit: {path.name}"
             )
-            for file_path in file_paths
-        ]
-    )
+        try:
+            content = path.read_bytes()
+        except OSError as exc:
+            logger.exception("Could not read uploaded file: %s", path)
+            raise RuntimeError(f"Could not read uploaded file: {path.name}") from exc
+        if error := validate_file_content(str(path), content):
+            raise ValueError(f"Invalid uploaded file {path.name}: {error}")
+        validated_files.append(File(file_path=str(path), extension=path.suffix.lower()))
+
+    files = Files(files=validated_files)
 
     if not files.files:
         raise ValueError("At least one uploaded file path is required for ingestion.")

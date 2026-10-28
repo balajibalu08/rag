@@ -58,6 +58,12 @@ function showChatNotice(message) {
   chatNotice.classList.toggle("visible", Boolean(message));
 }
 
+function clearChatHistory() {
+  chatMessages.replaceChildren(chatWelcome);
+  chatWelcome.hidden = false;
+  showChatNotice("");
+}
+
 function getFileKey(file) {
   return `${file.name}:${file.size}:${file.lastModified}`;
 }
@@ -189,6 +195,10 @@ async function uploadFiles() {
 
     const uploadedFiles = result.uploaded_files ?? [];
     const failedFiles = result.failed_files ?? [];
+    if (uploadedFiles.length) {
+      clearChatHistory();
+    }
+
     const failedNames = new Set(failedFiles.map((file) => file.filename));
     selectedFiles = filesBeingUploaded.filter((file) => failedNames.has(file.name));
     renderFiles();
@@ -303,17 +313,16 @@ async function sendQuestion(event) {
   waitingMessage.classList.add("waiting");
 
   try {
-    const response = await fetch("/chat/", {
+    const response = await fetch("/chat/stream", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ query }),
     });
-    const result = await response.json();
-    waitingMessage.remove();
-
     if (!response.ok) {
+      const result = await response.json();
+      waitingMessage.remove();
       addMessage(
         "assistant",
         result.detail || `The request failed (HTTP ${response.status}).`,
@@ -322,8 +331,83 @@ async function sendQuestion(event) {
       return;
     }
 
-    const answer = addMessage("assistant", result.answer);
-    addAnswerDetails(answer, result);
+    if (!response.body) {
+      throw new Error("The server did not provide a response stream.");
+    }
+
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = "";
+    let answerMessage = null;
+    let receivedTerminalEvent = false;
+
+    const handleEvent = (block) => {
+      const lines = block.split("\n");
+      const event = lines.find((line) => line.startsWith("event:"))?.slice(6).trim();
+      const data = lines
+        .filter((line) => line.startsWith("data:"))
+        .map((line) => line.slice(5).trimStart())
+        .join("\n");
+
+      if (!event || !data) {
+        return;
+      }
+
+      const payload = JSON.parse(data);
+
+      if (event === "delta") {
+        if (!answerMessage) {
+          waitingMessage.remove();
+          answerMessage = addMessage("assistant", "");
+        }
+        answerMessage.querySelector(".message-bubble").textContent += payload;
+      } else if (event === "reset") {
+        if (!answerMessage) {
+          waitingMessage.remove();
+          answerMessage = addMessage("assistant", "");
+        } else {
+          answerMessage.querySelector(".message-bubble").textContent = "";
+        }
+      } else if (event === "complete") {
+        if (!answerMessage) {
+          waitingMessage.remove();
+          answerMessage = addMessage("assistant", payload.answer);
+        } else {
+          answerMessage.querySelector(".message-bubble").textContent = payload.answer;
+        }
+        addAnswerDetails(answerMessage, payload);
+        receivedTerminalEvent = true;
+      } else if (event === "error") {
+        waitingMessage.remove();
+        answerMessage?.remove();
+        addMessage(
+          "assistant",
+          payload.detail || "The response could not be generated.",
+          "error"
+        );
+        receivedTerminalEvent = true;
+      }
+    };
+
+    while (true) {
+      const { value, done } = await reader.read();
+      buffer += decoder.decode(value, { stream: !done }).replace(/\r\n/g, "\n");
+
+      let separator = buffer.indexOf("\n\n");
+      while (separator !== -1) {
+        handleEvent(buffer.slice(0, separator));
+        buffer = buffer.slice(separator + 2);
+        separator = buffer.indexOf("\n\n");
+      }
+
+      if (done) {
+        break;
+      }
+    }
+
+    if (!receivedTerminalEvent) {
+      throw new Error("The response stream ended before the answer was complete.");
+    }
   } catch {
     waitingMessage.remove();
     addMessage(
