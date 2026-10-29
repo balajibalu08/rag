@@ -17,9 +17,8 @@ services:
       ollama:
         condition: service_healthy
     entrypoint: ["/bin/sh", "-c"]
-    command: >-
-      ollama pull qwen2.5:3b &&
-      ollama pull qwen3-embedding:0.6b
+    command:
+      - ollama pull qwen2.5:3b && ollama pull qwen3-embedding:0.6b
     environment:
       OLLAMA_HOST: http://ollama:11434
     restart: "no"
